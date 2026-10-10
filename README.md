@@ -1,14 +1,12 @@
-# So-Deystvie — landing
+# Со-Действие — сайт
 
-- `index.html` — основная адаптивная версия (десктоп / планшет 761–1024px / мобайл ≤760px)
-- `desktop.html` — исходная десктопная версия без мобильных правил
+Статический сайт, сборка не нужна.
 
-Всё self-contained: стили и скрипты вшиты в файл, внешних зависимостей нет (шрифты тянутся с Google Fonts).
+Страницы: `index.html` (главная), `uslugi.html`, `ceny.html`, `sidelki.html`, `baza-znaniy.html`, `statya.html`, `kontakty.html`, `faq.html`.
+
+Служебные файлы (не удалять): `support.js`, `image-slot.js`, `.image-slots.state.json` (фотографии).
 
 ## Публикация на GitHub Pages
+Settings → Pages → Source: Deploy from a branch → `main` / `(root)`.
 
-1. Создайте репозиторий и загрузите содержимое этой папки в его корень.
-2. Settings → Pages → Source: `Deploy from a branch`, branch `main`, folder `/ (root)`.
-3. Через 1–2 минуты сайт доступен по адресу `https://<username>.github.io/<repo>/`.
-
-Контакты в разметке: +7 995 887-09-41, info@so-deystvie.com
+Открывать через веб-сервер (GitHub Pages или `npx serve`), а не двойным кликом по файлу — иначе фотографии не загрузятся.

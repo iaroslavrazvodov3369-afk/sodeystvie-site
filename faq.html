@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=Yeseva+One&amp;family=Onest:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f2eb;--card:#fffdfc;--ink:#292724;--muted:#6f6962;--line:#d8cec3;--accent:#b85c45;--accent-deep:#974936;--accent-tint:#f4e5de;--sage:#7f927f;--sage-deep:#536653;--sage-tint:#e6ede5}
+*{box-sizing:border-box}
+summary::-webkit-details-marker{display:none}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Onest,system-ui,sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0}
+p{margin:0;text-wrap:pretty}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+button,input{font-family:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+::selection{background:var(--accent-tint)}
+</style>
+</helmet>
+
+<div style="max-width:1560px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+
+<header style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px 20px;width:100vw;margin-left:calc(50% - 50vw);padding:12px max(clamp(20px,5vw,72px),calc(50vw - 708px));flex-wrap:wrap;background:rgba(247,242,235,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)">
+  <a href="index.html" style="display:flex;align-items:center;gap:12px;color:var(--ink)">
+    <span style="display:flex;align-items:center;gap:10px;font-family:Lora,serif;font-size:22px;font-weight:500;letter-spacing:-.015em">
+      <svg width="32" height="32" viewBox="0 0 44 44" fill="none" aria-hidden="true" style="flex:none"><path d="M33 8.6A17.4 17.4 0 1 0 33 35.4" stroke="var(--accent)" stroke-width="3.8" stroke-linecap="round"></path><circle cx="21" cy="17.5" r="4.6" fill="var(--ink)"></circle><path d="M14.6 32.4c0-3.9 2.9-7 6.4-7s6.4 3.1 6.4 7" stroke="var(--ink)" stroke-width="3.6" stroke-linecap="round"></path></svg>
+      <span>Со-Действие</span>
+    </span>
+    <span style="font-size:14px;color:var(--muted);align-self:flex-end;padding-bottom:3px">Москва</span>
+  </a>
+  <nav style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+    <a href="uslugi.html" style="padding:8px 0;font-size:15.5px;color:var(--ink)" style-hover="color:var(--accent-deep)">Услуги</a>
+    <a href="ceny.html" style="padding:8px 0;font-size:15.5px;color:var(--ink)" style-hover="color:var(--accent-deep)">Цены</a>
+    <a href="baza-znaniy.html" style="padding:8px 0;font-size:15.5px;color:var(--ink)" style-hover="color:var(--accent-deep)">База знаний</a>
+    <details style="position:relative">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:8px 0;font-size:15.5px;color:var(--accent-deep);font-weight:500;border-bottom:2px solid var(--accent)">О компании<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+      <div style="position:absolute;top:calc(100% + 8px);left:-14px;z-index:30;min-width:210px;display:flex;flex-direction:column;padding:8px;border-radius:18px;background:var(--card);border:1px solid var(--line);box-shadow:0 14px 34px rgba(41,39,36,.12)">
+        <a href="#" aria-current="page" style="padding:11px 14px;border-radius:12px;font-size:15.5px;color:var(--accent-deep);font-weight:500;background:var(--accent-tint)">Частые вопросы</a>
+        <a href="kontakty.html" style="padding:11px 14px;border-radius:12px;font-size:15.5px;color:var(--ink)" style-hover="background:var(--accent-tint);color:var(--accent-deep)">Контакты</a>
+      </div>
+    </details>
+    <a href="#konsult" style="display:inline-flex;align-items:center;min-height:44px;padding:10px 20px;border-radius:999px;background:var(--accent);color:var(--card);font-size:15.5px;font-weight:500;transition:background .18s ease" style-hover="background:var(--accent-deep);color:var(--card)">Получить консультацию</a>
+  </nav>
+</header>
+
+<section data-screen-label="Шапка FAQ" style="padding:clamp(28px,4vw,56px) 0 clamp(28px,3.4vw,44px);display:flex;flex-direction:column;gap:18px">
+  <nav aria-label="Хлебные крошки" style="display:flex;align-items:center;gap:8px;font-size:15px;color:var(--muted)">
+    <a href="index.html" style="color:var(--muted)" style-hover="color:var(--accent-deep)">Главная</a>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+    <span style="color:var(--ink);font-weight:500">Частые вопросы</span>
+  </nav>
+  <h1 style="font-family:'Yeseva One',Georgia,serif;font-weight:400;font-size:clamp(40px,6vw,80px);line-height:1.04;letter-spacing:-.01em">Частые вопросы</h1>
+  <p style="font-size:clamp(17px,2vw,20px);color:var(--ink);max-width:36em">Собрали то, о чём семьи спрашивают на первой консультации: как устроена работа команды, сколько это стоит и что будет, если что-то пойдёт не так.</p>
+  <label style="display:flex;align-items:center;gap:12px;max-width:560px;margin-top:8px;padding:0 8px 0 22px;min-height:56px;border-radius:999px;background:var(--card);border:1px solid var(--line)">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+    <input type="search" placeholder="Найти вопрос" value="{{ query }}" onChange="{{ onQuery }}" style="flex:1;min-width:0;border:0;background:transparent;font-size:16px;color:var(--ink);outline:none;padding:14px 0">
+  </label>
+</section>
+
+<div style="display:flex;flex-wrap:wrap;gap:clamp(32px,4.4vw,64px);align-items:flex-start;padding-bottom:clamp(48px,6vw,96px)">
+
+  <main style="flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:clamp(36px,4.4vw,56px)">
+    <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:40px 32px;border-radius:32px;background:var(--card);display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+        <h3 style="font-family:Lora,serif;font-size:24px;font-weight:600">Такого вопроса пока нет</h3>
+        <p style="color:var(--muted);font-size:16px">Задайте его координатору — ответим лично и, возможно, добавим сюда.</p>
+        <button type="button" onClick="{{ resetQuery }}" style="margin-top:6px;min-height:44px;padding:10px 20px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:15px;cursor:pointer" style-hover="border-color:var(--accent);background:var(--accent-tint)">Сбросить поиск</button>
+      </div>
+    </sc-if>
+
+    <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+      <section id="{{ g.id }}" style="display:flex;flex-direction:column;gap:clamp(14px,1.8vw,22px);scroll-margin-top:96px">
+        <div style="display:flex;align-items:center;gap:16px">
+          <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:999px;background:{{ g.tint }};color:{{ g.ink }};font-family:'Yeseva One',serif;font-size:20px">{{ g.n }}</span>
+          <h2 style="font-family:Lora,serif;font-weight:700;font-size:clamp(26px,2.8vw,34px);line-height:1.15;letter-spacing:-.01em">{{ g.title }}</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;background:var(--card);border-radius:32px;padding:6px clamp(20px,2.6vw,32px)">
+          <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3">
+            <div style="border-top:{{ it.border }}">
+              <button type="button" onClick="{{ it.onClick }}" aria-expanded="{{ it.expanded }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:64px;padding:20px 0;background:none;border:none;cursor:pointer;text-align:left;color:var(--ink)" style-hover="color:var(--accent-deep)">
+                <span style="font-size:18px;font-weight:500;line-height:1.4">{{ it.q }}</span>
+                <span style="flex:none;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;background:{{ it.iconBg }};color:{{ it.iconInk }};transition:transform .2s ease,background .2s ease;transform:{{ it.rot }}">
+                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+                </span>
+              </button>
+              <sc-if value="{{ it.open }}" hint-placeholder-val="{{ false }}">
+                <p style="padding:0 52px 24px 0;font-size:17.5px;line-height:1.65;color:var(--ink)">{{ it.a }}</p>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-for>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:clamp(24px,3vw,36px);border-radius:32px;background:var(--sage-tint)">
+      <div style="display:flex;flex-direction:column;gap:6px;flex:1 1 320px">
+        <h3 style="font-family:Lora,serif;font-weight:700;font-size:clamp(22px,2.4vw,28px);line-height:1.2">Хотите разобраться глубже?</h3>
+        <p style="font-size:16.5px;line-height:1.55">В базе знаний — статьи врачей о деменции, уходе на дому и безопасности.</p>
+      </div>
+      <a href="baza-znaniy.html" style="display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:13px 24px;border-radius:999px;border:1px solid var(--sage-deep);color:var(--sage-deep);font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:var(--sage-deep);color:var(--card)">Открыть базу знаний
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+      </a>
+    </div>
+  </main>
+
+  <aside style="flex:1 1 300px;max-width:100%;display:flex;flex-direction:column;gap:clamp(28px,3vw,40px);position:sticky;top:96px">
+    <nav style="display:flex;flex-direction:column">
+      <span style="font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-bottom:10px">Разделы</span>
+      <sc-for list="{{ nav }}" as="c" hint-placeholder-count="5">
+        <a href="#{{ c.id }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:52px;padding:12px 0;border-bottom:1px solid var(--line);font-size:17px;color:var(--ink)" style-hover="color:var(--accent-deep)">
+          <span>{{ c.title }}</span>
+          <span style="min-width:30px;padding:2px 9px;border-radius:999px;background:var(--sage-tint);color:var(--sage-deep);font-size:13.5px;font-weight:500;text-align:center">{{ c.count }}</span>
+        </a>
+      </sc-for>
+      <button type="button" onClick="{{ toggleAll }}" style="align-self:flex-start;margin-top:14px;min-height:44px;padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:15px;cursor:pointer" style-hover="border-color:var(--accent);background:var(--accent-tint)">{{ toggleLabel }}</button>
+    </nav>
+
+    <div id="konsult" style="background:var(--accent-tint);border-radius:32px;padding:clamp(24px,2.6vw,32px);display:flex;flex-direction:column;gap:14px;align-items:flex-start;scroll-margin-top:96px">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:999px;background:var(--card);color:var(--accent)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"></path><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>
+      </span>
+      <h3 style="font-family:Lora,serif;font-weight:700;font-size:26px;line-height:1.15">Не нашли ответ?</h3>
+      <p style="font-size:16px;line-height:1.55;color:var(--ink)">Задайте вопрос на бесплатной консультации — 5 минут, без обязательств. Куратор перезвонит в течение дня.</p>
+      <a href="index.html#zayavka" style="display:inline-flex;align-items:center;min-height:48px;padding:13px 24px;border-radius:999px;background:var(--accent);color:var(--card);font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:var(--accent-deep);color:var(--card)">Задать свой вопрос</a>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        
+        
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer style="background:#fffdfc;border-top:1px solid var(--line);width:100vw;margin-left:calc(50% - 50vw);padding:clamp(28px,3.4vw,44px) max(clamp(20px,5vw,72px),calc(50vw - 708px))">
+  <div style="display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:space-between;align-items:center">
+    <span style="display:inline-flex;align-items:center;gap:10px;font-family:Lora,serif;font-size:20px"><svg width="28" height="28" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M33 8.6A17.4 17.4 0 1 0 33 35.4" stroke="var(--accent)" stroke-width="3.8" stroke-linecap="round"></path><circle cx="21" cy="17.5" r="4.6" fill="var(--ink)"></circle><path d="M14.6 32.4c0-3.9 2.9-7 6.4-7s6.4 3.1 6.4 7" stroke="var(--ink)" stroke-width="3.6" stroke-linecap="round"></path></svg>Со-Действие</span>
+    <div style="display:flex;flex-wrap:wrap;gap:18px;font-size:15px">
+      <a href="tel:+79958870941" style="color:var(--ink)">+7 995 887-09-41</a>
+      <a href="mailto:info@so-deystvie.com" style="color:var(--ink)">info@so-deystvie.com</a>
+    </div>
+    <span style="font-size:14px;color:var(--muted)">© 2026 ООО «Со-Действие» · ИНН 773119151503</span>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;allowMultiple&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const GROUPS = [
+  { id: 'service', title: 'Как мы работаем', tint: 'var(--accent-tint)', ink: 'var(--accent-deep)', items: [
+    { q: 'Чем вы отличаетесь от патронажной службы?', a: 'Патронажная служба присылает сиделку. Мы даём закреплённую команду: личного гериатра, медсестру и куратора, которые ведут родителя постоянно и держат общий план — здоровье, уход, быт и связь с семьёй.' },
+    { q: 'Вы лечите сами или направляете к другим врачам?', a: 'Ведём сами: личный гериатр держит общий план, медсестра выполняет назначения на дому. Когда нужен узкий специалист, мы не отправляем вас искать его — подбираем проверенного врача, организуем приём и возвращаем результат в общий план.' },
+    { q: 'Чем гериатр отличается от обычного терапевта?', a: 'Гериатр смотрит не на одну болезнь, а на то, как в пожилом возрасте взаимодействуют несколько диагнозов и десяток назначений. Часто его первая работа — не добавить лекарства, а убрать лишние.' },
+    { q: 'Можно ли следить за состоянием родителя, если я живу в другом городе?', a: 'Да, это основной сценарий. Куратор присылает короткий отчёт после каждого визита и ежемесячную сводку, а по важным решениям созванивается с вами заранее.' },
+  ]},
+  { id: 'team', title: 'Специалисты и сиделки', tint: 'var(--sage-tint)', ink: 'var(--sage-deep)', items: [
+    { q: 'Как вы проверяете сиделок и специалистов?', a: 'Работаем только с проверенными людьми: смотрим документы и опыт, берём рекомендации с прошлых мест, проводим собственное интервью. Оформление официальное, а работу контролирует куратор — если что-то не так, меняем без паузы в уходе.' },
+    { q: 'Что делать, если сиделка не подошла?', a: 'Скажите куратору. Мы подберём замену и организуем передачу дел, чтобы уход не прерывался ни на день.' },
+    { q: 'А если родитель не хочет никакой помощи?', a: 'Это норма, и мы это учитываем. Начинаем с малого — одного визита врача, разговора без давления. Куратор специально обучен не ломать сопротивление, а договариваться.' },
+  ]},
+  { id: 'price', title: 'Тарифы и оплата', tint: 'var(--accent-tint)', ink: 'var(--accent-deep)', items: [
+    { q: 'Сколько стоит сопровождение?', a: 'Стоимость зависит от тарифа и объёма ухода. Точную сумму куратор назовёт после бесплатной консультации — без скрытых доплат, всё фиксируется в договоре.' },
+    { q: 'Можно ли сменить тариф по ходу?', a: 'Да, с начала следующего месяца. Если состояние родителя резко изменилось, перестраиваем план сразу.' },
+    { q: 'Как можно отказаться и что будет с данными?', a: 'Расторжение — в любой момент, без штрафов, оплачивается только начатый месяц. Медицинскую карту и результаты обследований мы передаём вам целиком.' },
+  ]},
+  { id: 'urgent', title: 'Экстренные ситуации', tint: 'var(--sage-tint)', ink: 'var(--sage-deep)', items: [
+    { q: 'Что будет, если родителю станет плохо ночью?', a: 'Звонок принимает дежурный врач, у которого открыта карта вашего родителя. Решение «скорая или до утра» принимает он же — и при необходимости встречает скорую и передаёт медикам историю.' },
+    { q: 'Вы помогаете при госпитализации?', a: 'Да. Куратор выбирает больницу вместе с вами, сопровождает оформление, держит связь с лечащим врачом и готовит дом к выписке.' },
+  ]},
+];
+const ALL_KEYS = GROUPS.flatMap((g, gi) => g.items.map((_, i) => gi + '-' + i));
+
+class Component extends DCLogic {
+  state = { open: { '0-0': true }, query: '' };
+  renderVals() {
+    const { open, query } = this.state;
+    const multi = this.props.allowMultiple ?? true;
+    const q = query.trim().toLowerCase();
+    const toggle = k => () => this.setState(s => {
+      const was = !!s.open[k];
+      return { open: multi ? { ...s.open, [k]: !was } : (was ? {} : { [k]: true }) };
+    });
+    const groups = GROUPS.map((g, gi) => ({
+      ...g, n: gi + 1,
+      items: g.items.map((it, i) => ({ ...it, k: gi + '-' + i }))
+        .filter(it => !q || (it.q + ' ' + it.a).toLowerCase().includes(q))
+        .map((it, i) => {
+          const on = !!open[it.k] || (!!q);
+          return { q: it.q, a: it.a, open: on, expanded: on ? 'true' : 'false', onClick: toggle(it.k), border: i === 0 ? '0' : '1px solid var(--line)', rot: on ? 'rotate(45deg)' : 'none', iconBg: on ? 'var(--accent)' : 'var(--accent-tint)', iconInk: on ? 'var(--card)' : 'var(--accent-deep)' };
+        }),
+    })).filter(g => g.items.length);
+    const allOpen = ALL_KEYS.every(k => open[k]);
+    return {
+      query,
+      onQuery: e => this.setState({ query: e.target.value }),
+      resetQuery: () => this.setState({ query: '' }),
+      groups,
+      isEmpty: groups.length === 0,
+      nav: GROUPS.map(g => ({ id: g.id, title: g.title, count: g.items.length })),
+      toggleLabel: allOpen ? 'Свернуть все ответы' : 'Раскрыть все ответы',
+      toggleAll: () => this.setState({ open: allOpen ? {} : Object.fromEntries(ALL_KEYS.map(k => [k, true])) }),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=Yeseva+One&amp;family=Onest:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f2eb;--card:#fffdfc;--ink:#292724;--muted:#6f6962;--line:#d8cec3;--accent:#b85c45;--accent-deep:#974936;--accent-tint:#f4e5de;--sage:#7f927f;--sage-deep:#536653;--sage-tint:#e6ede5;--ink-2:#292724;--line-2:#e5ddd4}
+*{box-sizing:border-box}
+summary::-webkit-details-marker{display:none}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Onest,system-ui,sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0}
+p,ul{margin:0;text-wrap:pretty}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+button{font-family:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+::selection{background:var(--accent-tint)}
+</style>
+</helmet>
+
+<div style="max-width:1560px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+
+<header style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px 20px;width:100vw;margin-left:calc(50% - 50vw);padding:12px max(clamp(20px,5vw,72px),calc(50vw - 708px));flex-wrap:wrap;background:rgba(247,242,235,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)">
+  <a href="index.html" style="display:flex;align-items:center;gap:12px;color:var(--ink)">
+    <span style="display:flex;align-items:center;gap:10px;font-family:Lora,serif;font-size:22px;font-weight:500;letter-spacing:-.015em">
+      <svg width="32" height="32" viewBox="0 0 44 44" fill="none" aria-hidden="true" style="flex:none"><path d="M33 8.6A17.4 17.4 0 1 0 33 35.4" stroke="var(--accent)" stroke-width="3.8" stroke-linecap="round"></path><circle cx="21" cy="17.5" r="4.6" fill="var(--ink)"></circle><path d="M14.6 32.4c0-3.9 2.9-7 6.4-7s6.4 3.1 6.4 7" stroke="var(--ink)" stroke-width="3.6" stroke-linecap="round"></path></svg>
+      <span>Со-Действие</span>
+    </span>
+    <span style="font-size:14px;color:var(--muted);align-self:flex-end;padding-bottom:3px">Москва</span>
+  </a>
+  <nav style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+    <a href="uslugi.html" style="padding:8px 0;font-size:15.5px;color:var(--ink)" style-hover="color:var(--accent-deep)">Услуги</a>
+    <a href="#" aria-current="page" style="padding:8px 0;font-size:15.5px;color:var(--accent-deep);font-weight:500;border-bottom:2px solid var(--accent)">Цены</a>
+    <a href="baza-znaniy.html" style="padding:8px 0;font-size:15.5px;color:var(--ink)" style-hover="color:var(--accent-deep)">База знаний</a>
+    <details style="position:relative">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:8px 0;font-size:15.5px;color:var(--ink)" style-hover="color:var(--accent-deep)">О компании<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+      <div style="position:absolute;top:calc(100% + 8px);left:-14px;z-index:30;min-width:210px;display:flex;flex-direction:column;padding:8px;border-radius:18px;background:var(--card);border:1px solid var(--line);box-shadow:0 14px 34px rgba(41,39,36,.12)">
+        <a href="faq.html" style="padding:11px 14px;border-radius:12px;font-size:15.5px;color:var(--ink)" style-hover="background:var(--accent-tint);color:var(--accent-deep)">Частые вопросы</a>
+        <a href="kontakty.html" style="padding:11px 14px;border-radius:12px;font-size:15.5px;color:var(--ink)" style-hover="background:var(--accent-tint);color:var(--accent-deep)">Контакты</a>
+      </div>
+    </details>
+    <a href="kontakty.html#napisat" style="display:inline-flex;align-items:center;min-height:44px;padding:10px 20px;border-radius:999px;background:var(--accent);color:var(--card);font-size:15.5px;font-weight:500;transition:background .18s ease" style-hover="background:var(--accent-deep);color:var(--card)">Получить консультацию</a>
+  </nav>
+</header>
+
+<section data-screen-label="01 Шапка" style="padding:clamp(28px,4vw,56px) 0 clamp(28px,3.4vw,44px);display:flex;flex-direction:column;gap:18px">
+  <nav aria-label="Хлебные крошки" style="display:flex;align-items:center;gap:8px;font-size:15px;color:var(--muted)">
+    <a href="index.html" style="color:var(--muted)" style-hover="color:var(--accent-deep)">Главная</a>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+    <span style="color:var(--ink);font-weight:500">Цены</span>
+  </nav>
+  <h1 style="font-family:'Yeseva One',Georgia,serif;font-weight:400;font-size:clamp(40px,6vw,80px);line-height:1.04;letter-spacing:-.01em">Цены</h1>
+  <p style="font-size:clamp(17px,2vw,20px);max-width:36em">Ежемесячное сопровождение или отдельные услуги. Итоговую сумму куратор называет после бесплатной консультации — до начала работы.</p>
+</section>
+
+<section data-screen-label="02 Тарифы" style="display:flex;flex-direction:column;gap:clamp(20px,2.4vw,28px);padding-bottom:clamp(48px,6vw,80px)">
+  <h2 style="font-family:Lora,serif;font-weight:700;font-size:clamp(30px,3.8vw,44px);line-height:1.12;letter-spacing:-.015em">Сопровождение <em style="font-style:italic;color:var(--accent)">по месяцам</em></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(16px,2vw,24px);align-items:start">
+    <div style="background:var(--sage-tint);border:1px solid #d3ddd1;border-radius:24px;padding:clamp(24px,2.8vw,34px) clamp(22px,2.4vw,30px);display:flex;flex-direction:column">
+      <span style="align-self:center;padding:7px 16px;border-radius:999px;background:var(--card);color:var(--sage-deep);font-size:14px;font-weight:500;letter-spacing:.04em;text-transform:uppercase">Родитель справляется сам</span>
+      <div style="text-align:center;margin-top:clamp(16px,2vw,24px)">
+        <span style="font-family:Lora,serif;font-weight:600;font-size:clamp(38px,4.6vw,54px);line-height:1;letter-spacing:-.02em;color:var(--ink)">от 50 т.р.</span><span style="font-family:Lora,serif;font-size:clamp(20px,2.2vw,26px);color:var(--muted)">/мес</span>
+      </div>
+      <span style="margin-top:8px;text-align:center;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Медицинская координация</span>
+      <p style="margin-top:clamp(12px,1.6vw,18px);font-size:16.5px;line-height:1.55;color:var(--ink-2);text-align:center">Помощь нужна со здоровьем: врачи, анализы, лекарства, решения.</p>
+      <a href="kontakty.html#napisat" style="display:flex;justify-content:center;margin-top:clamp(16px,2vw,22px);padding:15px 26px;border-radius:999px;background:var(--sage-deep);color:var(--card);font-size:17px;font-weight:500;transition:background .18s ease" style-hover="background:#41523f;color:var(--card)">Обсудить этот формат</a>
+      <div style="margin-top:clamp(16px,1.8vw,22px);padding-top:clamp(12px,1.4vw,16px);border-top:1px solid var(--line-2);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr));column-gap:clamp(16px,2vw,26px);row-gap:0">
+        <sc-for list="{{ feats }}" as="f" hint-placeholder-count="10">
+          <div style="display:flex;gap:9px;align-items:flex-start;padding:8px 0">
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="var(--sage-deep)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="font-size:15.5px;line-height:1.4;color:var(--ink-2)">{{ f.name }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="background:var(--accent-tint);border:1px solid #eed9d0;border-radius:24px;padding:clamp(24px,2.8vw,34px) clamp(22px,2.4vw,30px);display:flex;flex-direction:column">
+      <span style="align-self:center;padding:7px 16px;border-radius:999px;background:var(--card);color:var(--accent-deep);font-size:14px;font-weight:500;letter-spacing:.04em;text-transform:uppercase">Родителю нужен человек рядом</span>
+      <div style="text-align:center;margin-top:clamp(16px,2vw,24px)">
+        <span style="font-family:Lora,serif;font-weight:600;font-size:clamp(38px,4.6vw,54px);line-height:1;letter-spacing:-.02em;color:var(--ink)">от 70 т.р.</span><span style="font-family:Lora,serif;font-size:clamp(20px,2.2vw,26px);color:var(--muted)">/мес</span>
+      </div>
+      <span style="margin-top:8px;text-align:center;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Координация + ежедневный уход</span>
+      <p style="margin-top:clamp(12px,1.6vw,18px);font-size:16.5px;line-height:1.55;color:var(--ink-2);text-align:center">Ограничена мобильность или память: помимо медицинской координации необходима сиделка.</p>
+      <a href="kontakty.html#napisat" style="display:flex;justify-content:center;margin-top:clamp(16px,2vw,22px);padding:15px 26px;border-radius:999px;background:var(--accent);color:var(--card);font-size:17px;font-weight:500;transition:background .18s ease" style-hover="background:var(--accent-deep);color:var(--card)">Обсудить этот формат</a>
+      <div style="margin-top:clamp(16px,1.8vw,22px);padding-top:clamp(12px,1.4vw,16px);border-top:1px solid var(--line-2);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr));column-gap:clamp(16px,2vw,26px);row-gap:0">
+        <sc-for list="{{ feats }}" as="f" hint-placeholder-count="10">
+          <div style="display:flex;gap:9px;align-items:flex-start;padding:8px 0">
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="var(--accent-deep)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="font-size:15.5px;line-height:1.4;color:var(--ink-2)">{{ f.name }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:clamp(12px,1.4vw,16px);padding:clamp(16px,1.8vw,20px);border-radius:14px;background:var(--card);display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:10px;align-items:center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-deep)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 11l-3 3-2-2"></path></svg>
+          <span style="font-size:17.5px;font-weight:500;line-height:1.3;color:var(--accent-deep)">Сиделка — целиком на нас</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:7px">
+          <span style="display:flex;align-items:center;justify-content:center;text-align:center;min-height:38px;padding:7px 12px;border-radius:14px;background:var(--accent-tint);color:var(--ink);font-size:14.5px;line-height:1.25">Подбор под состояние</span>
+          <span style="display:flex;align-items:center;justify-content:center;text-align:center;min-height:38px;padding:7px 12px;border-radius:14px;background:var(--accent-tint);color:var(--ink);font-size:14.5px;line-height:1.25">Документы и оформление</span>
+          <span style="display:flex;align-items:center;justify-content:center;text-align:center;min-height:38px;padding:7px 12px;border-radius:14px;background:var(--accent-tint);color:var(--ink);font-size:14.5px;line-height:1.25">Замена без паузы</span>
+          <span style="display:flex;align-items:center;justify-content:center;text-align:center;min-height:38px;padding:7px 12px;border-radius:14px;background:var(--accent-tint);color:var(--ink);font-size:14.5px;line-height:1.25">Контроль куратором</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section data-screen-label="03 Отдельные услуги" style="padding:clamp(40px,5.6vw,72px) 0;background:var(--card);width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px">
+    <h2 style="font-family:Lora,serif;font-weight:700;font-size:clamp(30px,3.8vw,44px);line-height:1.12;letter-spacing:-.015em">Отдельные <em style="font-style:italic;color:var(--accent)">услуги</em></h2>
+    <a href="uslugi.html" style="display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:500">Описание услуг
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+    </a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(16px,2vw,24px);margin-top:clamp(24px,3vw,36px);align-items:start">
+    <sc-for list="{{ groups }}" as="g" hint-placeholder-count="2">
+      <div style="display:flex;flex-direction:column;padding:clamp(20px,2.4vw,30px);border-radius:32px;background:var(--paper)">
+        <div style="display:flex;align-items:center;gap:12px;padding-bottom:6px">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:999px;background:{{ g.tint }};color:{{ g.ink }}">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ g.icon }}"></path></svg>
+          </span>
+          <h3 style="font-family:Lora,serif;font-weight:700;font-size:23px;line-height:1.2">{{ g.title }}</h3>
+        </div>
+        <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3">
+          <div style="display:flex;align-items:baseline;gap:12px;padding:14px 0;border-top:1px solid var(--line)">
+            <div style="display:flex;flex-direction:column;gap:2px;flex:1;min-width:0">
+              <span style="font-size:17px;font-weight:500;line-height:1.35">{{ it.name }}</span>
+              <span style="font-size:14.5px;line-height:1.45;color:var(--muted)">{{ it.note }}</span>
+            </div>
+            <span style="flex:none;display:flex;align-items:baseline;gap:4px;white-space:nowrap"><span style="font-size:14px;color:var(--muted)">от</span><span style="font-family:'Yeseva One',serif;font-size:21px;color:var(--accent-deep)">{{ it.price }}</span><span style="font-size:14px;color:var(--muted)">{{ it.unit }}</span></span>
+          </div>
+        </sc-for>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;margin-top:clamp(16px,2vw,24px);padding:clamp(20px,2.6vw,30px);border-radius:32px;border:1px solid var(--line)">
+    <div style="display:flex;flex-direction:column;gap:6px;flex:1 1 360px">
+      <h3 style="font-family:Lora,serif;font-weight:700;font-size:clamp(21px,2.2vw,25px);line-height:1.2">Проживание в пансионате — обсуждаем отдельно</h3>
+      <p style="font-size:16px;line-height:1.6;color:var(--muted);max-width:40em">Подбор — по фиксированной цене выше. Стоимость проживания зависит от состояния, района и пансионата, поэтому в прайс не входит.</p>
+    </div>
+    <a href="kontakty.html#napisat" style="display:inline-flex;align-items:center;min-height:52px;padding:15px 26px;border-radius:999px;border:1px solid var(--accent-deep);color:var(--accent-deep);font-size:16px;font-weight:500" style-hover="background:var(--accent);border-color:var(--accent);color:var(--card)">Обсудить пансионат</a>
+  </div>
+</section>
+
+<section data-screen-label="04 CTA" style="padding:clamp(40px,5.6vw,72px) 0 clamp(48px,6vw,96px)">
+  <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px;padding:clamp(26px,3.4vw,48px);border-radius:40px;background:var(--accent-tint)">
+    <div style="display:flex;flex-direction:column;gap:10px;flex:1 1 360px">
+      <h2 style="font-family:Lora,serif;font-weight:700;font-size:clamp(28px,3.4vw,40px);line-height:1.12;letter-spacing:-.015em">Посчитаем точную стоимость</h2>
+      <p style="font-size:17.5px;line-height:1.6;max-width:32em">Бесплатная консультация, 5 минут. Куратор подскажет, какие услуги нужны сейчас, а какие — нет.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+      <a href="kontakty.html#napisat" style="display:inline-flex;align-items:center;min-height:56px;padding:17px 30px;border-radius:999px;background:var(--accent);color:var(--card);font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:var(--accent-deep);color:var(--card)">Получить консультацию</a>
+      <a href="tel:+79958870941" style="display:inline-flex;align-items:center;min-height:56px;padding:17px 24px;border-radius:999px;border:1px solid var(--accent-deep);color:var(--accent-deep);font-size:16px" style-hover="background:var(--card);color:var(--accent-deep)">+7 995 887-09-41</a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#fffdfc;border-top:1px solid var(--line);width:100vw;margin-left:calc(50% - 50vw);padding:clamp(28px,3.4vw,44px) max(clamp(20px,5vw,72px),calc(50vw - 708px))">
+  <div style="display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:space-between;align-items:center">
+    <span style="display:inline-flex;align-items:center;gap:10px;font-family:Lora,serif;font-size:20px"><svg width="28" height="28" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M33 8.6A17.4 17.4 0 1 0 33 35.4" stroke="var(--accent)" stroke-width="3.8" stroke-linecap="round"></path><circle cx="21" cy="17.5" r="4.6" fill="var(--ink)"></circle><path d="M14.6 32.4c0-3.9 2.9-7 6.4-7s6.4 3.1 6.4 7" stroke="var(--ink)" stroke-width="3.6" stroke-linecap="round"></path></svg>Со-Действие</span>
+    <div style="display:flex;flex-wrap:wrap;gap:18px;font-size:15px">
+      <a href="tel:+79958870941" style="color:var(--ink)">+7 995 887-09-41</a>
+      <a href="mailto:info@so-deystvie.com" style="color:var(--ink)">info@so-deystvie.com</a>
+    </div>
+    <span style="font-size:14px;color:var(--muted)">© 2026 ООО «Со-Действие» · ИНН 773119151503</span>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;recommended&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Нет&quot;,&quot;Координация&quot;,&quot;Координация + уход&quot;],&quot;default&quot;:&quot;Координация + уход&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+const ROWS = [
+  ['Закреплённая пара кураторов', 1], ['Личный терапевт-гериатр', 1], ['Экстренная служба 24/7', 1], ['Анализы на дому', 1],
+  ['Медсестра по плану', 1], ['Доставка лекарств', 1], ['Подбор узких специалистов', 1], ['Цифровой помощник', 1],
+  ['Помощь с оформлением документов', 1], ['Организация такси и доставки продуктов', 1],
+  ['Сиделка: подбор, оформление, замена без паузы, контроль куратором', 0],
+];
+const ICONS = {
+  heart: 'M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z',
+  steth: 'M11 2v2M5 2v2M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1M8 15a6 6 0 0 0 12 0v-3M20 10a2 2 0 1 0 0 0.01',
+  truck: 'M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2M15 18H9M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14M7 16a2 2 0 1 0 0 4a2 2 0 1 0 0-4M17 16a2 2 0 1 0 0 4a2 2 0 1 0 0-4',
+  walk: 'M13 4a1 1 0 1 0 0 .01M9 20l3-6 3 3v4M7 12l3-4 4 1 3 3M12 14l-1-6',
+};
+const GROUPS = [
+  { title: 'Сиделки', icon: 'heart', tint: 'var(--accent-tint)', ink: 'var(--accent-deep)', items: [
+    { name: 'Почасовая', note: 'От 3 часов в день', price: '450 ₽', unit: '/ час' },
+    { name: 'Дневная', note: '8–12 часов рядом', price: '3 900 ₽', unit: '/ день' },
+    { name: 'С проживанием', note: '24/7, с выходными и подменой', price: '85 000 ₽', unit: '/ мес' },
+    { name: 'В больнице', note: 'Дежурство в стационаре', price: '3 500 ₽', unit: '/ сутки' },
+  ] },
+  { title: 'Здоровье и восстановление', icon: 'steth', tint: 'var(--sage-tint)', ink: 'var(--sage-deep)', items: [
+    { name: 'Гериатр на дом', note: 'Осмотр, ревизия лекарств, план лечения', price: '6 500 ₽', unit: '' },
+    { name: 'Медсестра на дом', note: 'Уколы, капельницы, перевязки, анализы', price: '1 800 ₽', unit: '' },
+    { name: 'Реабилитация на дому', note: 'Занятие с инструктором ЛФК', price: '3 200 ₽', unit: '' },
+  ] },
+  { title: 'Дом и переезд', icon: 'truck', tint: 'var(--accent-tint)', ink: 'var(--accent-deep)', items: [
+    { name: 'Безопасный дом', note: 'Аудит квартиры и установка за один день', price: '5 000 ₽', unit: '' },
+    { name: 'Перевозка лежачих больных', note: 'Носилки, спуск по лестнице, сопровождение в пути', price: '4 500 ₽', unit: '' },
+    { name: 'Подбор пансионата', note: 'Выезды, проверка условий, помощь с переездом', price: '15 000 ₽', unit: '' },
+  ] },
+];
+
+class Component extends DCLogic {
+  renderVals() {
+    const rec = this.props.recommended ?? 'Координация + уход';
+    return {
+      recA: rec === 'Координация',
+      recB: rec === 'Координация + уход',
+      rows: ROWS.map(([name, a]) => ({ name, a: !!a, noA: !a })),
+      feats: ROWS.filter(r => r[1]).map(([name]) => ({ name })),
+      groups: GROUPS.map(g => ({ ...g, icon: ICONS[g.icon] })),
+    };
+  }
+}
+</script>
+</body>
+</html>
