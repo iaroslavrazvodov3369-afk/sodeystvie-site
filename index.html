@@ -55,11 +55,14 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
   header[data-m=hdr] [data-hl]{display:none!important}
   header[data-m=hdr]>*:first-child span{font-size:19px!important}
   header[data-m=hdr]>*:first-child svg{width:28px;height:28px}
+  header[data-m=hdr] [data-logo]{height:32px!important}
 }
 @media (max-width:1024px){
   [data-thread=hero]{display:none!important}
   [data-m=h-copy]{display:contents!important}
-  [data-m=hero]{grid-template-columns:1fr!important;gap:20px!important}
+  [data-m=hero]{grid-template-columns:1fr!important;gap:20px!important;padding:clamp(24px,4vw,40px) 0 clamp(32px,5vw,56px)!important}
+  [data-m=hero]>[data-m=h-copy]>*:not([data-m=h-photo]){margin-left:clamp(20px,5vw,72px);margin-right:clamp(20px,5vw,72px)}
+  [data-m=h-photo]{min-height:clamp(320px,70vw,520px)!important;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 8%)!important;mask-image:linear-gradient(to bottom,transparent,#000 8%)!important}
   [data-m=h-title]{order:1}
   [data-m=h-sub]{order:2;margin-top:0!important}
   [data-m=h-photo]{order:3}
@@ -112,10 +115,7 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
 
 <header data-m="hdr" style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;width:100vw;margin-left:calc(50% - 50vw);padding:12px max(clamp(20px,5vw,72px),calc(50vw - 708px));flex-wrap:wrap;background:#1F3D34;border-bottom:1px solid rgba(255,254,251,.12)">
   <div style="display:flex;align-items:center;gap:12px">
-    <span style="display:flex;align-items:center;gap:10px;font-family:Lora,Georgia,serif;font-size:22px;font-weight:500;letter-spacing:-.015em;color:#FFFEFB" aria-label="Со-Действие">
-      <svg width="32" height="32" viewBox="0 0 44 44" fill="none" aria-hidden="true" style="flex:none"><path d="M33 8.6A17.4 17.4 0 1 0 33 35.4" stroke="#FFFEFB" stroke-opacity=".7" stroke-width="3.8" stroke-linecap="round"></path><circle cx="21" cy="17.5" r="4.6" fill="#FFFEFB"></circle><path d="M14.6 32.4c0-3.9 2.9-7 6.4-7s6.4 3.1 6.4 7" stroke="#FFFEFB" stroke-width="3.6" stroke-linecap="round"></path></svg>
-      <span>Со-Действие</span>
-    </span>
+    <img src="logo-dark.svg" alt="Со-Действие" width="183" height="40" data-logo="1" style="display:block;height:40px;width:auto">
     <span data-hl="1" style="font-size:14px;color:rgba(255,254,251,.6);letter-spacing:.02em;align-self:flex-end;padding-bottom:3px">Москва</span>
   </div>
   <div data-m="nav" style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
@@ -158,8 +158,8 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
   </div>
 </header>
 
-<section data-m="hero" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(28px,5vw,64px);align-items:center;padding:clamp(28px,4vw,56px) 0 clamp(40px,6vw,80px);position:relative">
-  <div data-m="h-copy" style="position:relative;z-index:1">
+<section data-m="hero" style="width:100vw;margin-left:calc(50% - 50vw);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));align-items:center;position:relative">
+  <div data-m="h-copy" style="position:relative;z-index:1;max-width:40em;padding:clamp(28px,4vw,56px) clamp(20px,4vw,56px) clamp(40px,6vw,80px) max(clamp(20px,5vw,72px),calc(50vw - 708px))">
     <h1 data-m="h-title" style="font-family:Lora,Georgia,serif;font-weight:400;font-size:clamp(38px,5vw,68px);line-height:1.08;letter-spacing:-.01em;color:var(--ink)">Быть рядом с родителями<br><em style="font-style:italic;color:var(--brown)">на любом расстоянии</em></h1>
     <p data-m="h-sub" style="margin-top:26px;font-size:clamp(18px,2.2vw,21px);line-height:1.55;color:var(--ink-2);max-width:30em">Закреплённая команда берёт на себя координацию здоровья и ухода за вашим родителем. Постоянно — а не когда уже случилось.</p>
     <div data-m="h-cta" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:34px">
@@ -168,18 +168,10 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
     </div>
     <p data-m="h-note" style="margin-top:20px;font-size:14px;color:var(--muted)">Консультация бесплатная и ни к чему не обязывает — 5 минут разговора о ситуации.</p>
   </div>
-  <div data-m="h-photo" style="position:relative;z-index:1;display:flex;justify-content:center">
-    <div style="position:relative;width:min(100%,470px)">
-      <svg data-thread="hero" aria-hidden="true" width="300" viewBox="0 0 300 220" fill="none" style="position:absolute;right:-90px;bottom:-70px;width:300px;height:auto;z-index:0;pointer-events:none;overflow:visible"><path d="M120 176C150 173 177 161 199 143C221 125 251 104 267 85C281 67 271 51 255 56C237 62 238 91 250 117C262 144 276 177 284 211" stroke="#8E6F56" stroke-opacity=".16" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="120" cy="176" r="3" fill="#8E6F56" fill-opacity=".7"></circle><circle cx="284" cy="212" r="3" fill="#1F3D34" fill-opacity=".4"></circle></svg>
-      <div style="position:relative;z-index:1;width:100%;aspect-ratio:5/6;border-radius:32px;overflow:hidden">
-      <image-slot id="hero-family" shape="rect" placeholder="Фото: взрослая дочь и мама за столом, дома, естественный свет — без халатов и клиники"></image-slot>
-    </div>
-    </div>
-  </div>
+  <div data-m="h-photo" style="position:relative;align-self:stretch;min-height:clamp(340px,42vw,620px);overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 7%);mask-image:linear-gradient(to right,transparent,#000 7%)"><image-slot id="hero-family" shape="rect" placeholder="Фото: взрослая дочь и мама за столом, дома, естественный свет — без халатов и клиники" style="width:100%;height:100%"></image-slot></div>
 </section>
 
 <section style="position:relative;padding:clamp(40px,5.6vw,72px) 0;background:#F5F0E6;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
-  <svg data-thread="cup" aria-hidden="true" width="58" viewBox="0 0 66 140" fill="none" style="position:absolute;left:8px;top:-56px;width:58px;height:auto;pointer-events:none"><path d="M32 0C30 10 36 18 31 28C26 38 36 44 31 56L31 60C22 60 13 60 10 62C10 78 14 92 24 96C30 98 38 98 44 96C52 92 54 78 54 62C46 60 38 60 31 60M54 63C63 62 66 74 60 80C57 83 53 84 50 84M50 84C61 96 52 104 30 104C18 104 8 102 5 101C1 110 5 124 12 138" stroke="#8E6F56" stroke-opacity=".18" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
   <h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12;max-width:26em">Что это меняет на практике</h2>
 
   <div data-m="trio" data-stats="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(16px,2vw,24px);margin-top:clamp(30px,4vw,48px)">
@@ -872,7 +864,7 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:clamp(26px,3.4vw,48px);align-items:stretch">
 
     <div style="display:flex;flex-direction:column;gap:14px;grid-column:span 1">
-      <span style="display:inline-flex;align-items:center;gap:10px;font-family:Lora,Georgia,serif;font-size:24px" aria-label="Со-Действие"><svg width="32" height="32" viewBox="0 0 44 44" fill="none" aria-hidden="true" style="flex:none"><path d="M33 8.6A17.4 17.4 0 1 0 33 35.4" stroke="var(--accent)" stroke-width="3.8" stroke-linecap="round"></path><circle cx="21" cy="17.5" r="4.6" fill="var(--ink)"></circle><path d="M14.6 32.4c0-3.9 2.9-7 6.4-7s6.4 3.1 6.4 7" stroke="var(--ink)" stroke-width="3.6" stroke-linecap="round"></path></svg><span>Со-Действие</span></span>
+      <img src="logo-light.svg" alt="Со-Действие" width="201" height="44" style="display:block;height:44px;width:auto">
       <p style="font-size:16px;line-height:1.6;color:var(--muted);max-width:26em">Закреплённая команда для родителей в Москве и Московской области.</p>
       <div style="display:flex;gap:10px;margin-top:2px">
         <a href="kontakty.html" aria-label="Телеграм" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);color:var(--ink-2)" style-hover="border-color:var(--ink);color:var(--ink)"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M18 3 2 9.3l4.4 1.5L8 17l2.6-3.4L15 16z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a>
@@ -974,13 +966,135 @@ class Component extends DCLogic {
     }
   ];
 
-  componentDidMount() { this.applyTheme(); }
+  componentDidMount() {
+    this.applyTheme();
+    const lvl = +(new URLSearchParams(location.search).get("threads") || 1);
+    if (new URLSearchParams(location.search).get("connect")) {
+      this.drawConnect = this.drawConnect.bind(this);
+      setTimeout(this.drawConnect, 400); setTimeout(this.drawConnect, 1600);
+      setTimeout(() => { const el = location.hash && document.getElementById(location.hash.slice(1)); if (el) window.scrollTo(0, el.getBoundingClientRect().top + scrollY - 60); }, 1700);
+      window.addEventListener("resize", this.drawConnect);
+    }
+    if (lvl > 1) {
+      this.threadLvl = lvl;
+      this.drawThreads = this.drawThreads.bind(this);
+      setTimeout(this.drawThreads, 300); setTimeout(this.drawThreads, 1500);
+      window.addEventListener("resize", this.drawThreads);
+    }
+  }
+  drawConnect() {
+    const D = document, W = D.documentElement.clientWidth, NS = "http://www.w3.org/2000/svg";
+    const dot = (x, y, c, o) => '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="4.5" fill="' + c + '" fill-opacity="' + o + '"/>';
+    const stroke = '" fill="none" stroke="#8E6F56" stroke-opacity=".5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>';
+    const layer = (sec) => {
+      let s = sec.querySelector(":scope > svg[data-connect]");
+      if (!s) { s = D.createElementNS(NS, "svg"); s.setAttribute("data-connect", "1"); s.setAttribute("aria-hidden", "true"); sec.appendChild(s); }
+      if (getComputedStyle(sec).position === "static") sec.style.position = "relative";
+      const r = sec.getBoundingClientRect();
+      s.setAttribute("width", r.width); s.setAttribute("height", r.height);
+      s.style.cssText = "position:absolute;left:0;top:0;pointer-events:none;z-index:3;overflow:visible";
+      return { s, ox: r.left, oy: r.top };
+    };
+    const garland = (sec, cards) => {
+      const L = layer(sec); if (W <= 760 || cards.length < 2) { L.s.innerHTML = ""; return; }
+      const pts = cards.map(c => { const r = c.getBoundingClientRect(); return { x: r.left + r.width / 2 - L.ox, y: r.top - L.oy }; });
+      const grid = cards[0].parentElement, prev = grid.previousElementSibling;
+      const gap = prev ? Math.max(20, grid.getBoundingClientRect().top - prev.getBoundingClientRect().bottom) : 44;
+      const lift = Math.min(26, gap * 0.32), loopH = Math.min(18, gap * 0.28);
+      let d = "M" + pts[0].x + " " + pts[0].y, html = "";
+      for (let i = 1; i < pts.length; i++) {
+        const a = pts[i - 1], b = pts[i], dx = b.x - a.x, mx = a.x + dx / 2;
+        if (i === 1) {
+          d += " C" + (a.x + dx * .2) + " " + (a.y - lift) + " " + (mx - 46) + " " + (a.y - lift - 4) + " " + (mx - 10) + " " + (a.y - lift + 2);
+          d += " C" + (mx + 18) + " " + (a.y - lift + 8) + " " + (mx + 14) + " " + (a.y - lift - loopH) + " " + (mx - 2) + " " + (a.y - lift - loopH * .8);
+          d += " C" + (mx - 16) + " " + (a.y - lift - loopH * .6) + " " + (mx - 6) + " " + (a.y - lift + 4) + " " + (mx + 16) + " " + (a.y - lift + 2);
+          d += " C" + (mx + 50) + " " + (a.y - lift) + " " + (b.x - dx * .2) + " " + (b.y - lift) + " " + b.x + " " + b.y;
+        } else {
+          d += " C" + (a.x + dx * .3) + " " + (a.y - lift - 6) + " " + (b.x - dx * .3) + " " + (b.y - lift + 4) + " " + b.x + " " + b.y;
+        }
+      }
+      html = '<path d="' + d + stroke;
+      pts.forEach((p, i) => { html += dot(p.x, p.y, i === pts.length - 1 ? "#1F3D34" : "#8E6F56", i === pts.length - 1 ? .55 : .85); });
+      L.s.innerHTML = html;
+    };
+    const rules = D.getElementById("cennosti");
+    if (rules) garland(rules, [...rules.querySelectorAll('[data-m="trio"] > div')]);
+    const gifts = D.getElementById("nasledie");
+    if (gifts) garland(gifts, [...gifts.querySelectorAll('[data-m="gift-cards"] > div')]);
+    const kak = D.getElementById("kak");
+    if (kak) {
+      const L = layer(kak); const cards = [...kak.querySelectorAll('[data-m="timeline"] > div[data-c] > div')];
+      if (W <= 1024 || cards.length < 2) { L.s.innerHTML = ""; }
+      else {
+        let html = "", d = "";
+        const sides = cards.map(c => { const r = c.getBoundingClientRect(); return { l: r.left - L.ox, r: r.right - L.ox, t: r.top - L.oy, b: r.bottom - L.oy, cx: r.left + r.width / 2 - L.ox }; });
+        const mid = (sides[0].r + sides[1].l) / 2;
+        for (let i = 0; i < sides.length - 1; i++) {
+          const a = sides[i], b = sides[i + 1], leftToRight = a.cx < b.cx;
+          const p1 = { x: leftToRight ? a.r : a.l, y: a.b - 26 }, p2 = { x: leftToRight ? b.l : b.r, y: b.t + 30 };
+          const s1 = leftToRight ? 1 : -1;
+          let seg = "M" + p1.x + " " + p1.y + " C" + (p1.x + s1 * 30) + " " + (p1.y + 4) + " " + (mid - s1 * 18) + " " + ((p1.y + p2.y) / 2 - 20) + " " + mid + " " + ((p1.y + p2.y) / 2);
+          if (i === 1) { const my = (p1.y + p2.y) / 2; seg += " C" + (mid + 26) + " " + (my + 14) + " " + (mid + 22) + " " + (my - 22) + " " + (mid + 2) + " " + (my - 18) + " C" + (mid - 18) + " " + (my - 14) + " " + (mid - 12) + " " + (my + 10) + " " + (mid + 4) + " " + (my + 12); }
+          seg += " C" + (mid + s1 * 18) + " " + ((p1.y + p2.y) / 2 + 20) + " " + (p2.x - s1 * 30) + " " + (p2.y - 4) + " " + p2.x + " " + p2.y;
+          d += seg + " ";
+          html += dot(p1.x, p1.y, "#8E6F56", .85);
+          if (i === sides.length - 2) html += dot(p2.x, p2.y, "#1F3D34", .55); else html += dot(p2.x, p2.y, "#8E6F56", .85);
+        }
+        L.s.innerHTML = '<path d="' + d + stroke + html;
+        kak.querySelectorAll('[data-m="tl-dot"]').forEach(e => e.style.visibility = "hidden");
+      }
+    }
+  }
+
+  componentWillUnmount() { if (this.drawThreads) window.removeEventListener("resize", this.drawThreads); }
+
+  drawThreads() {
+    const lvl = this.threadLvl, D = document, W = D.documentElement.clientWidth, Hh = D.documentElement.scrollHeight;
+    let svg = D.getElementById("thread-overlay");
+    if (!svg) { svg = D.createElementNS("http://www.w3.org/2000/svg", "svg"); svg.id = "thread-overlay"; svg.setAttribute("aria-hidden", "true"); D.body.appendChild(svg); }
+    svg.setAttribute("width", W); svg.setAttribute("height", Hh); svg.setAttribute("viewBox", "0 0 " + W + " " + Hh);
+    svg.style.cssText = "position:absolute;left:0;top:0;pointer-events:none;z-index:40;overflow:visible";
+    const secs = [...D.querySelectorAll("section, footer")].map(s => { const r = s.getBoundingClientRect(); return { top: r.top + scrollY, bottom: r.bottom + scrollY }; }).filter(s => s.bottom - s.top > 40);
+    if (!secs.length) return;
+    const m = Math.max(16, Math.min(72, W * 0.05)), xl = m * 0.5, xr = W - m * 0.5;
+    let d = "", dots = "";
+    if (lvl === 2) {
+      let x = xr, y = secs[0].bottom - 120;
+      d = "M" + x + " " + y; dots += '<circle cx="' + x + '" cy="' + y + '" r="4" fill="#8E6F56" fill-opacity=".7"/>';
+      secs.slice(1, -1).forEach((s, i) => {
+        const nx = x === xr ? xl : xr, yb = s.top;
+        d += " C" + x + " " + (yb - 70) + " " + x + " " + (yb - 10) + " " + ((x + nx) / 2 + (i % 3 === 1 ? 30 : 0)) + " " + yb;
+        if (i % 3 === 1) { const cx = (x + nx) / 2 + 30; d += " C" + (cx + 34) + " " + (yb - 4) + " " + (cx + 26) + " " + (yb - 46) + " " + cx + " " + (yb - 40) + " C" + (cx - 26) + " " + (yb - 34) + " " + (cx - 12) + " " + yb + " " + (cx + 6) + " " + (yb + 2); }
+        d += " C" + nx + " " + (yb + 10) + " " + nx + " " + (yb + 70) + " " + nx + " " + (yb + 140);
+        x = nx; y = yb + 140;
+        d += " L" + x + " " + (s.bottom - 70);
+      });
+      const end = secs[secs.length - 1].top - 30; d += " L" + x + " " + end; dots += '<circle cx="' + x + '" cy="' + end + '" r="4" fill="#1F3D34" fill-opacity=".4"/>';
+      svg.innerHTML = '<path d="' + d + '" fill="none" stroke="#8E6F56" stroke-opacity=".26" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>' + dots;
+    } else {
+      const lines = [{ c: "#8E6F56", o: .16, w: 5, ph: 0 }, { c: "#1F3D34", o: .09, w: 3, ph: 1 }];
+      let html = "";
+      lines.forEach(L => {
+        let side = L.ph, y0 = 90;
+        let x = side ? W * 0.12 : W * 0.88; let p = "M" + x + " " + y0;
+        secs.forEach((s, i) => {
+          const h = s.bottom - s.top, nx = side ? W * 0.9 : W * 0.1, ym = s.top + h * 0.5, ye = s.bottom;
+          p += " C" + x + " " + (s.top + h * 0.15) + " " + (side ? W * 0.05 : W * 0.95) + " " + (ym - h * 0.1) + " " + (W * 0.5 + (side ? -1 : 1) * W * 0.08) + " " + ym;
+          if (i % 2 === 0) { const cx = W * 0.5 + (side ? -1 : 1) * W * 0.08; p += " C" + (cx + 90) + " " + (ym + 10) + " " + (cx + 70) + " " + (ym - 120) + " " + cx + " " + (ym - 110) + " C" + (cx - 70) + " " + (ym - 100) + " " + (cx - 40) + " " + (ym + 10) + " " + (cx + 10) + " " + (ym + 14); }
+          p += " C" + (W * 0.5 + (side ? 1 : -1) * W * 0.3) + " " + (ym + h * 0.15) + " " + nx + " " + (ye - h * 0.2) + " " + nx + " " + ye;
+          x = nx; side = 1 - side;
+        });
+        html += '<path d="' + p + '" fill="none" stroke="' + L.c + '" stroke-opacity="' + L.o + '" stroke-width="' + L.w + '" stroke-linecap="round" stroke-linejoin="round"/>';
+      });
+      svg.innerHTML = html;
+    }
+  }
   componentDidUpdate(p) { if (p.accent !== this.props.accent || p.cornerStyle !== this.props.cornerStyle) this.applyTheme(); }
 
   applyTheme() {
     const r = document.documentElement.style;
     const a = this.props.accent;
-    const brand = ["#1f3d34", "#b85c45", "#b5654a", "#a94d55"];
+    const brand = ["#1F3D34", "#b85c45", "#b5654a", "#a94d55"];
     if (a && brand.indexOf(a.toLowerCase()) === -1) {
       r.setProperty("--accent", a);
       r.setProperty("--accent-deep", this.shade(a, -0.16));

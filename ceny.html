@@ -46,6 +46,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   header[data-m=hdr] [data-hl]{display:none!important}
   header[data-m=hdr]>*:first-child span{font-size:19px!important}
   header[data-m=hdr]>*:first-child svg{width:28px;height:28px}
+  header[data-m=hdr] [data-logo]{height:32px!important}
 }
 </style>
 </helmet>
@@ -54,10 +55,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
 <header data-m="hdr" style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px 20px;width:100vw;margin-left:calc(50% - 50vw);padding:12px max(clamp(20px,5vw,72px),calc(50vw - 708px));flex-wrap:wrap;background:#1F3D34;border-bottom:1px solid rgba(255,254,251,.12)">
   <a href="index.html" style="display:flex;align-items:center;gap:12px;color:#FFFEFB">
-    <span style="display:flex;align-items:center;gap:10px;font-family:Lora,Georgia,serif;font-size:22px;font-weight:500;letter-spacing:-.015em">
-      <svg width="32" height="32" viewBox="0 0 44 44" fill="none" aria-hidden="true" style="flex:none"><path d="M33 8.6A17.4 17.4 0 1 0 33 35.4" stroke="#FFFEFB" stroke-opacity=".7" stroke-width="3.8" stroke-linecap="round"></path><circle cx="21" cy="17.5" r="4.6" fill="#FFFEFB"></circle><path d="M14.6 32.4c0-3.9 2.9-7 6.4-7s6.4 3.1 6.4 7" stroke="#FFFEFB" stroke-width="3.6" stroke-linecap="round"></path></svg>
-      <span>Со-Действие</span>
-    </span>
+    <img src="logo-dark.svg" alt="Со-Действие" width="183" height="40" data-logo="1" style="display:block;height:40px;width:auto">
     <span data-hl="1" style="font-size:14px;color:rgba(255,254,251,.6);align-self:flex-end;padding-bottom:3px">Москва</span>
   </a>
   <nav data-m="nav" style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
@@ -219,7 +217,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:clamp(26px,3.4vw,48px);align-items:stretch">
 
     <div style="display:flex;flex-direction:column;gap:14px;grid-column:span 1">
-      <span style="display:inline-flex;align-items:center;gap:10px;font-family:Lora,Georgia,serif;font-size:24px" aria-label="Со-Действие"><svg width="32" height="32" viewBox="0 0 44 44" fill="none" aria-hidden="true" style="flex:none"><path d="M33 8.6A17.4 17.4 0 1 0 33 35.4" stroke="var(--accent)" stroke-width="3.8" stroke-linecap="round"></path><circle cx="21" cy="17.5" r="4.6" fill="var(--ink)"></circle><path d="M14.6 32.4c0-3.9 2.9-7 6.4-7s6.4 3.1 6.4 7" stroke="var(--ink)" stroke-width="3.6" stroke-linecap="round"></path></svg><span>Со-Действие</span></span>
+      <img src="logo-light.svg" alt="Со-Действие" width="201" height="44" style="display:block;height:44px;width:auto">
       <p style="font-size:16px;line-height:1.6;color:var(--muted);max-width:26em">Закреплённая команда для родителей в Москве и Московской области.</p>
       <div style="display:flex;gap:10px;margin-top:2px">
         <a href="kontakty.html" aria-label="Телеграм" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);color:var(--ink-2)" style-hover="border-color:var(--ink);color:var(--ink)"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M18 3 2 9.3l4.4 1.5L8 17l2.6-3.4L15 16z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a>
