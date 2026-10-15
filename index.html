@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<script src="support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -11,15 +11,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=Onest:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-<script src="./image-slot.js"></script>
+<script src="image-slot.js"></script>
 <style>
 :root{
-  --green:#1F3D34; --green-700:#2E5446; --sage-100:#E1EAE3; --sage-50:#EEF3EF; --sand:#F3E9D8; --brown:#8E6F56;
-  --paper:#FFFEFB; --surface-alt:#F5F0E6; --card:#FFFEFB; --ink:#1F2A26; --ink-2:#5F574F; --muted:#5F574F;
+  --green:#1F3D34; --green-700:#2E5446; --sage-100:#DFE8E2; --sage-50:#EAF0EC; --sand:#F4F0E7; --brown:#8E6F56;
+  --paper:#FFFEFB; --surface-alt:#F4F0E7; --card:#FFFEFB; --ink:#1F2A26; --ink-2:#5F574F; --muted:#5F574F;
   --line:#E2DACA; --line-2:#E2DACA; --border-input:#A89C8C;
-  --accent:#1F3D34; --accent-deep:#2E5446; --accent-soft:#2E5446; --accent-light:#EEF3EF; --accent-tint:#E1EAE3;
-  --sage:#1F3D34; --sage-deep:#1F3D34; --sage-tint:#E1EAE3; --chip:#EEF3EF;
-  --r:32px; --r-sm:20px;
+  --accent:#1F3D34; --accent-deep:#2E5446; --accent-soft:#2E5446; --accent-light:#EAF0EC; --accent-tint:#DFE8E2;
+  --sage:#1F3D34; --sage-deep:#1F3D34; --sage-tint:#DFE8E2; --chip:#EAF0EC;
+  --r:6px; --r-sm:4px;
 }
 *{box-sizing:border-box}
 summary::-webkit-details-marker{display:none}
@@ -34,7 +34,7 @@ input,textarea{font-family:inherit}
 input:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 ::selection{background:var(--accent-tint)}
 input,textarea{transition:border-color .15s ease,box-shadow .15s ease}
-input:focus-visible,textarea:focus-visible{outline:none;border-color:#1F3D34!important;box-shadow:0 0 0 1px #1F3D34,0 0 0 5px #E1EAE3}
+input:focus-visible,textarea:focus-visible{outline:none;border-color:#1F3D34!important;box-shadow:0 0 0 1px #1F3D34,0 0 0 5px #DFE8E2}
 input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
 @media (max-width:1200px){[data-thread=cup]{display:none!important}}
 @media (max-width:1280px) and (min-width:641px){[data-thread=hero]{right:-34px!important;bottom:-96px!important;width:230px!important}}
@@ -51,11 +51,12 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
 }
 @media (max-width:760px){
   body{font-size:17px}
-  header[data-m=hdr]{padding-top:10px!important;padding-bottom:10px!important}
+  header[data-m=hdr]{padding-top:0!important;padding-bottom:0!important;min-height:64px!important}
   header[data-m=hdr] [data-hl]{display:none!important}
   header[data-m=hdr]>*:first-child span{font-size:19px!important}
   header[data-m=hdr]>*:first-child svg{width:28px;height:28px}
   header[data-m=hdr] [data-logo]{height:32px!important}
+  header[data-m=hdr] [data-logo-name]{font-size:20px!important}
 }
 @media (max-width:1024px){
   [data-thread=hero]{display:none!important}
@@ -65,9 +66,9 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
   [data-m=h-photo]{min-height:clamp(320px,70vw,520px)!important;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 8%)!important;mask-image:linear-gradient(to bottom,transparent,#000 8%)!important}
   [data-m=h-title]{order:1}
   [data-m=h-sub]{order:2;margin-top:0!important}
-  [data-m=h-photo]{order:3}
-  [data-m=h-cta]{order:4;margin-top:0!important}
-  [data-m=h-note]{order:5;margin-top:0!important}
+  [data-m=h-photo]{order:5}
+  [data-m=h-cta]{order:3;margin-top:0!important}
+  [data-m=h-note]{order:4;margin-top:0!important}
   [data-stats]>div{padding:clamp(20px,2.4vw,26px)!important;gap:16px!important;align-items:stretch!important}
   [data-stats]>div>div:first-child{width:56px!important;height:56px!important;align-self:flex-start!important;flex:none}
   [data-stats]>div>div:first-child svg{width:30px!important;height:auto!important}
@@ -98,7 +99,7 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
 @media (max-width:760px){
   [data-m=cmp]{grid-template-columns:1fr!important;border:none!important;background:transparent!important;overflow:visible!important;border-radius:0!important}
   [data-m=cmp]>[data-h]{display:none!important}
-  [data-m=cmp]>[data-l]{flex-wrap:wrap!important;border:1px solid #E2DACA!important;border-bottom:none!important;border-radius:20px 20px 0 0!important;background:#F5F0E6!important}
+  [data-m=cmp]>[data-l]{flex-wrap:wrap!important;border:1px solid #E2DACA!important;border-bottom:none!important;border-radius:4px 20px 0 0!important;background:#F4F0E7!important}
   [data-m=cmp]>[data-r]{flex-wrap:wrap!important;border:1px solid #E2DACA!important;border-top:1px dashed #E2DACA!important;border-radius:0 0 20px 20px!important;background:#FFFEFB!important;margin-bottom:16px}
   [data-m=cmp-label],[data-m=cmp-label2]{display:block!important;flex:1 1 100%;font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:4px}
   [data-m=cmp-label]{color:var(--muted)}
@@ -108,76 +109,147 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
   [data-hide="1"]{display:none!important}
   [data-m=klub-photo]{-webkit-mask-image:linear-gradient(to bottom,transparent,#000 8%)!important;mask-image:linear-gradient(to bottom,transparent,#000 8%)!important;min-height:320px!important}
 }
+
+/* premium test layer */
+/* hx hero */
+[data-m=hx-copy]>*{order:0!important}
+@media (max-width:900px){[data-m=hx]{grid-template-columns:minmax(0,1fr)!important}[data-m=hx-copy]{padding:28px clamp(20px,5vw,72px) 8px!important}[data-m=hx-media]{margin:0 clamp(20px,5vw,72px) 32px;min-height:clamp(360px,90vw,520px)!important}[data-m=hx-mask]{-webkit-mask-image:none!important;mask-image:none!important;border-radius:6px}[data-m=hx-media]{margin-left:clamp(20px,5vw,72px)!important}[data-m=hx-card]{left:14px!important;top:auto!important;bottom:14px!important;transform:none!important}[data-m=hx-cap]{display:none!important}}
+
+@media (max-width:1100px){[data-m=mk-steps]{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media (max-width:560px){[data-m=mk-steps]{grid-template-columns:minmax(0,1fr)!important}}
+h1,h2,h3{font-family:Lora,Georgia,serif}
+[data-tab="1"]{display:none!important}
+@media (max-width:760px){[data-m=split-photo]{min-height:clamp(320px,90vw,460px)!important}}
+:root{--r:6px!important;--r-sm:4px!important}
+#kak [data-c]>div{background:transparent!important;border:0!important;border-radius:0!important;padding:4px 0 0!important}
+#kak [data-c]>div>span:first-child{background:transparent!important;border:1px solid #8E6F56!important;width:36px!important;height:36px!important}
+#kak [data-c]>div>span:first-child svg{width:18px;height:18px}
+#kak [data-m=tl-dot]{transform:scale(.6)}
+@media (max-width:1024px){
+  [data-stats],#cennosti [data-m=trio]{grid-template-columns:1fr!important}
+  [data-stats]>*:nth-child(3),#cennosti [data-m=trio]>*:nth-child(3){grid-column:auto!important;width:auto!important;justify-self:stretch!important}
+  #kak [data-m=timeline]>div[data-c]::before{background:#FFFEFB!important;color:#8E6F56!important;border:1px solid #8E6F56!important;width:34px!important;height:34px!important;left:-56px!important}
+}
+
+body{background:#FFFEFB}
+h1,h2{font-weight:400!important;letter-spacing:-.02em!important;text-wrap:balance}
+h3{font-weight:500!important}
+h1 em,h2 em{font-style:normal!important}
+[data-thread]{display:none!important}
+[data-m=hero]{background:#FFFEFB}
+[data-m=h-copy]{padding-top:clamp(40px,6vw,96px)!important;padding-bottom:clamp(48px,7vw,104px)!important}
+[data-m=h-cta]>a{border-radius:3px!important;padding:17px 28px!important}
+[data-m=h-cta]>a+a{border-width:1px!important}
+section:has([data-stats]){background:#DFE8E2!important}
+[data-stats]{gap:0!important;margin-top:clamp(18px,2vw,26px)!important}
+[data-stats]>div{background:transparent!important;border:0!important;border-left:1px solid rgba(31,61,52,.22)!important;border-radius:0!important;padding:4px clamp(20px,2.6vw,36px)!important}
+[data-stats]>div:first-child{border-left:0!important;padding-left:0!important}
+[data-stats]>div>div:first-child{display:none!important}
+[data-stats]>div>div:last-child{align-items:flex-start!important;text-align:left!important;gap:10px!important}
+[data-stats]>div>div:last-child>span:first-child{font-size:12px!important;letter-spacing:.16em!important;color:#5F574F!important}
+[data-stats]>div>div:last-child>span:nth-child(2){font-style:normal!important;font-weight:400!important;color:#1F3D34!important}
+[data-stats]>div>div:last-child>p{font-size:15.5px!important;color:#5F574F!important}
+#cennosti [data-m=trio]{gap:0!important}
+#cennosti [data-m=trio]>div{background:transparent!important;border:0!important;border-left:1px solid rgba(31,61,52,.18)!important;border-radius:0!important;padding:8px clamp(20px,2.6vw,36px)!important}
+#cennosti [data-m=trio]>div:first-child{border-left:0!important;padding-left:0!important}
+#cennosti [data-m=trio]>div>div:first-child>span:first-child{background:transparent!important;width:auto!important;height:auto!important}
+#cennosti [data-m=trio]>div>div:first-child>span:last-child{display:none!important}
+section[style*="background:#DFE8E2"] , [style*="box-shadow"]{box-shadow:none!important}
+@media (max-width:1024px){
+  [data-m=h-eyebrow]{order:0;margin:0 clamp(20px,5vw,72px)!important}
+  [data-stats]>div,#cennosti [data-m=trio]>div{border-left:0!important;border-top:1px solid rgba(31,61,52,.18)!important;padding:20px 0!important}
+  [data-stats]>div:first-child,#cennosti [data-m=trio]>div:first-child{border-top:0!important}
+  [data-stats]>div>div:last-child>span:nth-child(2){font-size:clamp(36px,9vw,46px)!important}
+}
+@media (max-width:760px){
+  [data-m=h-title]{font-size:clamp(38px,11vw,48px)!important}
+  [data-m=h-cta]{flex-direction:column;align-items:stretch!important;gap:10px!important}
+  [data-m=h-cta]>a{justify-content:center}
+  [data-m=h-photo]{-webkit-mask-image:none!important;mask-image:none!important;margin:0 clamp(20px,5vw,72px);border-radius:4px}
+}
 </style>
 </helmet>
 
 <div style="max-width:1560px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
 
-<header data-m="hdr" style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;width:100vw;margin-left:calc(50% - 50vw);padding:12px max(clamp(20px,5vw,72px),calc(50vw - 708px));flex-wrap:wrap;background:#1F3D34;border-bottom:1px solid rgba(255,254,251,.12)">
+<header data-m="hdr" style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;width:100vw;margin-left:calc(50% - 50vw);min-height:76px;padding:0 max(clamp(20px,5vw,72px),calc(50vw - 708px));flex-wrap:wrap;background:#1F3D34;border-bottom:1px solid rgba(255,254,251,.12)">
   <div style="display:flex;align-items:center;gap:12px">
-    <img src="logo-dark.svg" alt="Со-Действие" width="183" height="40" data-logo="1" style="display:block;height:40px;width:auto">
-    <span data-hl="1" style="font-size:14px;color:rgba(255,254,251,.6);letter-spacing:.02em;align-self:flex-end;padding-bottom:3px">Москва</span>
+    <div style="display:flex;align-items:center;gap:10px"><img src="logo-mark-light.png" alt="" width="286" height="227" data-logo="1" style="display:block;height:38px;width:auto"><div data-logo-name="1" style="font-family:Lora,Georgia,serif;font-weight:500;font-size:22px;line-height:1;letter-spacing:-.015em;color:#FFFEFB;white-space:nowrap">Со-Действие</div></div>
   </div>
   <div data-m="nav" style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
-    <a data-hl="1" href="uslugi.html" style="padding:8px 0;font-size:15.5px;color:#FFFEFB" style-hover="color:#E1EAE3">Услуги</a>
-    <a data-hl="1" href="ceny.html" style="padding:8px 0;font-size:15.5px;color:#FFFEFB" style-hover="color:#E1EAE3">Цены</a>
-    <a data-hl="1" href="baza-znaniy.html" style="padding:8px 0;font-size:15.5px;color:#FFFEFB" style-hover="color:#E1EAE3">База знаний</a>
+    <a data-hl="1" href="uslugi.html" style="padding:8px 0;font-size:15.5px;color:#FFFEFB" style-hover="color:#DFE8E2">Услуги</a>
+    <a data-hl="1" href="ceny.html" style="padding:8px 0;font-size:15.5px;color:#FFFEFB" style-hover="color:#DFE8E2">Цены</a>
+    <a data-hl="1" href="baza-znaniy.html" style="padding:8px 0;font-size:15.5px;color:#FFFEFB" style-hover="color:#DFE8E2">База знаний</a>
     <details data-hl="1" style="position:relative">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:8px 0;font-size:15.5px;color:#FFFEFB" style-hover="color:#E1EAE3">О компании<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
-      <div style="position:absolute;top:calc(100% + 8px);left:-14px;z-index:30;min-width:210px;display:flex;flex-direction:column;padding:8px;border-radius:20px;background:var(--card);border:1px solid var(--line);box-shadow:0 14px 34px rgba(31,61,52,.12)">
-        <a href="faq.html" style="padding:11px 14px;border-radius:20px;font-size:15.5px;color:var(--ink)" style-hover="background:var(--accent-tint);color:var(--accent-deep)">Частые вопросы</a>
-        <a href="kontakty.html" style="padding:11px 14px;border-radius:20px;font-size:15.5px;color:var(--ink)" style-hover="background:var(--accent-tint);color:var(--accent-deep)">Контакты</a>
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:8px 0;font-size:15.5px;color:#FFFEFB" style-hover="color:#DFE8E2">О компании<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+      <div style="position:absolute;top:calc(100% + 8px);left:-14px;z-index:30;min-width:210px;display:flex;flex-direction:column;padding:8px;border-radius:4px;background:var(--card);border:1px solid var(--line);box-shadow:0 14px 34px rgba(31,61,52,.12)">
+        <a href="faq.html" style="padding:11px 14px;border-radius:4px;font-size:15.5px;color:var(--ink)" style-hover="background:var(--accent-tint);color:var(--accent-deep)">Частые вопросы</a>
+        <a href="kontakty.html" style="padding:11px 14px;border-radius:4px;font-size:15.5px;color:var(--ink)" style-hover="background:var(--accent-tint);color:var(--accent-deep)">Контакты</a>
       </div>
     </details>
-    <a data-cta="1" href="#zayavka" style="display:inline-flex;align-items:center;min-height:44px;padding:10px 20px;border-radius:999px;background:#FFFEFB;color:#1F3D34;font-size:15.5px;font-weight:500;transition:background .18s ease" style-hover="background:#E1EAE3;color:#1F3D34"><span data-full="1">Получить консультацию</span><span data-short="1" style="display:none">Консультация</span></a>
+    <a data-cta="1" href="#zayavka" style="display:inline-flex;align-items:center;min-height:44px;padding:10px 20px;border-radius:4px;background:#FFFEFB;color:#1F3D34;font-size:15.5px;font-weight:500;transition:background .18s ease" style-hover="background:#DFE8E2;color:#1F3D34"><span data-full="1">Получить консультацию</span><span data-short="1" style="display:none">Консультация</span></a>
   </div>
 
   <div data-m="m-actions" style="display:none;align-items:center;gap:8px">
-    <a href="tel:+79958870941" aria-label="Позвонить" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;background:#FFFEFB;color:#1F3D34" style-hover="background:#E1EAE3;color:#1F3D34"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg></a>
+    <a href="tel:+79958870941" aria-label="Позвонить" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;background:#FFFEFB;color:#1F3D34" style-hover="background:#DFE8E2;color:#1F3D34"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg></a>
     <details style="position:relative">
       <summary aria-label="Мессенджеры" style="list-style:none;cursor:pointer;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;border:1px solid rgba(255,254,251,.35);color:#FFFEFB"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-4.9A8.3 8.3 0 0 1 4 11.5 8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"></path></svg></summary>
-      <div style="position:absolute;top:54px;right:0;z-index:60;min-width:190px;display:flex;flex-direction:column;padding:8px;border-radius:20px;background:#FFFEFB;border:1px solid #E2DACA;box-shadow:0 14px 34px rgba(31,61,52,.14)">
-        <a href="https://t.me/" style="padding:12px 14px;border-radius:14px;font-size:16px;color:#1F2A26" style-hover="background:#EEF3EF">Telegram</a>
-        <a href="https://wa.me/79958870941" style="padding:12px 14px;border-radius:14px;font-size:16px;color:#1F2A26" style-hover="background:#EEF3EF">WhatsApp</a>
-        <a href="https://max.ru/" style="padding:12px 14px;border-radius:14px;font-size:16px;color:#1F2A26" style-hover="background:#EEF3EF">MAX</a>
+      <div style="position:absolute;top:54px;right:0;z-index:60;min-width:190px;display:flex;flex-direction:column;padding:8px;border-radius:4px;background:#FFFEFB;border:1px solid #E2DACA;box-shadow:0 14px 34px rgba(31,61,52,.14)">
+        <a href="https://t.me/" style="padding:12px 14px;border-radius:14px;font-size:16px;color:#1F2A26" style-hover="background:#EAF0EC">Telegram</a>
+        <a href="https://wa.me/79958870941" style="padding:12px 14px;border-radius:14px;font-size:16px;color:#1F2A26" style-hover="background:#EAF0EC">WhatsApp</a>
+        <a href="https://max.ru/" style="padding:12px 14px;border-radius:14px;font-size:16px;color:#1F2A26" style-hover="background:#EAF0EC">MAX</a>
       </div>
     </details>
     <details>
       <summary aria-label="Меню" style="list-style:none;cursor:pointer;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;border:1px solid rgba(255,254,251,.35);color:#FFFEFB"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></summary>
       <div style="position:absolute;left:0;right:0;top:100%;z-index:55;display:flex;flex-direction:column;padding:4px max(clamp(20px,5vw,72px),calc(50vw - 708px)) 20px;background:#1F3D34;border-top:1px solid rgba(255,254,251,.12);box-shadow:0 18px 30px rgba(31,61,52,.18)">
-        <a href="index.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#E1EAE3">Главная</a>
-        <a href="uslugi.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#E1EAE3">Услуги</a>
-        <a href="ceny.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#E1EAE3">Цены</a>
-        <a href="sidelki.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#E1EAE3">Сиделки</a>
-        <a href="baza-znaniy.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#E1EAE3">База знаний</a>
-        <a href="faq.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#E1EAE3">Частые вопросы</a>
-        <a href="kontakty.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#E1EAE3">Контакты</a>
-        <a href="#zayavka" style="display:flex;align-items:center;justify-content:center;margin-top:16px;padding:15px 24px;border-radius:999px;background:#FFFEFB;color:#1F3D34;font-size:16px;font-weight:500" style-hover="background:#E1EAE3;color:#1F3D34">Получить консультацию</a>
+        <a href="index.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#DFE8E2">Главная</a>
+        <a href="uslugi.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#DFE8E2">Услуги</a>
+        <a href="ceny.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#DFE8E2">Цены</a>
+        <a href="sidelki.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#DFE8E2">Сиделки</a>
+        <a href="baza-znaniy.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#DFE8E2">База знаний</a>
+        <a href="faq.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#DFE8E2">Частые вопросы</a>
+        <a href="kontakty.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#DFE8E2">Контакты</a>
+        <a href="#zayavka" style="display:flex;align-items:center;justify-content:center;margin-top:16px;padding:15px 24px;border-radius:4px;background:#FFFEFB;color:#1F3D34;font-size:16px;font-weight:500" style-hover="background:#DFE8E2;color:#1F3D34">Получить консультацию</a>
       </div>
     </details>
   </div>
 </header>
 
-<section data-m="hero" style="width:100vw;margin-left:calc(50% - 50vw);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));align-items:center;position:relative">
-  <div data-m="h-copy" style="position:relative;z-index:1;max-width:40em;padding:clamp(28px,4vw,56px) clamp(20px,4vw,56px) clamp(40px,6vw,80px) max(clamp(20px,5vw,72px),calc(50vw - 708px))">
-    <h1 data-m="h-title" style="font-family:Lora,Georgia,serif;font-weight:400;font-size:clamp(38px,5vw,68px);line-height:1.08;letter-spacing:-.01em;color:var(--ink)">Быть рядом с родителями<br><em style="font-style:italic;color:var(--brown)">на любом расстоянии</em></h1>
-    <p data-m="h-sub" style="margin-top:26px;font-size:clamp(18px,2.2vw,21px);line-height:1.55;color:var(--ink-2);max-width:30em">Закреплённая команда берёт на себя координацию здоровья и ухода за вашим родителем. Постоянно — а не когда уже случилось.</p>
-    <div data-m="h-cta" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:34px">
-      <a href="#zayavka" style="display:inline-flex;align-items:center;padding:17px 32px;border-radius:999px;background:var(--accent);color:var(--card);font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:#2E5446">Получить консультацию</a>
-      <a href="#kak" style="display:inline-flex;align-items:center;min-height:44px;padding:16px 26px;border-radius:999px;border:1.5px solid #1F3D34;background:transparent;color:#1F3D34;font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:#EEF3EF;color:#1F3D34">Как это устроено</a>
+<section  data-m="hx" style="position:relative;overflow:hidden;background:#FFFEFB;width:100vw;margin-left:calc(50% - 50vw);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);align-items:stretch">
+  <div data-m="hx-copy" style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;gap:22px;min-width:0;padding:clamp(40px,5vw,80px) clamp(24px,3vw,48px) clamp(40px,5vw,80px) max(clamp(20px,5vw,72px),calc(50vw - 708px))">
+<h1 data-m="h-title" style="font-family:Lora,Georgia,serif;font-weight:400;font-size:clamp(40px,5.2vw,72px);line-height:1.06;letter-spacing:-.02em;color:#1F3D34;text-wrap:balance">Быть рядом<br>с родителями<br><span style="color:#8E6F56">на любом расстоянии</span></h1>
+    <p data-m="h-sub" style="font-size:clamp(18px,2.2vw,21px);line-height:1.55;color:var(--ink-2);max-width:30em">Экосистема заботы о вашем родителе: персональный куратор и проверенные специалисты решают всё — от здоровья до быта. Постоянно, а не когда уже случилось.</p>
+    <div data-m="h-cta" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:6px">
+      <a href="#zayavka" style="display:inline-flex;align-items:center;padding:17px 32px;border-radius:4px;background:var(--accent);color:var(--card);font-size:16px;font-weight:500;gap:12px;transition:background .18s ease" style-hover="background:#2E5446">Получить консультацию<span aria-hidden="true">→</span></a>
+      <a href="#kak" style="display:inline-flex;align-items:center;min-height:44px;padding:16px 26px;border-radius:4px;border:1.5px solid #1F3D34;background:transparent;color:#1F3D34;font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:#EAF0EC;color:#1F3D34">Как это устроено</a>
     </div>
-    <p data-m="h-note" style="margin-top:20px;font-size:14px;color:var(--muted)">Консультация бесплатная и ни к чему не обязывает — 5 минут разговора о ситуации.</p>
+    <p data-m="h-note" style="margin-top:-8px;font-size:14px;color:var(--muted)">Консультация ни к чему не обязывает — 5 минут разговора о вашей ситуации.</p>
+    <div data-m="h-checks" style="display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:4px;max-width:30em">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-size:15.5px;color:var(--ink)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Официальный договор</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;font-size:15.5px;color:var(--ink)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Персональный куратор</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;font-size:15.5px;color:var(--ink)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Москва и область</span>
+    </div>
   </div>
-  <div data-m="h-photo" style="position:relative;align-self:stretch;min-height:clamp(340px,42vw,620px);overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 7%);mask-image:linear-gradient(to right,transparent,#000 7%)"><image-slot id="hero-family" shape="rect" placeholder="Фото: взрослая дочь и мама за столом, дома, естественный свет — без халатов и клиники" style="width:100%;height:100%"></image-slot></div>
+  <div data-m="hx-media" style="position:relative;min-height:clamp(500px,44vw,680px);margin-left:-10vw">
+    <div data-m="hx-mask" style="position:absolute;inset:0;overflow:hidden;background:#DFE8E2;-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 32%);mask-image:linear-gradient(to right,transparent 0%,#000 32%)">
+      <image-slot id="hero-family" src="img/hero-family.jpg" fit="cover" shape="rect" placeholder="Фото: куратор с пожилой мамой на диване, тёплый дневной свет" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+      <span aria-hidden="true" style="position:absolute;inset:auto 0 0 0;height:55%;background:linear-gradient(to top,rgba(20,32,27,.7),rgba(20,32,27,0));pointer-events:none"></span>
+      <div data-m="hx-cap" style="position:absolute;right:clamp(24px,3.4vw,48px);bottom:clamp(28px,3.4vw,48px);display:flex;flex-direction:column;gap:12px;pointer-events:none">
+        <span style="display:block;height:1px;background:rgba(255,254,251,.6)"></span>
+        <span style="color:#FFFEFB;font-size:16px;line-height:1.4">Забота,<br>которая продолжается<br>каждый день</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section style="position:relative;padding:clamp(40px,5.6vw,72px) 0;background:#F5F0E6;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
-  <h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12;max-width:26em">Что это меняет на практике</h2>
+<section style="position:relative;padding:clamp(40px,5.6vw,72px) 0;background:#F4F0E7;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
+  <h2 style="font-family:Lora,Georgia,serif;font-size:clamp(32px,4.4vw,48px);line-height:1.12;max-width:26em">Что это меняет <span style="color:#8E6F56">на практике</span></h2>
 
   <div data-m="trio" data-stats="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(16px,2vw,24px);margin-top:clamp(30px,4vw,48px)">
 
-    <div style="background:#E1EAE3;border-radius:32px;padding:clamp(28px,3vw,36px) clamp(18px,2vw,24px) clamp(28px,3.2vw,40px);display:flex;flex-direction:column;gap:clamp(22px,2.8vw,34px)">
-      <div style="align-self:center;width:132px;height:132px;border-radius:50%;background:#EEF3EF;display:flex;align-items:center;justify-content:center">
+    <div style="background:#DFE8E2;border-radius:6px;padding:clamp(28px,3vw,36px) clamp(18px,2vw,24px) clamp(28px,3.2vw,40px);display:flex;flex-direction:column;gap:clamp(22px,2.8vw,34px)">
+      <div style="align-self:center;width:132px;height:132px;border-radius:50%;background:#EAF0EC;display:flex;align-items:center;justify-content:center">
         <svg width="96" height="64" viewBox="0 0 150 100" fill="none" aria-hidden="true">
           <rect x="42" y="10" width="56" height="78" rx="10" fill="var(--accent)" opacity="0.25"></rect>
           <path d="M55 30h30M55 43h30M55 56h19" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" opacity="0.8"></path>
@@ -186,13 +258,13 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
         </svg>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center">
-        <span style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)">в среднем за месяц</span>
-        <span style="font-family:Lora,Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(40px,5vw,58px);line-height:1;color:#1F2A26">14 579 ₽</span>
-        <p style="font-size:17px;line-height:1.55;color:var(--muted)">сэкономлено на предотвращении лишних назначений в аптеках и клиниках</p>
+        <span style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)">по отзывам семей</span>
+        <span style="font-family:Lora,Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(40px,5vw,58px);line-height:1;color:#1F2A26">9,4 из 10</span>
+        <p style="font-size:17px;line-height:1.55;color:var(--muted)">средняя оценка сервиса от семей</p>
       </div>
     </div>
 
-    <div style="background:#F3E9D8;border:1px solid #E2DACA;border-radius:32px;padding:clamp(28px,3vw,36px) clamp(18px,2vw,24px) clamp(28px,3.2vw,40px);display:flex;flex-direction:column;gap:clamp(22px,2.8vw,34px)">
+    <div style="background:#F4F0E7;border:1px solid #E2DACA;border-radius:6px;padding:clamp(28px,3vw,36px) clamp(18px,2vw,24px) clamp(28px,3.2vw,40px);display:flex;flex-direction:column;gap:clamp(22px,2.8vw,34px)">
       <div style="align-self:center;width:132px;height:132px;border-radius:50%;background:#FFFEFB;display:flex;align-items:center;justify-content:center">
         <svg width="96" height="64" viewBox="0 0 150 100" fill="none" aria-hidden="true">
           <rect x="30" y="50" width="40" height="34" rx="10" fill="#8E6F56" opacity="0.38"></rect>
@@ -207,8 +279,8 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
       </div>
     </div>
 
-    <div style="background:#E1EAE3;border-radius:32px;padding:clamp(28px,3vw,36px) clamp(18px,2vw,24px) clamp(28px,3.2vw,40px);display:flex;flex-direction:column;gap:clamp(22px,2.8vw,34px)">
-      <div style="align-self:center;width:132px;height:132px;border-radius:50%;background:#EEF3EF;display:flex;align-items:center;justify-content:center">
+    <div style="background:#DFE8E2;border-radius:6px;padding:clamp(28px,3vw,36px) clamp(18px,2vw,24px) clamp(28px,3.2vw,40px);display:flex;flex-direction:column;gap:clamp(22px,2.8vw,34px)">
+      <div style="align-self:center;width:132px;height:132px;border-radius:50%;background:#EAF0EC;display:flex;align-items:center;justify-content:center">
         <svg width="66" height="66" viewBox="0 0 100 100" fill="none" aria-hidden="true">
           <circle cx="50" cy="50" r="36" fill="var(--accent)"></circle>
           <path d="M50 50V14a36 36 0 0 1 25 10z" fill="#FFFEFB" opacity="0.92"></path>
@@ -223,98 +295,62 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
   </div>
 </section>
 
-<section style="padding:clamp(40px,5.6vw,72px) 0;background:#FFFEFB;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
-  <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:baseline;justify-content:space-between">
-    <h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12;max-width:22em">Причины, по которым к нам приходят</h2>
-    <p style="font-size:16px;color:var(--muted);max-width:26em">Обычно совпадает сразу несколько.</p>
+<section style="background:#FFFEFB;width:100vw;margin-left:calc(50% - 50vw);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr))">
+  <div data-m="split-photo" style="position:relative;min-height:clamp(380px,46vw,720px);background:#DFE8E2;overflow:hidden">
+    <image-slot id="reasons-photo" src="img/reasons-photo.jpg" fit="cover" shape="rect" placeholder="Фото: пожилая женщина у окна с чашкой чая, спокойная улыбка, мягкий дневной свет" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+    <span aria-hidden="true" style="position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(to top,rgba(20,32,27,.55),rgba(20,32,27,0));pointer-events:none"></span>
+    <span style="position:absolute;left:clamp(20px,3vw,40px);bottom:clamp(20px,3vw,40px);padding-left:14px;border-left:1.5px solid #FFFEFB;color:#FFFEFB;font-size:15px;line-height:1.45;max-width:15em;pointer-events:none">Спокойствие близких — лучшая поддержка для родителей</span>
   </div>
-
-  <div data-m="plan-switch" style="display:none;gap:6px;margin-top:clamp(20px,2.6vw,28px);padding:5px;border-radius:999px;background:var(--card);border:1px solid var(--line)">
-    <button type="button" onClick="{{ selR0 }}" style="{{ selR0Style }}">У родителя</button>
-    <button type="button" onClick="{{ selR1 }}" style="{{ selR1Style }}">У вас</button>
-  </div>
-  <div style="margin-top:clamp(28px,3.6vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(16px,2vw,24px);align-items:stretch;grid-template-rows:auto auto auto auto">
-
-    <div data-hide="{{ hideR0 }}" style="background:#F3E9D8;border-radius:32px;padding:clamp(22px,2.4vw,28px);display:grid;grid-template-rows:subgrid;grid-row:span 4;gap:clamp(12px,1.4vw,16px)">
-      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding:clamp(6px,1vw,12px) clamp(4px,0.6vw,8px) 0">
-        <span style="width:48px;height:48px;border-radius:50%;background:var(--card);display:flex;align-items:center;justify-content:center;flex:none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8E6F56" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.2-7-9.2A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7 2.8c0 5-7 9.2-7 9.2Z"></path></svg></span>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:3px">
-          <h3 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(26px,2.9vw,34px);line-height:1.1;color:var(--ink)">У родителя</h3>
-          <span style="font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--sage-deep)"><br></span>
-        </div>
-      </div>
-
-      <div style="display:contents">
-        <div style="background:var(--card);border-radius:20px;padding:clamp(18px,2vw,24px);display:flex;gap:16px;align-items:flex-start">
-          <span style="width:34px;height:34px;border-radius:50%;background:#F3E9D8;color:#8E6F56;font-family:Lora,Georgia,serif;font-size:18px;display:flex;align-items:center;justify-content:center;flex:none">1</span>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <span style="font-size:19px;font-weight:500;line-height:1.3;color:var(--ink)">Нет общей картины и системности в уходе</span>
-            <p style="font-size:16px;line-height:1.55;color:var(--muted)">Каждый специалист отвечает за свой орган и добавляет свои препараты. Никто не сводит назначения вместе и не смотрит, как они работают друг против друга.</p>
-          </div>
-        </div>
-        <div style="background:var(--card);border-radius:20px;padding:clamp(18px,2vw,24px);display:flex;gap:16px;align-items:flex-start">
-          <span style="width:34px;height:34px;border-radius:50%;background:#F3E9D8;color:#8E6F56;font-family:Lora,Georgia,serif;font-size:18px;display:flex;align-items:center;justify-content:center;flex:none">2</span>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <span style="font-size:19px;font-weight:500;line-height:1.3;color:var(--ink)">Всё откладывается на потом</span>
-            <p style="font-size:16px;line-height:1.55;color:var(--muted)">«Пойду, когда заболит» — и разбираться приходится уже со скорой. Профилактика почти всегда проще и дешевле лечения.</p>
-          </div>
-        </div>
-        <div style="background:var(--card);border-radius:20px;padding:clamp(18px,2vw,24px);display:flex;gap:16px;align-items:flex-start">
-          <span style="width:34px;height:34px;border-radius:50%;background:#F3E9D8;color:#8E6F56;font-family:Lora,Georgia,serif;font-size:18px;display:flex;align-items:center;justify-content:center;flex:none">3</span>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <span style="font-size:19px;font-weight:500;line-height:1.3;color:var(--ink)">После больницы нет плана восстановления</span>
-            <p style="font-size:16px;line-height:1.55;color:var(--muted)">Выписка есть, а что делать дальше — непонятно. Через месяц человек уже боится выходить из квартиры.</p>
-          </div>
-        </div>
-      </div>
+  <div style="padding:clamp(40px,5.6vw,80px) max(clamp(20px,5vw,72px),calc(50vw - 708px)) clamp(40px,5.6vw,80px) clamp(24px,4.4vw,72px);display:flex;flex-direction:column;min-width:0">
+    <h2 style="font-family:Lora,Georgia,serif;font-size:clamp(32px,4vw,46px);line-height:1.12">Причины, по которым <span style="color:#8E6F56">к нам приходят</span></h2>
+    <p style="margin-top:10px;font-size:16px;color:var(--muted)">Обычно совпадает сразу несколько.</p>
+    <div role="tablist" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;margin-top:clamp(24px,3vw,36px);margin-bottom:8px;background:#F4F0E7;border-radius:6px">
+      <button type="button" role="tab" onClick="{{ selR0 }}" style="{{ tabR0Style }}">У родителя</button>
+      <button type="button" role="tab" onClick="{{ selR1 }}" style="{{ tabR1Style }}">У вас</button>
     </div>
-
-    <div data-hide="{{ hideR1 }}" style="background:#E1EAE3;border-radius:32px;padding:clamp(22px,2.4vw,28px);display:grid;grid-template-rows:subgrid;grid-row:span 4;gap:clamp(12px,1.4vw,16px)">
-      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding:clamp(6px,1vw,12px) clamp(4px,0.6vw,8px) 0">
-        <span style="width:48px;height:48px;border-radius:50%;background:var(--card);display:flex;align-items:center;justify-content:center;flex:none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3.5 2.5"></path></svg></span>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:3px">
-          <h3 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(26px,2.9vw,34px);line-height:1.1;color:var(--ink)">У вас</h3>
-          <span style="font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-deep)"><br></span>
+    <div data-tab="{{ hideR0 }}">
+        <div style="display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid #E2DACA">
+          <span style="width:38px;height:38px;border-radius:50%;background:#DFE8E2;color:#1F3D34;font-family:Lora,Georgia,serif;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none">1</span>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:18px;font-weight:500;line-height:1.3;color:var(--ink)">Нет общей картины и системности в уходе</span><p style="font-size:15.5px;line-height:1.55;color:var(--muted)">Каждый специалист отвечает за свой орган и добавляет свои препараты. Никто не сводит назначения вместе и не смотрит, как они работают друг против друга.</p></div>
         </div>
-      </div>
-
-      <div style="display:contents">
-        <div style="background:var(--card);border-radius:20px;padding:clamp(18px,2vw,24px);display:flex;gap:16px;align-items:flex-start">
-          <span style="width:34px;height:34px;border-radius:50%;background:#EEF3EF;color:#1F3D34;font-family:Lora,Georgia,serif;font-size:18px;display:flex;align-items:center;justify-content:center;flex:none">1</span>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <span style="font-size:19px;font-weight:500;line-height:1.3;color:var(--ink)">Забота превратилась во вторую работу</span>
-            <p style="font-size:16px;line-height:1.55;color:var(--muted)">Звонки, записи, аптеки и согласования занимают всё личное время, при этом есть своя работа, свои дети, часто другой город. Что-то неизбежно проваливается.</p>
-          </div>
+        <div style="display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid #E2DACA">
+          <span style="width:38px;height:38px;border-radius:50%;background:#DFE8E2;color:#1F3D34;font-family:Lora,Georgia,serif;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none">2</span>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:18px;font-weight:500;line-height:1.3;color:var(--ink)">Всё откладывается на потом</span><p style="font-size:15.5px;line-height:1.55;color:var(--muted)">«Пойду, когда заболит» — и разбираться приходится уже со скорой. Профилактика почти всегда проще и дешевле лечения.</p></div>
         </div>
-        <div style="background:var(--card);border-radius:20px;padding:clamp(18px,2vw,24px);display:flex;gap:16px;align-items:flex-start">
-          <span style="width:34px;height:34px;border-radius:50%;background:#EEF3EF;color:#1F3D34;font-family:Lora,Georgia,serif;font-size:18px;display:flex;align-items:center;justify-content:center;flex:none">2</span>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <span style="font-size:19px;font-weight:500;line-height:1.3;color:var(--ink)">Не с кем сверить решения</span>
-            <p style="font-size:16px;line-height:1.55;color:var(--muted)">Нужна ли эта процедура, адекватна ли цена, хорошо ли работает сиделка — судить приходится наугад.</p>
-          </div>
+        <div style="display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid #E2DACA">
+          <span style="width:38px;height:38px;border-radius:50%;background:#DFE8E2;color:#1F3D34;font-family:Lora,Georgia,serif;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none">3</span>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:18px;font-weight:500;line-height:1.3;color:var(--ink)">После больницы нет плана восстановления</span><p style="font-size:15.5px;line-height:1.55;color:var(--muted)">Выписка есть, а что делать дальше — непонятно. Через месяц человек уже боится выходить из квартиры.</p></div>
         </div>
-        <div style="background:var(--card);border-radius:20px;padding:clamp(18px,2vw,24px);display:flex;gap:16px;align-items:flex-start">
-          <span style="width:34px;height:34px;border-radius:50%;background:#EEF3EF;color:#1F3D34;font-family:Lora,Georgia,serif;font-size:18px;display:flex;align-items:center;justify-content:center;flex:none">3</span>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <span style="font-size:19px;font-weight:500;line-height:1.3;color:var(--ink)">В доме случайные люди, за которых никто не отвечает</span>
-            <p style="font-size:16px;line-height:1.55;color:var(--muted)">Сиделка по объявлению, мастер из интернета, курьер из аптеки — каждого приходится проверять самому, и спросить за результат не с кого.</p>
-          </div>
+    </div>
+    <div data-tab="{{ hideR1 }}">
+        <div style="display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid #E2DACA">
+          <span style="width:38px;height:38px;border-radius:50%;background:#F4F0E7;color:#8E6F56;font-family:Lora,Georgia,serif;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none">1</span>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:18px;font-weight:500;line-height:1.3;color:var(--ink)">Забота превратилась во вторую работу</span><p style="font-size:15.5px;line-height:1.55;color:var(--muted)">Звонки, записи, аптеки и согласования занимают всё личное время, при этом есть своя работа, свои дети, часто другой город. Что-то неизбежно проваливается.</p></div>
         </div>
-      </div>
+        <div style="display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid #E2DACA">
+          <span style="width:38px;height:38px;border-radius:50%;background:#F4F0E7;color:#8E6F56;font-family:Lora,Georgia,serif;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none">2</span>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:18px;font-weight:500;line-height:1.3;color:var(--ink)">Не с кем сверить решения</span><p style="font-size:15.5px;line-height:1.55;color:var(--muted)">Нужна ли эта процедура, адекватна ли цена, хорошо ли работает сиделка — судить приходится наугад.</p></div>
+        </div>
+        <div style="display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid #E2DACA">
+          <span style="width:38px;height:38px;border-radius:50%;background:#F4F0E7;color:#8E6F56;font-family:Lora,Georgia,serif;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none">3</span>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:18px;font-weight:500;line-height:1.3;color:var(--ink)">В доме случайные люди, за которых никто не отвечает</span><p style="font-size:15.5px;line-height:1.55;color:var(--muted)">Сиделка по объявлению, мастер из интернета, курьер из аптеки — каждого приходится проверять самому, и спросить за результат не с кого.</p></div>
+        </div>
+    </div>
+    <div style="margin-top:clamp(24px,3vw,36px);display:flex;gap:18px;padding:clamp(18px,2vw,24px) clamp(20px,2.4vw,28px);background:#F4F0E7;border-radius:3px">
+      <span aria-hidden="true" style="flex:none;width:1.5px;background:#1F3D34"></span>
+      <p style="font-family:Lora,Georgia,serif;font-size:clamp(18px,1.8vw,21px);line-height:1.45;color:var(--ink)">Это не потому, что вы плохо справляетесь. Просто у этой работы должен быть профессионал.</p>
     </div>
   </div>
-
-  <p style="margin-top:clamp(28px,3.4vw,40px);font-size:clamp(22px,2.6vw,28px);line-height:1.32;font-family:Lora,Georgia,serif;font-weight:600;color:var(--ink);max-width:26em">Это не потому, что вы плохо справляетесь. Просто у этой работы должен быть профессионал.</p>
 </section>
 
-<section id="cennosti" style="padding:clamp(40px,5.6vw,72px) 0;background:#F5F0E6;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));scroll-margin-top:20px">
+<section id="cennosti" style="padding:clamp(40px,5.6vw,72px) 0;background:#F4F0E7;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));scroll-margin-top:20px">
   <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:baseline;justify-content:space-between">
-    <h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12;max-width:20em">Три правила, по которым мы работаем</h2>
+    <div><h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12;max-width:20em">Наши <span style="color:#8E6F56">принципы</span></h2></div>
     <p style="font-size:16px;line-height:1.6;color:var(--muted);max-width:26em">То, по чему вы вправе нас проверять.</p>
   </div>
 
   <div data-m="trio" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:clamp(16px,2vw,24px);margin-top:clamp(28px,3.5vw,44px)">
-    <div style="background:#E1EAE3;border-radius:var(--r);padding:clamp(24px,2.6vw,32px);display:flex;flex-direction:column;gap:16px">
+    <div style="background:#DFE8E2;border-radius:var(--r);padding:clamp(24px,2.6vw,32px);display:flex;flex-direction:column;gap:16px">
       <div style="display:flex;align-items:center;gap:12px">
         <span style="width:52px;height:52px;border-radius:50%;background:#FFFEFB;display:flex;align-items:center;justify-content:center;flex:none"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="6" cy="18" r="2.2" fill="var(--accent)"></circle><path d="M11 18a5 5 0 0 0-5-5" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"></path><path d="M16 18A10 10 0 0 0 6 8" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" opacity=".7"></path><path d="M21 18A15 15 0 0 0 6 3" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" opacity=".4"></path></svg></span>
         <span style="font-family:Lora,Georgia,serif;font-size:24px;line-height:1;color:#8E6F56">01</span>
@@ -324,9 +360,9 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
       <p style="font-size:16px;line-height:1.6;color:var(--ink-2)">Мы звоним первыми. Куратор сам замечает, что анализы просрочены на месяц, а таблетки заканчиваются в пятницу — и решает это до того, как вы об этом узнаете.</p>
     </div>
 
-    <div style="background:#F3E9D8;border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(24px,2.6vw,32px);display:flex;flex-direction:column;gap:16px">
+    <div style="background:#F4F0E7;border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(24px,2.6vw,32px);display:flex;flex-direction:column;gap:16px">
       <div style="display:flex;align-items:center;gap:12px">
-        <span style="width:52px;height:52px;border-radius:50%;background:#FFFEFB;display:flex;align-items:center;justify-content:center;flex:none"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.5 4.5 6.5v5c0 4.2 3 7.6 7.5 9 4.5-1.4 7.5-4.8 7.5-9v-5L12 3.5Z" stroke="#8E6F56" stroke-width="1.8" stroke-linejoin="round"></path><path d="M9.3 11.8 11.4 14l3.6-4" stroke="#8E6F56" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <span style="width:52px;height:52px;border-radius:50%;background:#FFFEFB;display:flex;align-items:center;justify-content:center;flex:none"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.5 4.5 6.5v5c0 4.2 3 7.6 7.5 9 4.5-1.4 7.5-4.8 7.5-9v-5L12 3.5Z" stroke="#1F3D34" stroke-width="1.8" stroke-linejoin="round"></path><path d="M9.3 11.8 11.4 14l3.6-4" stroke="#1F3D34" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
         <span style="font-family:Lora,Georgia,serif;font-size:24px;line-height:1;color:#8E6F56">02</span>
         <span style="height:1px;flex:1 1 auto;background:rgba(31,61,52,.14)"></span>
       </div>
@@ -334,7 +370,7 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
       <p style="font-size:16px;line-height:1.6;color:var(--ink-2)">Случай ведёт врач-гериатр, а не администратор с чек-листом. Каждое назначение проверяется на совместимость, спорные ситуации разбирает консилиум команды.</p>
     </div>
 
-    <div style="background:#E1EAE3;border-radius:var(--r);padding:clamp(24px,2.6vw,32px);display:flex;flex-direction:column;gap:16px">
+    <div style="background:#DFE8E2;border-radius:var(--r);padding:clamp(24px,2.6vw,32px);display:flex;flex-direction:column;gap:16px">
       <div style="display:flex;align-items:center;gap:12px">
         <span style="width:52px;height:52px;border-radius:50%;background:#FFFEFB;display:flex;align-items:center;justify-content:center;flex:none"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2.8 12S6 6.5 12 6.5 21.2 12 21.2 12 18 17.5 12 17.5 2.8 12 2.8 12Z" stroke="var(--accent)" stroke-width="1.8" stroke-linejoin="round"></path><circle cx="12" cy="12" r="2.7" stroke="var(--accent)" stroke-width="1.8"></circle></svg></span>
         <span style="font-family:Lora,Georgia,serif;font-size:24px;line-height:1;color:#8E6F56">03</span>
@@ -344,97 +380,71 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
       <p style="font-size:16px;line-height:1.6;color:var(--ink-2)">Вы видите всё: что сделано за месяц, сколько это стоило и что планируется дальше. Если услуга не нужна — скажем прямо, даже когда её выгоднее продать.</p>
     </div>
 
-    
   </div>
-</section><section id="kak" style="padding:clamp(40px,5.6vw,72px) 0;background:#FFFEFB;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));scroll-margin-top:20px">
-  <div style="position:relative;display:flex;flex-wrap:wrap;gap:20px;align-items:center">
-
-    <h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12">От заявки <em style="font-style:italic;color:var(--brown)">до постоянного ведения</em></h2>
+</section><section id="kak" style="background:#FFFEFB;width:100vw;margin-left:calc(50% - 50vw);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));scroll-margin-top:20px">
+  <div style="padding:clamp(40px,5.6vw,80px) clamp(24px,4.4vw,72px) clamp(40px,5.6vw,80px) max(clamp(20px,5vw,72px),calc(50vw - 708px));display:flex;flex-direction:column;min-width:0">
+    <h2 style="font-size:clamp(32px,4vw,46px);line-height:1.12">Путь к <span style="color:#8E6F56">спокойствию</span></h2>
+    <ol style="list-style:none;margin:clamp(28px,3.4vw,44px) 0 0;padding:0;display:flex;flex-direction:column;gap:8px">
+      <li style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(16px,2vw,28px);align-items:start;padding:clamp(18px,2vw,26px) clamp(18px,2.2vw,28px);background:#F4F0E7;border-radius:6px">
+        <span style="min-width:1.3em;font-family:Lora,Georgia,serif;font-size:clamp(40px,4.2vw,54px);line-height:.92;color:#8E6F56">01</span>
+        <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px"><span style="font-size:18px;font-weight:500;line-height:1.3;color:var(--ink)">Интервью с куратором</span></div>
+          <p style="font-size:15.5px;line-height:1.55;color:var(--muted);max-width:32em">Разбираем ситуацию родителя подробно и подбираем персональное решение.</p>
+        </div>
+      </li>
+      <li style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(16px,2vw,28px);align-items:start;padding:clamp(18px,2vw,26px) clamp(18px,2.2vw,28px);background:#EAF0EC;border-radius:6px">
+        <span style="min-width:1.3em;font-family:Lora,Georgia,serif;font-size:clamp(40px,4.2vw,54px);line-height:.92;color:#8E6F56">02</span>
+        <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px"><span style="font-size:18px;font-weight:500;line-height:1.3;color:var(--ink)">Гериатрическая оценка на дому</span></div>
+          <p style="font-size:15.5px;line-height:1.55;color:var(--muted);max-width:32em">Врач осматривает родителя, сверяет назначения и делает полную лекарственную сверку, проверяет пространство на безопасность.</p>
+        </div>
+      </li>
+      <li style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(16px,2vw,28px);align-items:start;padding:clamp(18px,2vw,26px) clamp(18px,2.2vw,28px);background:#DFE8E2;border-radius:6px">
+        <span style="min-width:1.3em;font-family:Lora,Georgia,serif;font-size:clamp(40px,4.2vw,54px);line-height:.92;color:#8E6F56">03</span>
+        <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px"><span style="font-size:18px;font-weight:500;line-height:1.3;color:var(--ink)">План и настройка</span></div>
+          <p style="font-size:15.5px;line-height:1.55;color:var(--muted);max-width:32em">Гериатр формирует план — что и как часто, назначает расширенные анализы, при необходимости направляет к узким специалистам. Куратор разбирает план с вами и подбирает сиделку, если она нужна.</p>
+        </div>
+      </li>
+      <li style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(16px,2vw,28px);align-items:start;padding:clamp(18px,2vw,26px) clamp(18px,2.2vw,28px);background:#1F3D34;border-radius:6px">
+        <span style="min-width:1.3em;font-family:Lora,Georgia,serif;font-size:clamp(40px,4.2vw,54px);line-height:.92;color:#D9C3A8">04</span>
+        <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px"><span style="font-size:18px;font-weight:500;line-height:1.3;color:#FFFEFB">Ведение</span></div>
+          <p style="font-size:15.5px;line-height:1.55;color:rgba(255,254,251,.84);max-width:32em">Куратор на связи, гериатр держит план, вы получаете короткие понятные сводки — без просьб «узнать, как там дела».</p>
+        </div>
+      </li>
+    </ol>
   </div>
-
-  <div data-m="timeline" style="margin-top:44px;display:grid;grid-template-columns:minmax(0,1fr) clamp(30px,3.4vw,52px) minmax(0,1fr);align-items:start">
-    <div data-c="1" style="grid-column:1;display:flex;justify-content:flex-end;padding:0 0 34px 0">
-      <div style="background:#FFFEFB;border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(18px,2vw,24px) clamp(18px,2.2vw,26px);max-width:440px;display:flex;flex-direction:column;gap:9px">
-        <span style="width:46px;height:46px;border-radius:50%;background:#E1EAE3;display:flex;align-items:center;justify-content:center;flex:none"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"></path><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"></path></svg></span>
-        <h3 style="font-size:clamp(21px,2.4vw,28px);line-height:1.22">Интервью с куратором</h3>
-        <p style="font-size:16px;line-height:1.55;color:var(--muted)">Разбираем ситуацию родителя подробно и подбираем персональное решение.</p>
-      </div>
-    </div>
-    <div data-m="tl-dot" data-d="1" style="grid-column:2;grid-row:1;justify-self:center;display:flex;flex-direction:column;align-items:center;height:100%">
-      <span style="width:34px;height:34px;border-radius:50%;background:#8E6F56;display:flex;align-items:center;justify-content:center;flex:none;margin-top:18px"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 10.5l3.5 3.5L15 7" stroke="var(--card)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-      <svg aria-hidden="true" width="14" viewBox="0 0 14 100" preserveAspectRatio="none" fill="none" style="flex:1 1 auto;min-height:24px;height:auto;overflow:visible"><path d="M7 2C10.5 28 3.5 62 7 98" stroke="#8E6F56" stroke-opacity=".38" stroke-width="1.25" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg>
-    </div>
-
-    <div data-c="1" style="grid-column:3;grid-row:2;display:flex;justify-content:flex-start;padding:0 0 34px 0">
-      <div style="background:#FFFEFB;border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(18px,2vw,24px) clamp(18px,2.2vw,26px);max-width:440px;display:flex;flex-direction:column;gap:9px">
-        <span style="width:46px;height:46px;border-radius:50%;background:#E1EAE3;display:flex;align-items:center;justify-content:center;flex:none"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 2v2"></path><path d="M5 2v2"></path><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"></path><path d="M8 15a6 6 0 0 0 12 0v-3"></path><circle cx="20" cy="10" r="2"></circle></svg></span>
-        <h3 style="font-size:clamp(21px,2.4vw,28px);line-height:1.22">Гериатрическая оценка на дому</h3>
-        <p style="font-size:16px;line-height:1.55;color:var(--muted)">Врач осматривает родителя, сверяет назначения и делает полную лекарственную сверку, проверяет пространство на безопасность.</p>
-      </div>
-    </div>
-    <div data-m="tl-dot" data-d="1" style="grid-column:2;grid-row:2;justify-self:center;display:flex;flex-direction:column;align-items:center;height:100%">
-      <span style="width:34px;height:34px;border-radius:50%;background:#8E6F56;display:flex;align-items:center;justify-content:center;flex:none;margin-top:18px"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 10.5l3.5 3.5L15 7" stroke="var(--card)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-      <svg aria-hidden="true" width="14" viewBox="0 0 14 100" preserveAspectRatio="none" fill="none" style="flex:1 1 auto;min-height:24px;height:auto;overflow:visible"><path d="M7 2C10.5 28 3.5 62 7 98" stroke="#8E6F56" stroke-opacity=".38" stroke-width="1.25" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg>
-    </div>
-
-    <div data-c="1" style="grid-column:1;grid-row:3;display:flex;justify-content:flex-end;padding:0 0 34px 0">
-      <div style="background:#FFFEFB;border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(18px,2vw,24px) clamp(18px,2.2vw,26px);max-width:440px;display:flex;flex-direction:column;gap:9px">
-        <span style="width:46px;height:46px;border-radius:50%;background:#E1EAE3;display:flex;align-items:center;justify-content:center;flex:none"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M8.5 11.5h7"></path><path d="M8.5 15.5h4.5"></path></svg></span>
-        <h3 style="font-size:clamp(21px,2.4vw,28px);line-height:1.22">План и настройка</h3>
-        <p style="font-size:16px;line-height:1.55;color:var(--muted)">Гериатр формирует план — что и как часто, назначает расширенные анализы, при необходимости направляет к узким специалистам. Куратор разбирает план с вами и подбирает сиделку, если она нужна.</p>
-      </div>
-    </div>
-    <div data-m="tl-dot" data-d="1" style="grid-column:2;grid-row:3;justify-self:center;display:flex;flex-direction:column;align-items:center;height:100%">
-      <span style="width:34px;height:34px;border-radius:50%;background:#8E6F56;display:flex;align-items:center;justify-content:center;flex:none;margin-top:18px"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 10.5l3.5 3.5L15 7" stroke="var(--card)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-      <svg aria-hidden="true" width="14" viewBox="0 0 14 100" preserveAspectRatio="none" fill="none" style="flex:1 1 auto;min-height:24px;height:auto;overflow:visible"><path d="M7 2C10.5 28 3.5 62 7 98" stroke="#8E6F56" stroke-opacity=".38" stroke-width="1.25" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg>
-    </div>
-
-    <div data-c="1" style="grid-column:3;grid-row:4;display:flex;justify-content:flex-start">
-      <div style="background:#FFFEFB;border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(18px,2vw,24px) clamp(18px,2.2vw,26px);max-width:440px;display:flex;flex-direction:column;gap:9px">
-        <span style="width:46px;height:46px;border-radius:50%;background:#E1EAE3;display:flex;align-items:center;justify-content:center;flex:none"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
-        <h3 style="font-size:clamp(21px,2.4vw,28px);line-height:1.22">Ведение</h3>
-        <p style="font-size:16px;line-height:1.55;color:var(--muted)">Куратор на связи, гериатр держит план, вы получаете короткие понятные сводки — без просьб «узнать, как там дела».</p>
-      </div>
-    </div>
-    <div data-m="tl-dot" data-d="1" style="grid-column:2;grid-row:4;justify-self:center;display:flex;flex-direction:column;align-items:center">
-      <span style="width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex: none; margin-top: 18px; background-color: #8E6F56"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 10.5l3.5 3.5L15 7" stroke="#FFFEFB" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-    </div>
+  <div data-m="split-photo" style="position:relative;min-height:clamp(380px,46vw,720px);background:#F4F0E7;overflow:hidden">
+    <image-slot id="kak-photo" src="img/kak-photo.jpg" fit="cover" shape="rect" placeholder="Фото: стол с цветами, чашкой и блокнотом — спокойный домашний натюрморт" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+    <div style="position:absolute;right:clamp(20px,3vw,40px);bottom:clamp(20px,3vw,40px);max-width:300px;padding:clamp(18px,2vw,24px) clamp(20px,2.2vw,28px);background:#FFFEFB;border-radius:3px;font-size:15.5px;line-height:1.5;color:var(--ink);pointer-events:none">Мы всегда рядом — на каждом этапе. Вам не нужно контролировать каждую деталь.</div>
   </div>
-
-  
 </section>
 
-
-
-
-
-
-
-
-
-<section id="tarify" style="padding:clamp(40px,5.6vw,72px) 0;background:#F5F0E6;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));scroll-margin-top:20px">
+<section id="tarify" style="padding:clamp(40px,5.6vw,72px) 0;background:#F4F0E7;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));scroll-margin-top:20px">
   <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:baseline;justify-content:space-between">
     
-    <h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12;margin-bottom:6px">Два уровня <em style="font-style:italic;color:var(--brown)">участия</em></h2><p style="font-size:16px;line-height:1.6;color:var(--muted);max-width:32em"><br></p>
+    <div><h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12;margin-bottom:6px">Два уровня <span style="color:#8E6F56">участия</span></h2></div>
+          <p style="font-size:16px;line-height:1.6;color:var(--muted);max-width:32em"><br></p>
   </div>
 
-  <div data-m="plan-switch" style="display:none;gap:6px;margin-top:clamp(20px,2.6vw,28px);padding:5px;border-radius:999px;background:var(--card);border:1px solid var(--line)">
+  <div data-m="plan-switch" style="display:none;gap:6px;margin-top:clamp(20px,2.6vw,28px);padding:5px;border-radius:4px;background:var(--card);border:1px solid var(--line)">
     <button type="button" onClick="{{ selPlan0 }}" style="{{ selPlan0Style }}">Справляется сам</button>
     <button type="button" onClick="{{ selPlan1 }}" style="{{ selPlan1Style }}">Нужен человек рядом</button>
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(16px,2vw,24px);margin-top:clamp(28px,3.4vw,40px);align-items:start">
-    <div data-hide="{{ hide0 }}" style="background:#F3E9D8;border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(24px,2.8vw,34px) clamp(22px,2.4vw,30px);display:flex;flex-direction:column">
-      <span style="align-self:center;padding:7px 16px;border-radius:999px;background:var(--card);color:#1F2A26;font-size:14px;font-weight:500;letter-spacing:.04em;text-transform:uppercase">Родитель справляется сам</span>
-      <div style="text-align:center;margin-top:clamp(16px,2vw,24px)">
-        <span style="font-family:Lora,Georgia,serif;font-weight:600;font-size:clamp(38px,4.6vw,54px);line-height:1;letter-spacing:-.02em;color:var(--ink)">от 50 т.р.</span><span style="font-family:Lora,Georgia,serif;font-size:clamp(20px,2.2vw,26px);color:var(--muted)">/мес</span>
+    <div data-hide="{{ hide0 }}" style="background:#F4F0E7;border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(24px,2.8vw,34px) clamp(22px,2.4vw,30px);display:flex;flex-direction:column">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <span style="padding:7px 16px;border-radius:4px;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;background:var(--card);color:#1F2A26">Родитель справляется сам</span>
+        <span aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:#FFFEFB"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8E6F56" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path><path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"></path><circle cx="20" cy="10" r="2"></circle></svg></span>
       </div>
-      <span style="margin-top:8px;text-align:center;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Медицинская координация</span>
-      <p style="margin-top:clamp(12px,1.6vw,18px);font-size:16.5px;line-height:1.55;color:var(--ink-2);text-align:center">Помощь нужна со здоровьем: врачи, анализы, лекарства, решения.</p>
-      <a href="#zayavka" style="display:flex;justify-content:center;margin-top:clamp(16px,2vw,22px);padding:15px 26px;border-radius:999px;background:#1F3D34;color:#FFFEFB;font-size:17px;font-weight:500;transition:background .18s ease" style-hover="background:#2E5446">Обсудить этот формат</a>
+      <h3 style="margin-top:clamp(14px,1.8vw,20px);font-family:Lora,Georgia,serif;font-weight:600;font-size:clamp(32px,3.6vw,44px);line-height:1.06;letter-spacing:-.015em;color:var(--ink)">Медицинская <em style="font-style:italic;color:var(--brown)">координация</em></h3>
+      <p style="margin-top:12px;font-size:17px;line-height:1.55;color:var(--ink-2);max-width:28em">Помощь нужна со здоровьем: врачи, анализы, лекарства, решения.</p>
+      <a href="#zayavka" style="display:flex;justify-content:center;margin-top:clamp(16px,2vw,22px);padding:15px 26px;border-radius:4px;background:#1F3D34;color:#FFFEFB;font-size:17px;font-weight:500;transition:background .18s ease" style-hover="background:#2E5446">Обсудить этот формат</a>
         <div style="margin-top:clamp(16px,1.8vw,22px);padding-top:clamp(12px,1.4vw,16px);border-top:1px solid rgba(31,61,52,.14);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr));column-gap:clamp(16px,2vw,26px);row-gap:0">
           <div style="display:flex;gap:9px;align-items:flex-start;padding:8px 0">
             <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#8E6F56" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            <span style="font-size:15.5px;line-height:1.4;color:var(--ink-2)">Закреплённая пара кураторов</span>
+            <span style="font-size:15.5px;line-height:1.4;color:var(--ink-2)">Закреплённый куратор</span>
           </div>
           <div style="display:flex;gap:9px;align-items:flex-start;padding:8px 0">
             <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#8E6F56" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -476,56 +486,56 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
         </div>
         
     </div>
-    <div data-hide="{{ hide1 }}" style="position:relative;background:#E1EAE3;border-radius:var(--r);padding:clamp(24px,2.8vw,34px) clamp(22px,2.4vw,30px);display:flex;flex-direction:column">
-      <span style="position:absolute;top:-13px;right:clamp(20px,2.4vw,30px);padding:5px 14px;border-radius:999px;background:#1F3D34;color:#FFFEFB;font-size:13px;font-weight:500;letter-spacing:.02em">Чаще выбирают</span>
-      <span style="align-self:center;padding:7px 16px;border-radius:999px;background:var(--card);color:#1F2A26;font-size:14px;font-weight:500;letter-spacing:.04em;text-transform:uppercase">Родителю нужен человек рядом</span>
-      <div style="text-align:center;margin-top:clamp(16px,2vw,24px)">
-        <span style="font-family:Lora,Georgia,serif;font-weight:600;font-size:clamp(38px,4.6vw,54px);line-height:1;letter-spacing:-.02em;color:var(--ink)">от 70 т.р.</span><span style="font-family:Lora,Georgia,serif;font-size:clamp(20px,2.2vw,26px);color:var(--muted)">/мес</span>
+    <div data-hide="{{ hide1 }}" style="position:relative;background:#1F3D34;border-radius:var(--r);padding:clamp(24px,2.8vw,34px) clamp(22px,2.4vw,30px);display:flex;flex-direction:column">
+      <span style="position:absolute;top:-14px;left:clamp(22px,2.4vw,30px);padding:6px 14px;border-radius:4px;background:#8E6F56;color:#FFFEFB;font-size:13px;font-weight:500;letter-spacing:.02em">Чаще выбирают</span>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <span style="padding:7px 16px;border-radius:4px;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,254,251,.14);color:#FFFEFB">Родителю нужен человек рядом</span>
+        <span aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:#DFE8E2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></span>
       </div>
-      <span style="margin-top:8px;text-align:center;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Координация + ежедневный уход</span>
-      <p style="margin-top:clamp(12px,1.6vw,18px);font-size:16.5px;line-height:1.55;color:var(--ink-2);text-align:center">Ограничена мобильность или память: помимо медицинской координации необходима сиделка.</p>
-      <a href="#zayavka" style="display:flex;justify-content:center;margin-top:clamp(16px,2vw,22px);padding:15px 26px;border-radius:999px;background:#1F3D34;color:#FFFEFB;font-size:17px;font-weight:500;transition:background .18s ease" style-hover="background:#2E5446">Обсудить этот формат</a>
-        <div style="margin-top:clamp(16px,1.8vw,22px);padding-top:clamp(12px,1.4vw,16px);border-top:1px solid rgba(31,61,52,.14);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr));column-gap:clamp(16px,2vw,26px);row-gap:0">
+      <h3 style="margin-top:clamp(14px,1.8vw,20px);font-family:Lora,Georgia,serif;font-weight:600;font-size:clamp(32px,3.6vw,44px);line-height:1.06;letter-spacing:-.015em;color:#FFFEFB">Координация <em style="font-style:italic;color:#DFE8E2">+ ежедневный уход</em></h3>
+      <p style="margin-top:12px;font-size:17px;line-height:1.55;color:rgba(255,254,251,.86);max-width:28em">Ограничена мобильность или память: помимо медицинской координации необходима сиделка.</p>
+      <a href="#zayavka" style="display:flex;justify-content:center;margin-top:clamp(16px,2vw,22px);padding:15px 26px;border-radius:4px;background:#FFFEFB;color:#1F3D34;font-size:17px;font-weight:500;transition:background .18s ease" style-hover="background:#DFE8E2">Обсудить этот формат</a>
+        <div style="margin-top:clamp(16px,1.8vw,22px);padding-top:clamp(12px,1.4vw,16px);border-top:1px solid rgba(255,254,251,.18);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr));column-gap:clamp(16px,2vw,26px);row-gap:0">
           <div style="display:flex;gap:9px;align-items:flex-start;padding:8px 0">
-            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#8E6F56" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            <span style="font-size:15.5px;line-height:1.4;color:var(--ink-2)">Закреплённая пара кураторов</span>
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#DFE8E2" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="font-size:15.5px;line-height:1.4;color:rgba(255,254,251,.9)">Закреплённый куратор</span>
           </div>
           <div style="display:flex;gap:9px;align-items:flex-start;padding:8px 0">
-            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#8E6F56" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            <span style="font-size:15.5px;line-height:1.4;color:var(--ink-2)">Личный терапевт-гериатр</span>
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#DFE8E2" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="font-size:15.5px;line-height:1.4;color:rgba(255,254,251,.9)">Личный терапевт-гериатр</span>
           </div>
           <div style="display:flex;gap:9px;align-items:flex-start;padding:8px 0">
-            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#8E6F56" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            <span style="font-size:15.5px;line-height:1.4;color:var(--ink-2)">Экстренная служба 24/7</span>
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#DFE8E2" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="font-size:15.5px;line-height:1.4;color:rgba(255,254,251,.9)">Экстренная служба 24/7</span>
           </div>
           <div style="display:flex;gap:9px;align-items:flex-start;padding:8px 0">
-            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#8E6F56" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            <span style="font-size:15.5px;line-height:1.4;color:var(--ink-2)">Анализы на дому</span>
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#DFE8E2" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="font-size:15.5px;line-height:1.4;color:rgba(255,254,251,.9)">Анализы на дому</span>
           </div>
           <div style="display:flex;gap:9px;align-items:flex-start;padding:8px 0">
-            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#8E6F56" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            <span style="font-size:15.5px;line-height:1.4;color:var(--ink-2)">Медсестра по плану</span>
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#DFE8E2" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="font-size:15.5px;line-height:1.4;color:rgba(255,254,251,.9)">Медсестра по плану</span>
           </div>
           <div style="display:flex;gap:9px;align-items:flex-start;padding:8px 0">
-            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#8E6F56" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            <span style="font-size:15.5px;line-height:1.4;color:var(--ink-2)">Доставка лекарств</span>
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#DFE8E2" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="font-size:15.5px;line-height:1.4;color:rgba(255,254,251,.9)">Доставка лекарств</span>
           </div>
           <div style="display:flex;gap:9px;align-items:flex-start;padding:8px 0">
-            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#8E6F56" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            <span style="font-size:15.5px;line-height:1.4;color:var(--ink-2)">Подбор узких специалистов</span>
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#DFE8E2" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="font-size:15.5px;line-height:1.4;color:rgba(255,254,251,.9)">Подбор узких специалистов</span>
           </div>
           <div style="display:flex;gap:9px;align-items:flex-start;padding:8px 0">
-            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#8E6F56" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            <span style="font-size:15.5px;line-height:1.4;color:var(--ink-2)">Цифровой помощник</span>
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#DFE8E2" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="font-size:15.5px;line-height:1.4;color:rgba(255,254,251,.9)">Цифровой помощник</span>
           </div>
           <div style="display:flex;gap:9px;align-items:flex-start;padding:8px 0">
-            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#8E6F56" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            <span style="font-size:15.5px;line-height:1.4;color:var(--ink-2)">Помощь с оформлением документов</span>
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#DFE8E2" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="font-size:15.5px;line-height:1.4;color:rgba(255,254,251,.9)">Помощь с оформлением документов</span>
           </div>
           
           <div style="display:flex;gap:9px;align-items:flex-start;padding:8px 0">
-            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#8E6F56" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            <span style="font-size:15.5px;line-height:1.4;color:var(--ink-2)">Организация такси и доставки продуктов</span>
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><path d="M5 10.5l3.5 3.5L15 7" stroke="#DFE8E2" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="font-size:15.5px;line-height:1.4;color:rgba(255,254,251,.9)">Организация такси и доставки продуктов</span>
           </div>
         </div>
         <div style="margin-top:clamp(12px,1.4vw,16px);padding:clamp(16px,1.8vw,20px);border-radius:var(--r-sm);background:var(--card);display:flex;flex-direction:column;gap:12px">
@@ -534,10 +544,10 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
             <span style="font-size:17.5px;font-weight:500;line-height:1.3;color:#1F3D34">Сиделка — целиком на нас</span>
           </div>
           <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:7px">
-            <span style="display:flex;align-items:center;justify-content:center;text-align:center;min-height:38px;padding:7px 12px;border-radius:var(--r-sm);background:#E1EAE3;color:var(--ink);font-size:14.5px;line-height:1.25">Подбор под состояние</span>
-            <span style="display:flex;align-items:center;justify-content:center;text-align:center;min-height:38px;padding:7px 12px;border-radius:var(--r-sm);background:#E1EAE3;color:var(--ink);font-size:14.5px;line-height:1.25">Документы и оформление</span>
-            <span style="display:flex;align-items:center;justify-content:center;text-align:center;min-height:38px;padding:7px 12px;border-radius:var(--r-sm);background:#E1EAE3;color:var(--ink);font-size:14.5px;line-height:1.25">Замена без паузы</span>
-            <span style="display:flex;align-items:center;justify-content:center;text-align:center;min-height:38px;padding:7px 12px;border-radius:var(--r-sm);background:#E1EAE3;color:var(--ink);font-size:14.5px;line-height:1.25">Контроль куратором</span>
+            <span style="display:flex;align-items:center;justify-content:center;text-align:center;min-height:38px;padding:7px 12px;border-radius:var(--r-sm);background:#DFE8E2;color:var(--ink);font-size:14.5px;line-height:1.25">Подбор под состояние</span>
+            <span style="display:flex;align-items:center;justify-content:center;text-align:center;min-height:38px;padding:7px 12px;border-radius:var(--r-sm);background:#DFE8E2;color:var(--ink);font-size:14.5px;line-height:1.25">Документы и оформление</span>
+            <span style="display:flex;align-items:center;justify-content:center;text-align:center;min-height:38px;padding:7px 12px;border-radius:var(--r-sm);background:#DFE8E2;color:var(--ink);font-size:14.5px;line-height:1.25">Замена без паузы</span>
+            <span style="display:flex;align-items:center;justify-content:center;text-align:center;min-height:38px;padding:7px 12px;border-radius:var(--r-sm);background:#DFE8E2;color:var(--ink);font-size:14.5px;line-height:1.25">Контроль куратором</span>
           </div>
         </div>
     </div>
@@ -548,16 +558,46 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
       <h3 style="font-size:clamp(24px,2.6vw,30px);line-height:1.2">Пансионат — обсуждаем отдельно</h3>
       <p style="margin-top:8px;font-size:16px;line-height:1.6;color:var(--muted)">Если дома становится небезопасно, подбираем пансионат-партнёр и сопровождаем переезд — куратор и гериатр продолжают вести родителя уже там. В тарифы не входит: слишком многое зависит от состояния, района и семьи.</p>
     </div>
-    <a href="#zayavka" style="display:inline-flex;padding:14px 26px;border-radius:999px;border:1.5px solid #1F3D34;background:transparent;color:#1F3D34;font-size:17px;font-weight:500;transition:background .18s ease" style-hover="background:#EEF3EF;color:#1F3D34">Обсудить пансионат</a>
+    <a href="#zayavka" style="display:inline-flex;padding:14px 26px;border-radius:4px;border:1.5px solid #1F3D34;background:transparent;color:#1F3D34;font-size:17px;font-weight:500;transition:background .18s ease" style-hover="background:#EAF0EC;color:#1F3D34">Обсудить пансионат</a>
   </div>
 
   <p style="margin-top:18px;font-size:14px;color:var(--muted)"><br></p>
 </section>
 
+<section id="medkonsierzh" style="padding:clamp(28px,3.6vw,48px) 0;background:#FFFEFB;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));scroll-margin-top:20px">
+  <div style="background:#1F3D34;border-radius:6px;padding:clamp(22px,2.8vw,36px);display:flex;flex-direction:column;gap:clamp(18px,2.2vw,26px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px">
+      <div style="display:flex;flex-direction:column;gap:8px;max-width:40em;min-width:0">
+        <h2 style="font-family:Lora,Georgia,serif;font-size:clamp(28px,3.4vw,38px);line-height:1.12;color:#FFFEFB">Медицинский <span style="color:#D9C3A8">консьерж</span></h2>
+        <p style="font-size:16px;line-height:1.55;color:rgba(255,254,251,.84)">Запишем родителя к лучшим узким специалистам Москвы и возьмём организацию на себя.</p>
+      </div>
+      <a href="#zayavka" style="flex:none;display:inline-flex;align-items:center;gap:12px;padding:14px 22px;border-radius:3px;background:#FFFEFB;color:#1F3D34;font-size:15.5px;font-weight:500;transition:background .18s ease" style-hover="background:#DFE8E2">Записать к специалисту<span aria-hidden="true">→</span></a>
+    </div>
+    <ol style="list-style:none;margin:0;padding:clamp(16px,1.8vw,22px) 0 0;border-top:1px solid rgba(255,254,251,.16);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px clamp(16px,2vw,28px)" data-m="mk-steps">
+      <li style="display:flex;gap:12px;align-items:flex-start;min-width:0">
+        <span style="flex:none;font-family:Lora,Georgia,serif;font-size:20px;line-height:1.2;color:#D9C3A8">01</span>
+        <div style="display:flex;flex-direction:column;gap:3px;min-width:0"><span style="font-size:16px;font-weight:500;line-height:1.3;color:#FFFEFB">Подбор врача</span><span style="font-size:14.5px;line-height:1.45;color:rgba(255,254,251,.78)">Сильнейший специалист именно под ваш случай.</span></div>
+      </li>
+      <li style="display:flex;gap:12px;align-items:flex-start;min-width:0">
+        <span style="flex:none;font-family:Lora,Georgia,serif;font-size:20px;line-height:1.2;color:#D9C3A8">02</span>
+        <div style="display:flex;flex-direction:column;gap:3px;min-width:0"><span style="font-size:16px;font-weight:500;line-height:1.3;color:#FFFEFB">Запись к топовым</span><span style="font-size:14.5px;line-height:1.45;color:rgba(255,254,251,.78)">Ведущие клиники Москвы, без долгого ожидания.</span></div>
+      </li>
+      <li style="display:flex;gap:12px;align-items:flex-start;min-width:0">
+        <span style="flex:none;font-family:Lora,Georgia,serif;font-size:20px;line-height:1.2;color:#D9C3A8">03</span>
+        <div style="display:flex;flex-direction:column;gap:3px;min-width:0"><span style="font-size:16px;font-weight:500;line-height:1.3;color:#FFFEFB">Подготовка и визит</span><span style="font-size:14.5px;line-height:1.45;color:rgba(255,254,251,.78)">Анализы и выписки заранее, сопровождение на приём.</span></div>
+      </li>
+      <li style="display:flex;gap:12px;align-items:flex-start;min-width:0">
+        <span style="flex:none;font-family:Lora,Georgia,serif;font-size:20px;line-height:1.2;color:#D9C3A8">04</span>
+        <div style="display:flex;flex-direction:column;gap:3px;min-width:0"><span style="font-size:16px;font-weight:500;line-height:1.3;color:#FFFEFB">В общий план</span><span style="font-size:14.5px;line-height:1.45;color:rgba(255,254,251,.78)">Гериатр сверяет назначения, куратор следит за выполнением.</span></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
 <section id="dop" style="padding:clamp(40px,5.6vw,72px) 0;background:#FFFEFB;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));scroll-margin-top:20px">
   <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end;justify-content:space-between">
     <div style="display:flex;flex-direction:column;gap:10px;max-width:34em">
-      <h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12">Наши ресурсы</h2>
+      <h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12">Наши <span style="color:#8E6F56">ресурсы</span></h2>
       <p style="font-size:16px;line-height:1.6;color:var(--muted)">Свои специалисты и команды, которых куратор подключает, когда они понадобятся.</p>
     </div>
     <div style="display:flex;gap:12px;flex:none">
@@ -572,7 +612,7 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
 
   <div ref="{{ railRef }}" style="margin-top:clamp(28px,3.4vw,40px);display:flex;gap:clamp(16px,2vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 14px;margin-left:-4px;margin-right:-4px;scrollbar-width:none">
         <article style="flex:0 0 clamp(240px,72vw,290px);scroll-snap-align:start;background:#FFFEFB;border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:14px">
-          <span style="width:64px;height:64px;border-radius:50%;background:#E1EAE3;display:flex;align-items:center;justify-content:center;flex:none">
+          <span style="width:64px;height:64px;border-radius:50%;background:#DFE8E2;display:flex;align-items:center;justify-content:center;flex:none">
             <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"></path><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"></path></svg>
           </span>
           <div style="display:flex;flex-direction:column;gap:6px">
@@ -582,7 +622,7 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
         </article>
         
         <article style="flex:0 0 clamp(240px,72vw,290px);scroll-snap-align:start;background:#FFFEFB;border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:14px">
-          <span style="width:64px;height:64px;border-radius:50%;background:#E1EAE3;display:flex;align-items:center;justify-content:center;flex:none">
+          <span style="width:64px;height:64px;border-radius:50%;background:#DFE8E2;display:flex;align-items:center;justify-content:center;flex:none">
             <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.8V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.8"></path><path d="m9.5 14.5 1.8 1.8 3.5-3.5"></path></svg>
           </span>
           <div style="display:flex;flex-direction:column;gap:6px">
@@ -591,7 +631,7 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
           </div>
         </article>
         <article style="flex:0 0 clamp(240px,72vw,290px);scroll-snap-align:start;background:#FFFEFB;border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:14px">
-          <span style="width:64px;height:64px;border-radius:50%;background:#E1EAE3;display:flex;align-items:center;justify-content:center;flex:none">
+          <span style="width:64px;height:64px;border-radius:50%;background:#DFE8E2;display:flex;align-items:center;justify-content:center;flex:none">
             <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
           </span>
           <div style="display:flex;flex-direction:column;gap:6px">
@@ -600,7 +640,7 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
           </div>
         </article>
         <article style="flex:0 0 clamp(240px,72vw,290px);scroll-snap-align:start;background:#FFFEFB;border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:14px">
-          <span style="width:64px;height:64px;border-radius:50%;background:#E1EAE3;display:flex;align-items:center;justify-content:center;flex:none">
+          <span style="width:64px;height:64px;border-radius:50%;background:#DFE8E2;display:flex;align-items:center;justify-content:center;flex:none">
             <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.5" r="2"></circle><path d="M12 6.5v6"></path><path d="M12 12.5 9 21"></path><path d="m12 12.5 3 8.5"></path><path d="M7.5 10h9"></path></svg>
           </span>
           <div style="display:flex;flex-direction:column;gap:6px">
@@ -610,7 +650,7 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
         </article>
         
         <article style="flex:0 0 clamp(240px,72vw,290px);scroll-snap-align:start;background:#FFFEFB;border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:14px">
-          <span style="width:64px;height:64px;border-radius:50%;background:#E1EAE3;display:flex;align-items:center;justify-content:center;flex:none">
+          <span style="width:64px;height:64px;border-radius:50%;background:#DFE8E2;display:flex;align-items:center;justify-content:center;flex:none">
             <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.6" r="1.2"></circle><path d="M12 5.8v1.6"></path><path d="M4.2 15a7.8 7.8 0 0 1 15.6 0Z"></path><path d="M2.5 18.4h19"></path></svg>
           </span>
           <div style="display:flex;flex-direction:column;gap:6px">
@@ -619,7 +659,7 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
           </div>
         </article>
         <article style="flex:0 0 clamp(240px,72vw,290px);scroll-snap-align:start;background:#FFFEFB;border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:14px">
-          <span style="width:64px;height:64px;border-radius:50%;background:#E1EAE3;display:flex;align-items:center;justify-content:center;flex:none">
+          <span style="width:64px;height:64px;border-radius:50%;background:#DFE8E2;display:flex;align-items:center;justify-content:center;flex:none">
             <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0L14.06 8.5A2 2 0 0 0 15.5 9.94l6.14 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"></path></svg>
           </span>
           <div style="display:flex;flex-direction:column;gap:6px">
@@ -628,7 +668,7 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
           </div>
         </article>
         <article style="flex:0 0 clamp(240px,72vw,290px);scroll-snap-align:start;background:#FFFEFB;border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:14px">
-          <span style="width:64px;height:64px;border-radius:50%;background:#E1EAE3;display:flex;align-items:center;justify-content:center;flex:none">
+          <span style="width:64px;height:64px;border-radius:50%;background:#DFE8E2;display:flex;align-items:center;justify-content:center;flex:none">
             <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
           </span>
           <div style="display:flex;flex-direction:column;gap:6px">
@@ -639,27 +679,25 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
   </div>
 </section>
 
-<section id="klub" style="background:#F5F0E6;width:100vw;margin-left:calc(50% - 50vw);scroll-margin-top:20px">
+<section id="klub" style="background:#F4F0E7;width:100vw;margin-left:calc(50% - 50vw);scroll-margin-top:20px">
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));align-items:center">
     <div style="display:flex;flex-direction:column;gap:16px;max-width:34em;padding:clamp(40px,5.6vw,80px) clamp(20px,4vw,56px) clamp(40px,5.6vw,80px) max(clamp(20px,5vw,72px),calc(50vw - 708px))">
-      <span style="font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Клуб по интересам</span>
-      <h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12">Место, где находят друзей</h2>
+      <h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12">Место, где <span style="color:#8E6F56">находят друзей</span></h2>
       <p style="font-size:17px;line-height:1.65;color:var(--muted)">Встречи трижды в неделю для наших подопечных и их соседей: гимнастика для равновесия, лекции, хор, шахматы и настольные игры. Одни и те же люди из района — через месяц-два появляются те, с кем звонят друг другу и гуляют между встречами.</p>
     </div>
-    <div data-m="klub-photo" style="position:relative;align-self:stretch;min-height:clamp(300px,38vw,520px);overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 7%);mask-image:linear-gradient(to right,transparent,#000 7%)"><image-slot id="klub-photo" shape="rect" placeholder="Фото: светлый зал клуба, пожилые люди за большим столом, разговор и смех" style="width:100%;height:100%"></image-slot></div>
+    <div data-m="klub-photo" style="position:relative;align-self:stretch;min-height:clamp(300px,38vw,520px);overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 7%);mask-image:linear-gradient(to right,transparent,#000 7%)"><image-slot id="klub-photo" src="img/klub-photo.jpg" fit="cover" shape="rect" placeholder="Фото: светлый зал клуба, пожилые люди за большим столом, разговор и смех" style="width:100%;height:100%"></image-slot></div>
   </div>
 </section>
 
 <section id="nasledie" style="position:relative;padding:clamp(40px,5.6vw,72px) 0;background:#FFFEFB;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));scroll-margin-top:20px">
-  <svg data-thread="linden" aria-hidden="true" width="190" viewBox="0 0 190 150" fill="none" style="position:absolute;right:max(clamp(20px,5vw,72px),calc(50vw - 708px));top:clamp(24px,3vw,40px);width:190px;height:auto;pointer-events:none"><g stroke="#8E6F56" stroke-opacity=".16" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M186 6C158 18 128 32 104 49C80 66 52 88 22 116"></path><g transform="translate(160 15) rotate(160) scale(0.85)"><path d="M0 -9L0 0"></path><path d="M0 0C-8 -6 -18 2 -14 14C-11 23 -2 28 4 36C8 27 16 20 16 10C16 0 6 -4 0 0Z"></path><path d="M0 0C2 12 3 24 4 35"></path></g><g transform="translate(138 27) rotate(12) scale(0.85)"><path d="M0 -9L0 0"></path><path d="M0 0C-8 -6 -18 2 -14 14C-11 23 -2 28 4 36C8 27 16 20 16 10C16 0 6 -4 0 0Z"></path><path d="M0 0C2 12 3 24 4 35"></path></g><g transform="translate(113 41) rotate(192) scale(0.85)"><path d="M0 -9L0 0"></path><path d="M0 0C-8 -6 -18 2 -14 14C-11 23 -2 28 4 36C8 27 16 20 16 10C16 0 6 -4 0 0Z"></path><path d="M0 0C2 12 3 24 4 35"></path></g><g transform="translate(90 57) rotate(-6) scale(0.85)"><path d="M0 -9L0 0"></path><path d="M0 0C-8 -6 -18 2 -14 14C-11 23 -2 28 4 36C8 27 16 20 16 10C16 0 6 -4 0 0Z"></path><path d="M0 0C2 12 3 24 4 35"></path></g><g transform="translate(66 75) rotate(172) scale(0.85)"><path d="M0 -9L0 0"></path><path d="M0 0C-8 -6 -18 2 -14 14C-11 23 -2 28 4 36C8 27 16 20 16 10C16 0 6 -4 0 0Z"></path><path d="M0 0C2 12 3 24 4 35"></path></g><g transform="translate(42 96) rotate(22) scale(0.85)"><path d="M0 -9L0 0"></path><path d="M0 0C-8 -6 -18 2 -14 14C-11 23 -2 28 4 36C8 27 16 20 16 10C16 0 6 -4 0 0Z"></path><path d="M0 0C2 12 3 24 4 35"></path></g><g transform="translate(25 111) rotate(50) scale(0.7)"><path d="M0 -9L0 0"></path><path d="M0 0C-8 -6 -18 2 -14 14C-11 23 -2 28 4 36C8 27 16 20 16 10C16 0 6 -4 0 0Z"></path><path d="M0 0C2 12 3 24 4 35"></path></g></g></svg>
   <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:baseline;justify-content:space-between">
     <div style="display:flex;flex-direction:column;gap:14px;max-width:24em">
       
-      <h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12">Наши подарки за лояльность</h2>
+      <h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12">Наши подарки <span style="color:#8E6F56">за лояльность</span></h2>
     </div>
   </div>
 
-  <div data-m="gift-scale" style="margin-top:clamp(30px,4vw,44px);padding:clamp(26px,3vw,38px) clamp(14px,2.4vw,32px);background:#E1EAE3;border-radius:var(--r)">
+  <div data-m="gift-scale" style="margin-top:clamp(30px,4vw,44px);padding:clamp(26px,3vw,38px) clamp(14px,2.4vw,32px);background:#DFE8E2;border-radius:var(--r)">
     <div style="position:relative;display:grid;grid-template-columns:repeat(3,1fr);align-items:start">
       <span style="position:absolute;left:16.667%;right:16.667%;top:46px;height:2px;background:rgba(31,61,52,.18)"></span>
       <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
@@ -681,17 +719,17 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
   </div>
 
   <div data-m="gift-cards" style="margin-top:clamp(18px,2.2vw,26px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(14px,1.8vw,20px)">
-    <div style="background:#F3E9D8;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:12px">
+    <div style="background:#F4F0E7;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:12px">
       <span style="width:52px;height:52px;border-radius:50%;background:#FFFEFB;display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#8E6F56" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="13" y="8" width="8" height="13" rx="2"></rect><path d="M17 17.5h.01"></path><path d="M9 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2"></path><path d="M6 21h5"></path><path d="M8.5 17v4"></path></svg></span>
       <h3 style="font-size:clamp(20px,2.1vw,23px);line-height:1.2">Курсы цифровой грамотности</h3>
       <p style="font-size:16px;line-height:1.5;color:var(--muted)">Занятия один на один: видеозвонки детям и внукам, банк, такси, аптека. Без снисходительности.</p>
     </div>
-    <div style="background:#F3E9D8;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:12px">
+    <div style="background:#F4F0E7;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:12px">
       <span style="width:52px;height:52px;border-radius:50%;background:#FFFEFB;display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#8E6F56" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 22H4a2 2 0 0 1-2-2V6"></path><path d="m22 13-1.3-1.3a2 2 0 0 0-2.8 0L14 16"></path><circle cx="12" cy="8" r="2"></circle><rect x="6" y="2" width="16" height="16" rx="2"></rect></svg></span>
       <h3 style="font-size:clamp(20px,2.1vw,23px);line-height:1.2">Проект «Наследие»</h3>
       <p style="font-size:16px;line-height:1.5;color:var(--muted)">Оцифровываем семейные фото и видео и записываем воспоминания в единый архив.</p>
     </div>
-    <div style="background:#F3E9D8;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:12px">
+    <div style="background:#F4F0E7;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:12px">
       <span style="width:52px;height:52px;border-radius:50%;background:#FFFEFB;display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#8E6F56" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a2 2 0 0 1 .71-1.53l7-6a2 2 0 0 1 2.58 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M15 21v-7a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v7"></path></svg></span>
       <h3 style="font-size:clamp(20px,2.1vw,23px);line-height:1.2">Неделя в санатории</h3>
       <p style="font-size:16px;line-height:1.5;color:var(--muted)">Путёвка на неделю, всё включено. С сопровождением, если оно нужно.</p>
@@ -701,15 +739,15 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
   <p style="margin-top:clamp(18px,2.2vw,26px);font-size:18px;line-height:1.55;color:var(--muted)">Это наша благодарность за то, что вы остаётесь с нами.</p>
 </section>
 
-<section style="padding:clamp(40px,5.6vw,72px) 0;background:#F5F0E6;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
+<section style="padding:clamp(40px,5.6vw,72px) 0;background:#F4F0E7;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
   <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:baseline;justify-content:space-between">
-    <h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12;max-width:24em">Наши отличия от сиделки или "своего" врача</h2>
+    <div><h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12;max-width:24em">Наши отличия <span style="color:#8E6F56">от сиделки или "своего" врача</span></h2></div>
     <p style="font-size:16px;line-height:1.6;color:var(--muted);max-width:24em">Ни один из них не отвечает за родителя целиком и постоянно.</p>
   </div>
 
   <div data-m="cmp" style="margin-top:clamp(28px,3.5vw,44px);background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:grid;grid-template-columns:minmax(0,0.78fr) minmax(0,1.4fr)">
 
-    <div data-h="1" style="padding:clamp(16px,1.8vw,22px) clamp(20px,2.4vw,30px);background:#F5F0E6">
+    <div data-h="1" style="padding:clamp(16px,1.8vw,22px) clamp(20px,2.4vw,30px);background:#F4F0E7">
       <span style="font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2)">Как обычно</span>
     </div>
     <div data-h="1" style="padding:clamp(16px,1.8vw,22px) clamp(20px,2.4vw,30px);display:flex;align-items:center;gap:10px">
@@ -717,41 +755,41 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
       <span style="font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink)">С Со-Действием</span>
     </div>
 
-    <div data-l="1" style="padding:clamp(22px,2.6vw,30px) clamp(20px,2.4vw,30px);border-top:1px solid var(--line-2);background:#F5F0E6;display:flex;gap:14px;align-items:flex-start">
+    <div data-l="1" style="padding:clamp(22px,2.6vw,30px) clamp(20px,2.4vw,30px);border-top:1px solid var(--line-2);background:#F4F0E7;display:flex;gap:14px;align-items:flex-start">
       <span data-m="cmp-label" style="display:none">Как обычно</span>
       <span data-m="cmp-num" style="font-size:13px;font-weight:500;letter-spacing:.06em;color:var(--muted);flex:none;padding-top:3px">01</span>
       <span style="font-size:17px;line-height:1.45;color:var(--muted)">Врач отдельно, сиделка отдельно, организация — на вас</span>
     </div>
     <div data-r="1" style="padding:clamp(22px,2.6vw,30px) clamp(20px,2.4vw,30px);border-top:1px solid var(--line-2);background:#FFFEFB;display:flex;gap:14px;align-items:flex-start">
       <span data-m="cmp-label2" style="display:none">С Со-Действием</span>
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><circle cx="12" cy="12" r="10.5" fill="#E1EAE3"></circle><path d="M7.5 12.4l3.2 3.1L16.6 9" stroke="#1F3D34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><circle cx="12" cy="12" r="10.5" fill="#DFE8E2"></circle><path d="M7.5 12.4l3.2 3.1L16.6 9" stroke="#1F3D34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       <div style="display:flex;flex-direction:column;gap:6px">
         <span style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(23px,2.5vw,30px);line-height:1.15;letter-spacing:-.01em;color:#1F2A26">Всё в одном окне</span>
         <p style="font-size:16px;line-height:1.55;color:var(--ink-2)">Куратор держит всю картину, не нужно быть посредником между разными людьми и службами.</p>
       </div>
     </div>
 
-    <div data-l="1" style="padding:clamp(22px,2.6vw,30px) clamp(20px,2.4vw,30px);border-top:1px solid var(--line-2);background:#F5F0E6;display:flex;gap:14px;align-items:flex-start">
+    <div data-l="1" style="padding:clamp(22px,2.6vw,30px) clamp(20px,2.4vw,30px);border-top:1px solid var(--line-2);background:#F4F0E7;display:flex;gap:14px;align-items:flex-start">
       <span style="font-size:13px;font-weight:500;letter-spacing:.06em;color:var(--muted);flex:none;padding-top:3px">02</span>
       <span style="font-size:17px;line-height:1.45;color:var(--muted)">Обращаются, когда заболит</span>
     </div>
     <div data-r="1" style="padding:clamp(22px,2.6vw,30px) clamp(20px,2.4vw,30px);border-top:1px solid var(--line-2);background:#FFFEFB;display:flex;gap:14px;align-items:flex-start">
       <span data-m="cmp-label2" style="display:none">С Со-Действием</span>
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><circle cx="12" cy="12" r="10.5" fill="#E1EAE3"></circle><path d="M7.5 12.4l3.2 3.1L16.6 9" stroke="#1F3D34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><circle cx="12" cy="12" r="10.5" fill="#DFE8E2"></circle><path d="M7.5 12.4l3.2 3.1L16.6 9" stroke="#1F3D34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       <div style="display:flex;flex-direction:column;gap:6px">
         <span style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(23px,2.5vw,30px);line-height:1.15;letter-spacing:-.01em;color:#1F2A26">Превентивный метод лечения</span>
         <p style="font-size:16px;line-height:1.55;color:var(--ink-2)">Куратор замечает просроченные анализы и заканчивающиеся лекарства раньше, чем это станет поводом обращаться к врачу.</p>
       </div>
     </div>
 
-    <div data-l="1" style="padding:clamp(22px,2.6vw,30px) clamp(20px,2.4vw,30px);border-top:1px solid var(--line-2);background:#F5F0E6;display:flex;gap:14px;align-items:flex-start">
+    <div data-l="1" style="padding:clamp(22px,2.6vw,30px) clamp(20px,2.4vw,30px);border-top:1px solid var(--line-2);background:#F4F0E7;display:flex;gap:14px;align-items:flex-start">
       <span data-m="cmp-label" style="display:none">Как обычно</span>
       <span data-m="cmp-num" style="font-size:13px;font-weight:500;letter-spacing:.06em;color:var(--muted);flex:none;padding-top:3px">03</span>
       <span style="font-size:17px;line-height:1.45;color:var(--muted)">Частные клиники и аптеки заинтересованы продать вам лишние процедуры и лекарства</span>
     </div>
     <div data-r="1" style="padding:clamp(22px,2.6vw,30px) clamp(20px,2.4vw,30px);border-top:1px solid var(--line-2);background:#FFFEFB;display:flex;gap:14px;align-items:flex-start">
       <span data-m="cmp-label2" style="display:none">С Со-Действием</span>
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><circle cx="12" cy="12" r="10.5" fill="#E1EAE3"></circle><path d="M7.5 12.4l3.2 3.1L16.6 9" stroke="#1F3D34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:none;margin-top:4px"><circle cx="12" cy="12" r="10.5" fill="#DFE8E2"></circle><path d="M7.5 12.4l3.2 3.1L16.6 9" stroke="#1F3D34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       <div style="display:flex;flex-direction:column;gap:6px">
         <span style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(23px,2.5vw,30px);line-height:1.15;letter-spacing:-.01em;color:#1F2A26">Никаких лишних назначений</span>
         <p style="font-size:16px;line-height:1.55;color:var(--ink-2)">Ни куратор, ни врач не имеют KPI и действуют только для достижения результата.&nbsp;</p>
@@ -766,9 +804,59 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
 
 
 
+<section id="komanda" data-screen-label="Наша команда" style="padding:clamp(40px,5.6vw,72px) 0;background:#1F3D34;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));scroll-margin-top:20px">
+  <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end;justify-content:space-between"><div style="display:flex;flex-direction:column;gap:12px;max-width:34em">
+    <h2 style="font-family:Lora,Georgia,serif;font-size:clamp(32px,4.4vw,48px);line-height:1.12;color:#FFFEFB">Наша <span style="color:#D9C3A8">команда</span></h2>
+    <p style="font-size:16px;line-height:1.6;color:rgba(255,254,251,.84);max-width:26em">Люди, которые будут знать вашего родителя по имени.</p></div>
+    <div style="display:flex;gap:12px;flex:none"><button type="button" onClick="{{ carPrev }}" aria-label="Назад" style="width:52px;height:52px;border-radius:50%;background:transparent;border:1px solid rgba(255,254,251,.4);color:#FFFEFB;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .18s ease,color .18s ease" style-hover="background:#FFFEFB;color:#1F3D34;border-color:#FFFEFB"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button><button type="button" onClick="{{ carNext }}" aria-label="Вперёд" style="width:52px;height:52px;border-radius:50%;background:transparent;border:1px solid rgba(255,254,251,.4);color:#FFFEFB;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .18s ease,color .18s ease" style-hover="background:#FFFEFB;color:#1F3D34;border-color:#FFFEFB"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button></div>
+  </div>
+  <div data-rail="1" style="display:flex;gap:clamp(16px,2vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-top:clamp(28px,3.6vw,44px)">
+    <article style="flex:0 0 clamp(250px,72vw,360px);scroll-snap-align:start;display:flex;flex-direction:column;gap:16px;min-width:0">
+      <div style="aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:#2C4F44"><image-slot id="team-1" fit="cover" shape="rect" placeholder="Фото: Александр Лысенков, портрет"></image-slot></div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <span style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#D9C3A8">Основатель</span>
+        <h3 style="font-family:Lora,Georgia,serif;font-size:21px;line-height:1.25;color:#FFFEFB">Александр Лысенков</h3>
+        <p style="font-size:15.5px;line-height:1.5;color:rgba(255,254,251,.84)">Отвечает за качество ухода в каждой семье.</p>
+      </div>
+    </article>
+    <article style="flex:0 0 clamp(250px,72vw,360px);scroll-snap-align:start;display:flex;flex-direction:column;gap:16px;min-width:0">
+      <div style="aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:#2C4F44"><image-slot id="team-5" fit="cover" shape="rect" placeholder="Фото: Сергей Косенко, портрет"></image-slot></div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <span style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#D9C3A8">Медицинский директор</span>
+        <h3 style="font-family:Lora,Georgia,serif;font-size:21px;line-height:1.25;color:#FFFEFB">Сергей Косенко</h3>
+        <p style="font-size:15.5px;line-height:1.5;color:rgba(255,254,251,.84)">Контролирует медицинскую часть и работу врачей.</p>
+      </div>
+    </article>
+    <article style="flex:0 0 clamp(250px,72vw,360px);scroll-snap-align:start;display:flex;flex-direction:column;gap:16px;min-width:0">
+      <div style="aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:#2C4F44"><image-slot id="team-6" fit="cover" shape="rect" placeholder="Фото: Ярослав Разводов, портрет"></image-slot></div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <span style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#D9C3A8">Руководитель клиентского сервиса</span>
+        <h3 style="font-family:Lora,Georgia,serif;font-size:21px;line-height:1.25;color:#FFFEFB">Ярослав Разводов</h3>
+        <p style="font-size:15.5px;line-height:1.5;color:rgba(255,254,251,.84)">Руководит кураторами и отвечает за ваш опыт работы с нами.</p>
+      </div>
+    </article>
+    <article style="flex:0 0 clamp(250px,72vw,360px);scroll-snap-align:start;display:flex;flex-direction:column;gap:16px;min-width:0">
+      <div style="aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:#2C4F44"><image-slot id="team-2" fit="cover" shape="rect" placeholder="Фото: Елена Кузнецова, портрет"></image-slot></div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <span style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#D9C3A8">Врач-гериатр</span>
+        <h3 style="font-family:Lora,Georgia,serif;font-size:21px;line-height:1.25;color:#FFFEFB">Елена Кузнецова</h3>
+        <p style="font-size:15.5px;line-height:1.5;color:rgba(255,254,251,.84)">Составляет план ухода и следит за назначениями.</p>
+      </div>
+    </article>
+    <article style="flex:0 0 clamp(250px,72vw,360px);scroll-snap-align:start;display:flex;flex-direction:column;gap:16px;min-width:0">
+      <div style="aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:#2C4F44"><image-slot id="team-3" fit="cover" shape="rect" placeholder="Фото: Марина Белова, портрет"></image-slot></div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <span style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#D9C3A8">Куратор семей</span>
+        <h3 style="font-family:Lora,Georgia,serif;font-size:21px;line-height:1.25;color:#FFFEFB">Марина Белова</h3>
+        <p style="font-size:15.5px;line-height:1.5;color:rgba(255,254,251,.84)">Ваш единый контакт по всем вопросам.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
 <section id="istorii" style="padding:clamp(40px,5.6vw,72px) 0;background:#FFFEFB;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));scroll-margin-top:20px">
   <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:baseline;justify-content:space-between">
-    <h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12">Отзывы</h2>
+    <div><h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12"><span style="color:#8E6F56">Отзывы</span></h2></div>
     <p style="font-size:16px;color:var(--muted);max-width:26em">Пять семей, которые согласились рассказать, что изменилось.</p>
   </div>
 
@@ -777,7 +865,7 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
       <article style="flex:none;width:clamp(250px,26vw,300px);scroll-snap-align:start;background:#FFFEFB;border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:18px">
         <p style="font-size:16.5px;line-height:1.55;color:var(--ink-2)">{{ review.text }}</p>
         <div style="margin-top:auto;display:flex;align-items:center;gap:12px">
-          <span style="width:54px;height:54px;flex:none;border-radius:50%;background:#E1EAE3;color:#1F3D34;display:flex;align-items:center;justify-content:center;font-family:Lora,Georgia,serif;font-size:19px;font-weight:600;letter-spacing:.02em">{{ review.initials }}</span>
+          <span style="width:54px;height:54px;flex:none;border-radius:50%;background:#DFE8E2;color:#1F3D34;display:flex;align-items:center;justify-content:center;font-family:Lora,Georgia,serif;font-size:19px;font-weight:600;letter-spacing:.02em">{{ review.initials }}</span>
           <span style="display:flex;flex-direction:column;gap:1px">
             <span style="font-size:15.5px;font-weight:500;color:var(--ink)">{{ review.name }}</span>
             <span style="font-size:13px;color:var(--muted)">Родитель: {{ review.about }}</span>
@@ -788,12 +876,12 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
   </div>
 </section>
 
-<section id="faq" style="padding:clamp(40px,5.6vw,72px) 0;background:#F5F0E6;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));scroll-margin-top:20px">
+<section id="faq" style="padding:clamp(40px,5.6vw,72px) 0;background:#F4F0E7;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));scroll-margin-top:20px">
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(24px,4vw,56px);align-items:start">
     <div>
-      <h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12">Частые вопросы</h2>
-      <p style="margin-top:14px;font-size:18px;line-height:1.6;color:var(--muted);max-width:24em">Если вашего вопроса здесь нет — задайте его на бесплатной консультации — 5 минут, без обязательств.</p>
-      <a href="#zayavka" style="display:inline-flex;margin-top:20px;padding:13px 24px;border-radius:999px;border:1.5px solid #1F3D34;background:transparent;color:#1F3D34;font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:#EEF3EF;color:#1F3D34">Задать свой вопрос</a>
+      <h2 style="font-size:clamp(32px,4.4vw,48px);line-height:1.12">Частые <span style="color:#8E6F56">вопросы</span></h2>
+      <p style="margin-top:14px;font-size:18px;line-height:1.6;color:var(--muted);max-width:24em">Если вашего вопроса здесь нет — задайте его на консультации — 5 минут, без обязательств.</p>
+      <a href="#zayavka" style="display:inline-flex;margin-top:20px;padding:13px 24px;border-radius:4px;border:1.5px solid #1F3D34;background:transparent;color:#1F3D34;font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:#EAF0EC;color:#1F3D34">Задать свой вопрос</a>
     </div>
     <div style="display:flex;flex-direction:column">
       <sc-for list="{{ faq }}" as="item" hint-placeholder-count="6">
@@ -816,16 +904,15 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
 
 
 
-<section id="zayavka" style="padding:clamp(40px,5.6vw,72px) 0;background:#F3E9D8;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));scroll-margin-top:20px">
+<section id="zayavka" style="padding:clamp(40px,5.6vw,72px) 0;background:#F4F0E7;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));scroll-margin-top:20px">
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(20px,3vw,40px);align-items:stretch">
     <div style="position:relative;overflow:hidden;padding:clamp(8px,1.6vw,20px) 0;display:flex;flex-direction:column;gap:16px">
-      <h2 style="position:relative;z-index:1;font-size:clamp(32px,4.4vw,48px);line-height:1.12">Начнём <em style="font-style:italic;color:#1F3D34">с разговора</em></h2>
+      <h2 style="position:relative;z-index:1;font-size:clamp(32px,4.4vw,48px);line-height:1.12">Начнём <span style="color:#8E6F56">с разговора</span></h2>
       <p style="position:relative;font-size:18px;line-height:1.6;color:var(--muted)">Куратор перезвонит в течение дня — консультация занимает 5 минут и ни к чему не обязывает. Если мы не подходим вашей ситуации, скажем прямо.</p>
       <div style="position:relative;display:flex;flex-direction:column;gap:2px;margin-top:auto;padding-top:20px">
         <a href="tel:+79958870941" style="font-family:Lora,Georgia,serif;font-size:24px;color:var(--ink)" style-hover="color:var(--accent)">+7 995 887-09-41</a>
-        <span style="font-size:14px;color:var(--muted)">Ежедневно с 7:00 до 22:00 · <a href="mailto:info@so-deystvie.com">info@so-deystvie.com</a></span>
+        <span style="font-size:14px;color:var(--muted)">Ежедневно с 10:00 до 22:00 · <a href="mailto:info@sodeistvie-family.ru">info@sodeistvie-family.ru</a></span>
       </div>
-      <svg aria-hidden="true" width="262" viewBox="0 0 262 60" fill="none" style="position:relative;display:block;width:min(100%,262px);height:auto;margin-top:18px;margin-left:-4px;pointer-events:none"><path d="M0 30C30 18 60 44 96 36C126 29 140 10 160 16C178 22 168 44 150 40C134 36 150 20 176 26C204 32 222 44 245 40" stroke="#8E6F56" stroke-opacity=".22" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="249" cy="40" r="3" fill="#8E6F56" fill-opacity=".75"></circle><circle cx="257" cy="40" r="3" fill="#1F3D34" fill-opacity=".4"></circle></svg>
     </div>
     <form onSubmit="{{ onSubmit }}" novalidate="{{ true }}" style="padding:clamp(24px,3.4vw,44px);display:flex;flex-direction:column;gap:16px;background:#FFFEFB;border-radius:var(--r)">
       <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
@@ -839,12 +926,12 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px">
             <label style="display:flex;flex-direction:column;gap:7px">
               <span style="font-size:14px;font-weight:500;color:var(--ink)">Как вас зовут</span>
-              <input type="text" value="{{ name }}" onChange="{{ onName }}" placeholder="Анна" style="padding:13px 17px;border-radius:999px;border:1.5px solid #A89C8C;background:var(--card);font-size:18px;color:var(--ink);width:100%">
+              <input type="text" value="{{ name }}" onChange="{{ onName }}" placeholder="Анна" style="padding:13px 17px;border-radius:4px;border:1.5px solid #A89C8C;background:var(--card);font-size:18px;color:var(--ink);width:100%">
               <sc-if value="{{ errName }}" hint-placeholder-val="{{ false }}"><span style="font-size:14px;color:var(--accent-deep)">Напишите, пожалуйста, имя</span></sc-if>
             </label>
             <label style="display:flex;flex-direction:column;gap:7px">
               <span style="font-size:14px;font-weight:500;color:var(--ink)">Телефон</span>
-              <input type="tel" value="{{ phone }}" onChange="{{ onPhone }}" placeholder="+7 900 000-00-00" style="padding:13px 17px;border-radius:999px;border:1.5px solid #A89C8C;background:var(--card);font-size:18px;color:var(--ink);width:100%">
+              <input type="tel" value="{{ phone }}" onChange="{{ onPhone }}" placeholder="+7 900 000-00-00" style="padding:13px 17px;border-radius:4px;border:1.5px solid #A89C8C;background:var(--card);font-size:18px;color:var(--ink);width:100%">
               <sc-if value="{{ errPhone }}" hint-placeholder-val="{{ false }}"><span style="font-size:14px;color:var(--accent-deep)">Нужен номер из 10–11 цифр</span></sc-if>
             </label>
           </div>
@@ -852,7 +939,7 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
             <span style="font-size:14px;font-weight:500;color:var(--ink)">Коротко о ситуации родителя <span style="color:var(--muted)">— по желанию</span></span>
             <textarea rows="3" value="{{ note }}" onChange="{{ onNote }}" placeholder="Маме 82, живёт одна, после перелома стало тяжело" style="padding:13px 17px;border-radius:var(--r-sm);border:1.5px solid #A89C8C;background:var(--card);font-size:18px;color:var(--ink);resize:vertical;width:100%"></textarea>
           </label>
-          <button type="submit" style="width:100%;padding:17px 30px;border-radius:999px;border:none;background:#1F3D34;color:#FFFEFB;font-size:16.5px;font-weight:500;cursor:pointer;transition:background .18s ease" style-hover="background:#2E5446">Получить консультацию</button>
+          <button type="submit" style="width:100%;padding:17px 30px;border-radius:4px;border:none;background:#1F3D34;color:#FFFEFB;font-size:16.5px;font-weight:500;cursor:pointer;transition:background .18s ease" style-hover="background:#2E5446">Получить консультацию</button>
           <p style="font-size:13.5px;line-height:1.5;color:var(--muted)">Отправляя заявку, вы соглашаетесь на обработку персональных данных. Мы не звоним с предложениями и не передаём данные третьим лицам.</p>
         </div>
       </sc-if>
@@ -864,8 +951,8 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:clamp(26px,3.4vw,48px);align-items:stretch">
 
     <div style="display:flex;flex-direction:column;gap:14px;grid-column:span 1">
-      <img src="logo-light.svg" alt="Со-Действие" width="201" height="44" style="display:block;height:44px;width:auto">
-      <p style="font-size:16px;line-height:1.6;color:var(--muted);max-width:26em">Закреплённая команда для родителей в Москве и Московской области.</p>
+      <div style="display:flex;align-items:center;gap:12px;align-self:flex-start;"><img src="logo-mark.png" alt="" width="289" height="245" data-logo="1" style="display:block;height:56px;width:auto"><div style="display:flex;flex-direction:column;gap:5px"><div style="font-family:Lora,Georgia,serif;font-weight:500;font-size:30px;line-height:1;letter-spacing:-.015em;color:#1F3D34;white-space:nowrap">Со-Действие</div><div style="font-size:12px;line-height:1;letter-spacing:.22em;text-transform:uppercase;color:#6B6458;white-space:nowrap">Забота, которая рядом</div></div></div>
+      <p style="font-size:16px;line-height:1.6;color:var(--muted);max-width:26em">Экосистема заботы о вашем родителе: персональный куратор и проверенные специалисты решают всё — от здоровья до быта. Постоянно, а не когда уже случилось.</p>
       <div style="display:flex;gap:10px;margin-top:2px">
         <a href="kontakty.html" aria-label="Телеграм" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);color:var(--ink-2)" style-hover="border-color:var(--ink);color:var(--ink)"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M18 3 2 9.3l4.4 1.5L8 17l2.6-3.4L15 16z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a>
         <a href="kontakty.html" aria-label="ВКонтакте" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);color:var(--ink-2)" style-hover="border-color:var(--ink);color:var(--ink)"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M2.5 6h3c.4 3 1.9 5.4 3 5.4V6h2.8v3c1 0 2-1.3 2.6-3h2.6c-.5 1.9-1.5 3.4-2.6 4.1 1.2.7 2.3 2.1 2.9 3.9h-2.9c-.5-1.4-1.4-2.6-2.6-2.6V14H8.4C4.9 14 3 10.6 2.5 6z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path></svg></a>
@@ -891,15 +978,15 @@ input::placeholder,textarea::placeholder{color:rgba(95,87,79,.7)}
     <div style="display:flex;flex-direction:column;gap:11px">
       <span style="font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">Связаться</span>
       <a href="tel:+79958870941" style="font-family:Lora,Georgia,serif;font-size:24px;line-height:1.1;color:var(--ink)" style-hover="color:var(--accent)">+7 995 887-09-41</a>
-      <span style="font-size:14px;color:var(--muted)">Ежедневно 7:00–22:00<br>Экстренная линия — круглосуточно</span>
-      <a href="mailto:info@so-deystvie.com" style="font-size:16px;color:var(--ink-2)" style-hover="color:var(--accent)">info@so-deystvie.com</a>
+      <span style="font-size:14px;color:var(--muted)">Ежедневно 10:00–22:00<br>Экстренная линия — круглосуточно</span>
+      <a href="mailto:info@sodeistvie-family.ru" style="font-size:16px;color:var(--ink-2)" style-hover="color:var(--accent)">info@sodeistvie-family.ru</a>
       <span style="font-size: 14px; line-height: 1.6; color: var(--muted); width: 235px; height: 30px">Москва, 2-й Боткинский проезд, 8<br></span>
-      <a href="#zayavka" style="display:inline-flex;align-items:center;justify-content:center;text-align:center;line-height:1.2;align-self:flex-start;margin-top:auto;padding:13px 24px;border-radius:999px;background:var(--accent);color:var(--card);font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:#2E5446">Получить консультацию</a>
+      <a href="#zayavka" style="display:inline-flex;align-items:center;justify-content:center;text-align:center;line-height:1.2;align-self:flex-start;margin-top:auto;padding:13px 24px;border-radius:4px;background:var(--accent);color:var(--card);font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:#2E5446">Получить консультацию</a>
     </div>
   </div>
 
   <div style="display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:space-between;align-items:baseline;margin-top:clamp(28px,3.4vw,44px);padding-top:20px;border-top:1px solid var(--line)">
-    <span style="font-size:14px;color:var(--muted)">© 2026 ООО «Со-Действие» · ИНН 773119151503</span>
+    <span style="font-size:14px;color:var(--muted)">© 2026 ИП Лысенков А. В. · ИНН 773119151503</span>
     <div style="display:flex;flex-wrap:wrap;gap:18px">
       <a href="kontakty.html" style="font-size:14px;color:var(--muted)" style-hover="color:var(--ink)">Политика конфиденциальности</a>
       <a href="kontakty.html" style="font-size:14px;color:var(--muted)" style-hover="color:var(--ink)">Договор и оферта</a>
@@ -919,7 +1006,7 @@ class Component extends DCLogic {
     { q: "Как вы проверяете сиделок и специалистов?", a: "Работаем только со проверенными людьми: смотрим документы и опыт, берём рекомендации с прошлых мест, проводим собственное интервью. Оформление официальное, а работу контролирует куратор — если что-то не так, меняем без паузы в уходе.", __old: "Нет. Мы работаем там, где живёт родитель: врач и медсестра приезжают на дом, куратор организует всё вокруг. Переезд обсуждаем только если дома стало небезопасно — и тогда это отдельное решение семьи." },
     { q: "Чем гериатр отличается от обычного терапевта?", a: "Гериатр смотрит не на одну болезнь, а на то, как в пожилом возрасте взаимодействуют несколько диагнозов и десяток назначений. Часто его первая работа — не добавить лекарства, а убрать лишние." },
     { q: "А если родитель не хочет никакой помощи?", a: "Это норма, и мы это учитываем. Начинаем с малого — одного визита врача, разговора без давления. Куратор специально обучен не ломать сопротивление, а договариваться." },
-    { q: "Вы лечите сами или направляете к другим врачам?", a: "Ведём сами: личный гериатр держит общий план, медсестра выполняет назначения на дому. Когда нужен узкий специалист, мы не отправляем вас искать его — подбираем проверенного врача, организуем приём и возвращаем результат в общий план.", __old: "Отвечает дежурный экстренной службы, у которого открыта карта вашего родителя. Решение «скорая или до утра» принимает врач — он же при необходимости встречает скорую и передаёт медикам историю." },
+    { q: "Вы лечите сами или направляете к другим врачам?", a: "Ведём сами: личный гериатр держит общий план, медсестра выполняет назначения на дому. Когда нужен узкий специалист, мы не отправляем вас искать его — подбираем проверенного врача, организуем приём и возвращаем результат в общий план." },
     { q: "Как можно отказаться и что будет с данными?", a: "Расторжение — в любой момент, без штрафов, оплачивается только начатый месяц. Медицинскую карту и результаты обследований мы передаём вам целиком." }
   ];
 
@@ -1116,7 +1203,7 @@ class Component extends DCLogic {
   mix(a, b, t) { const A = this.hex(a), B = this.hex(b); return this.out(A.map((x, i) => x + (B[i] - x) * t)); }
 
   planBtn(active) {
-    return "flex:1 1 0;min-height:44px;padding:10px 12px;border-radius:999px;border:none;cursor:pointer;font-family:inherit;font-size:14.5px;font-weight:500;line-height:1.2;transition:background .18s ease;" + (active ? "background:#1F3D34;color:#FFFEFB;" : "background:transparent;color:#1F2A26;");
+    return "flex:1 1 0;min-height:44px;padding:10px 12px;border-radius:4px;border:none;cursor:pointer;font-family:inherit;font-size:14.5px;font-weight:500;line-height:1.2;transition:background .18s ease;" + (active ? "background:#1F3D34;color:#FFFEFB;" : "background:transparent;color:#1F2A26;");
   }
 
   digits(s) { return (s || "").replace(/\D/g, ""); }
@@ -1141,6 +1228,10 @@ class Component extends DCLogic {
     { text: "Сиделку подобрали за четыре дня, замена была один раз — всё решили без меня.", name: "Ольга Терентьева, 55", about: "мама с деменцией", sex: "f" }
   ];
 
+  carBy(e, dir) {
+    const el = e.currentTarget.closest('section').querySelector('[data-rail]');
+    if (el) el.scrollBy({ left: dir * Math.max(280, el.clientWidth * 0.8), behavior: "smooth" });
+  }
   renderVals() {
     const s = this.state;
     const group = this.feed[s.tab] || this.feed[0];
@@ -1148,10 +1239,12 @@ class Component extends DCLogic {
     const tabs = this.feed.slice(0, 3).map((g, i) => ({
       label: g.label,
       onClick: () => this.setState({ tab: i }),
-      style: "min-height:44px;padding:11px 20px;border-radius:999px;border:1px solid transparent;cursor:pointer;font-family:inherit;font-size:15px;font-weight:500;white-space:nowrap;transition:background .18s ease,border-color .18s ease;"
+      style: "min-height:44px;padding:11px 20px;border-radius:4px;border:1px solid transparent;cursor:pointer;font-family:inherit;font-size:15px;font-weight:500;white-space:nowrap;transition:background .18s ease,border-color .18s ease;"
         + (i === s.tab ? "background:var(--accent);color:var(--card);" : "background:transparent;color:var(--ink-2);border-color:var(--line);")
     }));
     return {
+      carPrev: (e) => this.carBy(e, -1),
+      carNext: (e) => this.carBy(e, 1),
       tabs, lead: items[0], rest: items.slice(1, 5),
       medOpen: s.medOpen, bytOpen: s.bytOpen,
       toggleMed: () => this.setState({ medOpen: !s.medOpen }),
@@ -1164,6 +1257,8 @@ class Component extends DCLogic {
       selR1: () => this.setState({ reason: 1 }),
       selR0Style: this.planBtn(s.reason !== 1),
       selR1Style: this.planBtn(s.reason === 1),
+      tabR0Style: s.reason !== 1 ? "width:100%;background:#1F3D34;border:0;border-radius:4px;padding:16px 12px;font-family:inherit;font-size:16.5px;font-weight:500;color:#FFFEFB;cursor:pointer;transition:background .18s ease" : "width:100%;background:transparent;border:0;border-radius:4px;padding:16px 12px;font-family:inherit;font-size:16.5px;font-weight:500;color:#1F3D34;cursor:pointer;transition:background .18s ease",
+      tabR1Style: s.reason === 1 ? "width:100%;background:#1F3D34;border:0;border-radius:4px;padding:16px 12px;font-family:inherit;font-size:16.5px;font-weight:500;color:#FFFEFB;cursor:pointer;transition:background .18s ease" : "width:100%;background:transparent;border:0;border-radius:4px;padding:16px 12px;font-family:inherit;font-size:16.5px;font-weight:500;color:#1F3D34;cursor:pointer;transition:background .18s ease",
       hide0: s.plan === 1 ? "1" : "0",
       hide1: s.plan === 1 ? "0" : "1",
       selPlan0: () => this.setState({ plan: 0 }),
@@ -1178,7 +1273,7 @@ class Component extends DCLogic {
         q: it.q, a: it.a, open: s.faqOpen === i,
         onClick: () => this.setState({ faqOpen: s.faqOpen === i ? -1 : i }),
         iconStyle: "width:30px;height:30px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;transition:transform .2s ease;"
-          + (s.faqOpen === i ? "background:#1F3D34;color:#FFFEFB;transform:rotate(45deg);" : "background:#E1EAE3;color:#1F3D34;")
+          + (s.faqOpen === i ? "background:#1F3D34;color:#FFFEFB;transform:rotate(45deg);" : "background:#DFE8E2;color:#1F3D34;")
       })),
       name: s.name, phone: s.phone, note: s.note,
       sent: s.sent, notSent: !s.sent,

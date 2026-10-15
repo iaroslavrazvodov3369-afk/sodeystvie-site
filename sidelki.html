@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<script src="support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -11,14 +11,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=Onest:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-<script src="./image-slot.js"></script>
+<script src="image-slot.js"></script>
 <style>
 :root{
-  --green:#1F3D34; --green-700:#2E5446; --sage-100:#E1EAE3; --sage-50:#EEF3EF; --sand:#F3E9D8; --brown:#8E6F56;
-  --paper:#FFFEFB; --surface-alt:#F5F0E6; --card:#FFFEFB; --ink:#1F2A26; --ink-2:#5F574F; --muted:#5F574F;
+  --green:#1F3D34; --green-700:#2E5446; --sage-100:#DFE8E2; --sage-50:#EAF0EC; --sand:#F4F0E7; --brown:#8E6F56;
+  --paper:#FFFEFB; --surface-alt:#F4F0E7; --card:#FFFEFB; --ink:#1F2A26; --ink-2:#5F574F; --muted:#5F574F;
   --line:#E2DACA; --line-2:#E2DACA; --border-input:#A89C8C;
-  --accent:#1F3D34; --accent-deep:#2E5446; --accent-soft:#2E5446; --accent-light:#EEF3EF; --accent-tint:#E1EAE3;
-  --sage:#1F3D34; --sage-deep:#1F3D34; --sage-tint:#E1EAE3; --chip:#EEF3EF;
+  --accent:#1F3D34; --accent-deep:#2E5446; --accent-soft:#2E5446; --accent-light:#EAF0EC; --accent-tint:#DFE8E2;
+  --sage:#1F3D34; --sage-deep:#1F3D34; --sage-tint:#DFE8E2; --chip:#EAF0EC;
   --r:32px; --r-sm:20px;
 }
 *{box-sizing:border-box}
@@ -45,95 +45,123 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 }
 @media (max-width:760px){
   body{font-size:17px}
-  header[data-m=hdr]{padding-top:10px!important;padding-bottom:10px!important}
+  header[data-m=hdr]{padding-top:0!important;padding-bottom:0!important;min-height:64px!important}
   header[data-m=hdr] [data-hl]{display:none!important}
   header[data-m=hdr]>*:first-child span{font-size:19px!important}
   header[data-m=hdr]>*:first-child svg{width:28px;height:28px}
   header[data-m=hdr] [data-logo]{height:32px!important}
+  header[data-m=hdr] [data-logo-name]{font-size:20px!important}
+}
+
+/* premium test layer */
+/* hx hero */
+@media (max-width:900px){[data-m=hx]{grid-template-columns:minmax(0,1fr)!important}[data-m=hx-copy]{padding:28px clamp(20px,5vw,72px) 8px!important}[data-m=hx-media]{margin:0 clamp(20px,5vw,72px) 32px;min-height:clamp(360px,90vw,520px)!important}[data-m=hx-mask]{-webkit-mask-image:none!important;mask-image:none!important;border-radius:6px}[data-m=hx-media]{margin-left:clamp(20px,5vw,72px)!important}[data-m=hx-card]{left:14px!important;top:auto!important;bottom:14px!important;transform:none!important}[data-m=hx-cap]{display:none!important}}
+
+[data-m=wk-steps] h3{hyphens:auto;overflow-wrap:break-word}
+@media (max-width:1200px){[data-m=wk-ticks]{display:none!important}[data-m=wk-steps]{grid-template-columns:repeat(2,minmax(0,1fr))!important}[data-m=wk-day]{display:inline-block!important}}
+@media (max-width:620px){[data-m=wk-steps]{grid-template-columns:minmax(0,1fr)!important}}
+h1,h2,h3{font-family:Lora,Georgia,serif}
+[data-m=pick2]{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:560px){[data-m=pick2]{grid-template-columns:1fr}}
+@media (max-width:760px){[data-m=split-photo]{min-height:clamp(320px,90vw,460px)!important}}
+:root{--r:6px!important;--r-sm:4px!important;--surface-alt:#F4F0E7}
+h1,h2{font-weight:400!important;letter-spacing:-.02em!important;text-wrap:balance}
+h3{font-weight:500!important}
+h1 em,h2 em,h2 [style*="italic"]{font-style:normal!important}
+h2[data-eb]::before{content:attr(data-eb);display:block;margin-bottom:14px;font-family:Onest,system-ui,sans-serif;font-size:12.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#5F574F;line-height:1.4}
+[data-thread]{display:none!important}
+[style*="box-shadow"]{box-shadow:none!important}
+section[data-screen-label="01 Hero"]{padding:0!important}
+section[data-screen-label="01 Hero"]>[data-m=h-copy]{padding-top:clamp(32px,5vw,72px)!important;padding-bottom:clamp(48px,7vw,96px)!important}
+section[data-screen-label="01 Hero"] a[href="#zayavka"],section[data-screen-label="01 Hero"] a[href="#formaty"]{border-radius:3px!important}
+@media (max-width:760px){
+  section[data-screen-label="01 Hero"] [data-m=h-title]{font-size:clamp(36px,10.5vw,46px)!important}
+  section[data-screen-label="01 Hero"]>div:first-child>div:nth-of-type(1){flex-direction:column;align-items:stretch!important;gap:10px!important}
+  section[data-screen-label="01 Hero"]>div:first-child>div:nth-of-type(1)>a{justify-content:center}
 }
 </style>
 </helmet>
 
 <div style="max-width:1560px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
 
-<header data-m="hdr" style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px 20px;width:100vw;margin-left:calc(50% - 50vw);padding:12px max(clamp(20px,5vw,72px),calc(50vw - 708px));flex-wrap:wrap;background:#1F3D34;border-bottom:1px solid rgba(255,254,251,.12)">
+<header data-m="hdr" style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px 20px;width:100vw;margin-left:calc(50% - 50vw);min-height:76px;padding:0 max(clamp(20px,5vw,72px),calc(50vw - 708px));flex-wrap:wrap;background:#1F3D34;border-bottom:1px solid rgba(255,254,251,.12)">
   <a href="index.html" style="display:flex;align-items:center;gap:12px;color:#FFFEFB">
-    <img src="logo-dark.svg" alt="Со-Действие" width="183" height="40" data-logo="1" style="display:block;height:40px;width:auto">
-    <span data-hl="1" style="font-size:14px;color:rgba(255,254,251,.6);align-self:flex-end;padding-bottom:3px">Москва</span>
+    <div style="display:flex;align-items:center;gap:10px"><img src="logo-mark-light.png" alt="" width="286" height="227" data-logo="1" style="display:block;height:38px;width:auto"><div data-logo-name="1" style="font-family:Lora,Georgia,serif;font-weight:500;font-size:22px;line-height:1;letter-spacing:-.015em;color:#FFFEFB;white-space:nowrap">Со-Действие</div></div>
   </a>
   <nav data-m="nav" style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
     <a data-hl="1" href="uslugi.html" style="padding:8px 0;font-size:15.5px;color:#FFFEFB;font-weight:500;border-bottom:1px solid #FFFEFB">Услуги</a>
-    <a data-hl="1" href="ceny.html" style="padding:8px 0;font-size:15.5px;color:#FFFEFB" style-hover="color:#E1EAE3">Цены</a>
-    <a data-hl="1" href="baza-znaniy.html" style="padding:8px 0;font-size:15.5px;color:#FFFEFB" style-hover="color:#E1EAE3">База знаний</a>
+    <a data-hl="1" href="ceny.html" style="padding:8px 0;font-size:15.5px;color:#FFFEFB" style-hover="color:#DFE8E2">Цены</a>
+    <a data-hl="1" href="baza-znaniy.html" style="padding:8px 0;font-size:15.5px;color:#FFFEFB" style-hover="color:#DFE8E2">База знаний</a>
     <details data-hl="1" style="position:relative">
-      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:8px 0;font-size:15.5px;color:#FFFEFB" style-hover="color:#E1EAE3">О компании<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
-      <div style="position:absolute;top:calc(100% + 8px);left:-14px;z-index:30;min-width:210px;display:flex;flex-direction:column;padding:8px;border-radius:20px;background:var(--card);border:1px solid var(--line);box-shadow:0 14px 34px rgba(31,61,52,.12)">
-        <a href="faq.html" style="padding:11px 14px;border-radius:20px;font-size:15.5px;color:var(--ink)" style-hover="background:var(--accent-tint);color:var(--accent-deep)">Частые вопросы</a>
-        <a href="kontakty.html" style="padding:11px 14px;border-radius:20px;font-size:15.5px;color:var(--ink)" style-hover="background:var(--accent-tint);color:var(--accent-deep)">Контакты</a>
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:8px 0;font-size:15.5px;color:#FFFEFB" style-hover="color:#DFE8E2">О компании<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+      <div style="position:absolute;top:calc(100% + 8px);left:-14px;z-index:30;min-width:210px;display:flex;flex-direction:column;padding:8px;border-radius:4px;background:var(--card);border:1px solid var(--line);box-shadow:0 14px 34px rgba(31,61,52,.12)">
+        <a href="faq.html" style="padding:11px 14px;border-radius:4px;font-size:15.5px;color:var(--ink)" style-hover="background:var(--accent-tint);color:var(--accent-deep)">Частые вопросы</a>
+        <a href="kontakty.html" style="padding:11px 14px;border-radius:4px;font-size:15.5px;color:var(--ink)" style-hover="background:var(--accent-tint);color:var(--accent-deep)">Контакты</a>
       </div>
     </details>
-    <a data-cta="1" href="#zayavka" style="display:inline-flex;align-items:center;min-height:44px;padding:10px 20px;border-radius:999px;background:#FFFEFB;color:#1F3D34;font-size:15.5px;font-weight:500;transition:background .18s ease" style-hover="background:#E1EAE3;color:#1F3D34"><span data-full="1">Подобрать сиделку</span><span data-short="1" style="display:none">Подобрать</span></a>
+    <a data-cta="1" href="#zayavka" style="display:inline-flex;align-items:center;min-height:44px;padding:10px 20px;border-radius:4px;background:#FFFEFB;color:#1F3D34;font-size:15.5px;font-weight:500;transition:background .18s ease" style-hover="background:#DFE8E2;color:#1F3D34"><span data-full="1">Подобрать сиделку</span><span data-short="1" style="display:none">Подобрать</span></a>
   </nav>
 
   <div data-m="m-actions" style="display:none;align-items:center;gap:8px">
-    <a href="tel:+79958870941" aria-label="Позвонить" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;background:#FFFEFB;color:#1F3D34" style-hover="background:#E1EAE3;color:#1F3D34"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg></a>
+    <a href="tel:+79958870941" aria-label="Позвонить" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;background:#FFFEFB;color:#1F3D34" style-hover="background:#DFE8E2;color:#1F3D34"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg></a>
     <details style="position:relative">
       <summary aria-label="Мессенджеры" style="list-style:none;cursor:pointer;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;border:1px solid rgba(255,254,251,.35);color:#FFFEFB"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-4.9A8.3 8.3 0 0 1 4 11.5 8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"></path></svg></summary>
-      <div style="position:absolute;top:54px;right:0;z-index:60;min-width:190px;display:flex;flex-direction:column;padding:8px;border-radius:20px;background:#FFFEFB;border:1px solid #E2DACA;box-shadow:0 14px 34px rgba(31,61,52,.14)">
-        <a href="https://t.me/" style="padding:12px 14px;border-radius:14px;font-size:16px;color:#1F2A26" style-hover="background:#EEF3EF">Telegram</a>
-        <a href="https://wa.me/79958870941" style="padding:12px 14px;border-radius:14px;font-size:16px;color:#1F2A26" style-hover="background:#EEF3EF">WhatsApp</a>
-        <a href="https://max.ru/" style="padding:12px 14px;border-radius:14px;font-size:16px;color:#1F2A26" style-hover="background:#EEF3EF">MAX</a>
+      <div style="position:absolute;top:54px;right:0;z-index:60;min-width:190px;display:flex;flex-direction:column;padding:8px;border-radius:4px;background:#FFFEFB;border:1px solid #E2DACA;box-shadow:0 14px 34px rgba(31,61,52,.14)">
+        <a href="https://t.me/" style="padding:12px 14px;border-radius:14px;font-size:16px;color:#1F2A26" style-hover="background:#EAF0EC">Telegram</a>
+        <a href="https://wa.me/79958870941" style="padding:12px 14px;border-radius:14px;font-size:16px;color:#1F2A26" style-hover="background:#EAF0EC">WhatsApp</a>
+        <a href="https://max.ru/" style="padding:12px 14px;border-radius:14px;font-size:16px;color:#1F2A26" style-hover="background:#EAF0EC">MAX</a>
       </div>
     </details>
     <details>
       <summary aria-label="Меню" style="list-style:none;cursor:pointer;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;border:1px solid rgba(255,254,251,.35);color:#FFFEFB"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></summary>
       <div style="position:absolute;left:0;right:0;top:100%;z-index:55;display:flex;flex-direction:column;padding:4px max(clamp(20px,5vw,72px),calc(50vw - 708px)) 20px;background:#1F3D34;border-top:1px solid rgba(255,254,251,.12);box-shadow:0 18px 30px rgba(31,61,52,.18)">
-        <a href="index.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#E1EAE3">Главная</a>
-        <a href="uslugi.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#E1EAE3">Услуги</a>
-        <a href="ceny.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#E1EAE3">Цены</a>
-        <a href="sidelki.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#E1EAE3">Сиделки</a>
-        <a href="baza-znaniy.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#E1EAE3">База знаний</a>
-        <a href="faq.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#E1EAE3">Частые вопросы</a>
-        <a href="kontakty.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#E1EAE3">Контакты</a>
-        <a href="kontakty.html#napisat" style="display:flex;align-items:center;justify-content:center;margin-top:16px;padding:15px 24px;border-radius:999px;background:#FFFEFB;color:#1F3D34;font-size:16px;font-weight:500" style-hover="background:#E1EAE3;color:#1F3D34">Получить консультацию</a>
+        <a href="index.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#DFE8E2">Главная</a>
+        <a href="uslugi.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#DFE8E2">Услуги</a>
+        <a href="ceny.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#DFE8E2">Цены</a>
+        <a href="sidelki.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#DFE8E2">Сиделки</a>
+        <a href="baza-znaniy.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#DFE8E2">База знаний</a>
+        <a href="faq.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#DFE8E2">Частые вопросы</a>
+        <a href="kontakty.html" style="padding:14px 0;font-size:17px;color:#FFFEFB;border-bottom:1px solid rgba(255,254,251,.14)" style-hover="color:#DFE8E2">Контакты</a>
+        <a href="kontakty.html#napisat" style="display:flex;align-items:center;justify-content:center;margin-top:16px;padding:15px 24px;border-radius:4px;background:#FFFEFB;color:#1F3D34;font-size:16px;font-weight:500" style-hover="background:#DFE8E2;color:#1F3D34">Получить консультацию</a>
       </div>
     </details>
   </div>
 </header>
 
-<section data-screen-label="01 Hero" style="position:relative;background:#FFFEFB;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(28px,5vw,64px);align-items:center;padding:clamp(24px,3.4vw,48px) 0 clamp(40px,6vw,80px);width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
-  <div style="display:flex;flex-direction:column;gap:22px">
-    <nav aria-label="Хлебные крошки" style="display:flex;align-items:center;gap:8px;font-size:15px;color:var(--muted)">
-      <a href="index.html" style="color:var(--muted)" style-hover="color:var(--accent-deep)">Главная</a>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
-      <span style="color:var(--ink);font-weight:500">Сиделки</span>
-    </nav>
-    <h1 style="font-family:Lora,Georgia,serif; font-weight: 400; font-size: clamp(38px,5vw,68px); line-height: 1.08; letter-spacing: -.01em; color: #2E2E2E"><span style="text-wrap-mode: initial; font-size: clamp(38px, 5vw, 68px); letter-spacing: -0.01em;">Сиделка под присмотром врача <span style="font-style:italic;color:var(--brown);">в Москве</span></span></h1>
+<section data-screen-label="01 Hero" data-m="hx" style="position:relative;overflow:hidden;background:#FFFEFB;width:100vw;margin-left:calc(50% - 50vw);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);align-items:stretch">
+  <div data-m="hx-copy" style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;gap:22px;min-width:0;padding:clamp(40px,5vw,80px) clamp(24px,3vw,48px) clamp(40px,5vw,80px) max(clamp(20px,5vw,72px),calc(50vw - 708px))">
+<nav data-m="hx-crumbs" aria-label="Хлебные крошки" style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--muted);margin-bottom:-6px"><a href="index.html" style="color:var(--muted)" style-hover="color:#1F3D34">Главная</a><span aria-hidden="true">›</span><span style="color:var(--ink)">Сиделки</span></nav>
+    <h1 data-m="h-title" style="font-family:Lora,Georgia,serif;font-weight:400;font-size:clamp(40px,5.2vw,72px);line-height:1.06;letter-spacing:-.02em;color:#1F3D34;text-wrap:balance">Сиделка под присмотром <span style="color:#8E6F56">врача в Москве</span></h1>
     <p style="font-size:clamp(18px,2.2vw,21px);line-height:1.55;max-width:30em">Подбираем сиделку под характер и здоровье вашего родителя. Её работу ведут гериатр и куратор — вы не остаётесь один на один с чужим человеком в доме.</p>
     <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:6px">
-      <a href="#zayavka" style="display:inline-flex;align-items:center;min-height:56px;padding:17px 32px;border-radius:999px;background:var(--accent);color:var(--card);font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:var(--accent-deep);color:var(--card)">Подобрать сиделку</a>
-      <a href="#formaty" style="display:inline-flex;align-items:center;min-height:56px;padding:17px 26px;border-radius:999px;border:1px solid var(--line);color:var(--ink);font-size:16px;transition:background .18s ease" style-hover="border-color:var(--accent);background:var(--accent-tint);color:var(--ink)">Форматы и цены</a>
+      <a href="#zayavka" style="display:inline-flex;align-items:center;min-height:56px;padding:17px 32px;border-radius:4px;background:var(--accent);color:var(--card);font-size:16px;font-weight:500;gap:12px;transition:background .18s ease" style-hover="background:var(--accent-deep);color:var(--card)">Подобрать сиделку<span aria-hidden="true">→</span></a>
+      <a href="#formaty" style="display:inline-flex;align-items:center;min-height:56px;padding:17px 26px;border-radius:4px;border:1px solid var(--line);color:var(--ink);font-size:16px;transition:background .18s ease" style-hover="border-color:var(--accent);background:var(--accent-tint);color:var(--ink)">Форматы и цены</a>
     </div>
-    <div style="display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:4px">
+    <div data-m="h-checks" style="display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:4px;max-width:30em">
       <span style="display:inline-flex;align-items:center;gap:8px;font-size:15.5px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sage-deep)" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Официальный договор</span>
       <span style="display:inline-flex;align-items:center;gap:8px;font-size:15.5px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sage-deep)" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Замена без паузы в уходе</span>
       <span style="display:inline-flex;align-items:center;gap:8px;font-size:15.5px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sage-deep)" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Москва и область</span>
     </div>
   </div>
-  <div style="display:flex;justify-content:center">
-    <div style="width:min(100%,480px);aspect-ratio:5/6;border-radius:32px;overflow:hidden;background:var(--accent-tint)">
-      <image-slot id="sidelki-hero" shape="rect" placeholder="Фото: сиделка и пожилая женщина на кухне, тёплый дневной свет"></image-slot>
+  <div data-m="hx-media" style="position:relative;min-height:clamp(500px,44vw,680px);margin-left:-10vw">
+    <div data-m="hx-mask" style="position:absolute;inset:0;overflow:hidden;background:#DFE8E2;-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 32%);mask-image:linear-gradient(to right,transparent 0%,#000 32%)">
+      <image-slot id="sidelki-hero" src="img/sidelki-hero.jpg" fit="cover" shape="rect" placeholder="Фото: сиделка и пожилая женщина на диване, держатся за руки" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+      <span aria-hidden="true" style="position:absolute;inset:auto 0 0 0;height:55%;background:linear-gradient(to top,rgba(20,32,27,.7),rgba(20,32,27,0));pointer-events:none"></span>
+      <div data-m="hx-cap" style="position:absolute;right:clamp(24px,3.4vw,48px);bottom:clamp(28px,3.4vw,48px);display:flex;flex-direction:column;gap:12px;pointer-events:none">
+        <span style="display:block;height:1px;background:rgba(255,254,251,.6)"></span>
+        <span style="color:#FFFEFB;font-size:16px;line-height:1.4">Забота,<br>которая продолжается<br>каждый день</span>
+      </div>
     </div>
   </div>
 </section>
 
-<section data-screen-label="02 Признаки" style="position:relative;padding:clamp(40px,5.6vw,72px) 0;background:#F5F0E6;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
-  <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em">Признаки, <em style="font-style:italic;color:var(--brown)">что пора</em></h2>
+<section data-screen-label="02 Признаки" style="position:relative;padding:clamp(40px,5.6vw,72px) 0;background:#F4F0E7;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
+  <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em">Признаки, <span style="color:#8E6F56">что пора</span></h2>
   <p style="margin-top:14px;font-size:18px;color:var(--muted);max-width:34em">Отметьте то, что узнаёте в своём родителе.</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(20px,3vw,40px);margin-top:clamp(24px,3vw,36px);align-items:start">
     <div style="display:flex;flex-direction:column;gap:8px">
       <sc-for list="{{ signs }}" as="g" hint-placeholder-count="5">
-        <button type="button" role="checkbox" onClick="{{ g.onClick }}" aria-checked="{{ g.checked }}" style="display:flex;align-items:center;gap:16px;min-height:60px;padding:14px 22px;border-radius:999px;border:1px solid {{ g.border }};background:{{ g.bg }};color:var(--ink);font-size:17px;text-align:left;cursor:pointer;transition:background .18s ease" style-hover="border-color:var(--accent)">
+        <button type="button" role="checkbox" onClick="{{ g.onClick }}" aria-checked="{{ g.checked }}" style="display:flex;align-items:center;gap:16px;min-height:60px;padding:14px 22px;border-radius:4px;border:1px solid {{ g.border }};background:{{ g.bg }};color:var(--ink);font-size:17px;text-align:left;cursor:pointer;transition:background .18s ease" style-hover="border-color:var(--accent)">
           <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:2px solid {{ g.boxBorder }};background:{{ g.boxBg }};color:var(--card)">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
           </span>
@@ -141,140 +169,234 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
         </button>
       </sc-for>
     </div>
-    <div style="background:var(--sage-tint);border-radius:32px;padding:clamp(22px,2.8vw,34px);display:flex;flex-direction:column;gap:14px">
+    <div style="background:var(--sage-tint);border-radius:6px;padding:clamp(22px,2.8vw,34px);display:flex;flex-direction:column;gap:14px">
       <span style="font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--sage-deep);font-weight:500">Отмечено: {{ signCount }} из 5</span>
       <h3 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(24px,2.6vw,30px);line-height:1.2">{{ signTitle }}</h3>
       <p style="font-size:17px;line-height:1.6">{{ signText }}</p>
-      <a href="#zayavka" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:48px;padding:13px 24px;border-radius:999px;background:var(--sage-deep);color:var(--card);font-size:16px;font-weight:500" style-hover="background:#1F3D34;color:var(--card)">Обсудить с куратором</a>
+      <a href="#zayavka" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:48px;padding:13px 24px;border-radius:4px;background:var(--sage-deep);color:var(--card);font-size:16px;font-weight:500" style-hover="background:#1F3D34;color:var(--card)">Обсудить с куратором</a>
     </div>
   </div>
 </section>
 
-<section data-screen-label="03 Что делает" style="position:relative;background:#FFFEFB;padding:clamp(40px,5.6vw,72px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(28px,4vw,56px);align-items:start;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
-  <div style="display:flex;flex-direction:column;gap:14px">
-    <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em">Чем занимается <em style="font-style:italic;color:var(--brown)">сиделка</em></h2>
-    <p style="font-size:18px;color:var(--muted);max-width:24em">Список обязанностей составляем вместе с вами и гериатром — и меняем, когда меняется состояние.</p>
+<section data-screen-label="03 Что делает" style="background:#FFFEFB;width:100vw;margin-left:calc(50% - 50vw);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr))">
+  <div data-m="split-photo" style="position:relative;min-height:clamp(380px,44vw,680px);background:#DFE8E2;overflow:hidden">
+    <image-slot id="sidelki-care" src="img/sidelki-care.jpg" fit="cover" shape="rect" placeholder="Фото: сиделка и пожилой мужчина на прогулке в парке, мягкий свет" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+    <span aria-hidden="true" style="position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(to top,rgba(20,32,27,.55),rgba(20,32,27,0));pointer-events:none"></span>
+    <span style="position:absolute;left:clamp(20px,3vw,40px);bottom:clamp(20px,3vw,40px);padding-left:14px;border-left:1.5px solid #FFFEFB;color:#FFFEFB;font-size:15px;line-height:1.45;max-width:15em;pointer-events:none">Обязанности меняем вместе с состоянием родителя</span>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(14px,1.8vw,20px)">
-    <div style="background:#E1EAE3;border-radius:32px;padding:clamp(22px,2.6vw,30px);display:flex;flex-direction:column;gap:14px">
-      <span style="font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#1F3D34;font-weight:500">Уход и здоровье</span>
-      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:10px;font-size:17px;line-height:1.5">
-        <li style="display:flex;gap:12px"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:#1F3D34"></span>Гигиена, смена белья, помощь в туалете</li>
-        <li style="display:flex;gap:12px"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:#1F3D34"></span>Приём лекарств по назначениям гериатра</li>
-        <li style="display:flex;gap:12px"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:#1F3D34"></span>Давление, сахар, дневник самочувствия</li>
-        <li style="display:flex;gap:12px"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:#1F3D34"></span>Профилактика пролежней и падений</li>
-      </ul>
+  <div style="padding:clamp(40px,5.6vw,80px) max(clamp(20px,5vw,72px),calc(50vw - 708px)) clamp(40px,5.6vw,80px) clamp(24px,4.4vw,72px);display:flex;flex-direction:column;min-width:0">
+    <h2 style="font-size:clamp(32px,4vw,46px);line-height:1.12">Чем занимается <span style="color:#8E6F56">сиделка</span></h2>
+    <p style="margin-top:16px;font-size:17px;line-height:1.6;color:var(--muted);max-width:30em">Список обязанностей составляем вместе с вами и гериатром — и меняем, когда меняется состояние.</p>
+    <div style="margin-top:clamp(28px,3.4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px;align-items:stretch">
+      <div style="display:flex;flex-direction:column;gap:18px;padding:clamp(22px,2.4vw,30px);background:#DFE8E2;border-radius:6px;min-width:0">
+        <div style="display:flex;align-items:center;gap:14px"><span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:#FFFEFB"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"></path></svg></span><h3 style="font-family:Lora,Georgia,serif;font-size:21px;line-height:1.25;color:var(--ink)">Уход и здоровье</h3></div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column">
+          <li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:12px;align-items:start;padding:12px 0;border-top:1px solid rgba(31,61,52,.14);font-size:16px;line-height:1.45;color:var(--ink)"><span style="padding-top:2px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Гигиена, смена белья, помощь в туалете</span></li>
+          <li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:12px;align-items:start;padding:12px 0;border-top:1px solid rgba(31,61,52,.14);font-size:16px;line-height:1.45;color:var(--ink)"><span style="padding-top:2px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Контроль приёма лекарств по назначениям гериатра</span></li>
+          <li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:12px;align-items:start;padding:12px 0;border-top:1px solid rgba(31,61,52,.14);font-size:16px;line-height:1.45;color:var(--ink)"><span style="padding-top:2px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Давление, сахар, дневник самочувствия</span></li>
+          <li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:12px;align-items:start;padding:12px 0;border-top:1px solid rgba(31,61,52,.14);font-size:16px;line-height:1.45;color:var(--ink)"><span style="padding-top:2px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1F3D34" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Профилактика пролежней</span></li>
+        </ul>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;padding:clamp(22px,2.4vw,30px);background:#F4F0E7;border-radius:6px;min-width:0">
+        <div style="display:flex;align-items:center;gap:14px"><span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:#FFFEFB"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8E6F56" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></span><h3 style="font-family:Lora,Georgia,serif;font-size:21px;line-height:1.25;color:var(--ink)">Быт и общение</h3></div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column">
+          <li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:12px;align-items:start;padding:12px 0;border-top:1px solid rgba(31,61,52,.14);font-size:16px;line-height:1.45;color:var(--ink)"><span style="padding-top:2px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8E6F56" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Смотрит вместе фильмы и передачи</span></li>
+          <li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:12px;align-items:start;padding:12px 0;border-top:1px solid rgba(31,61,52,.14);font-size:16px;line-height:1.45;color:var(--ink)"><span style="padding-top:2px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8E6F56" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Прогулки, сопровождение к врачу</span></li>
+          <li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:12px;align-items:start;padding:12px 0;border-top:1px solid rgba(31,61,52,.14);font-size:16px;line-height:1.45;color:var(--ink)"><span style="padding-top:2px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8E6F56" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Поддерживает порядок в квартире</span></li>
+          <li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:12px;align-items:start;padding:12px 0;border-top:1px solid rgba(31,61,52,.14);font-size:16px;line-height:1.45;color:var(--ink)"><span style="padding-top:2px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8E6F56" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Разговаривает, читает, занимает делами</span></li>
+        </ul>
+      </div>
     </div>
-    <div style="background:#F3E9D8;border:1px solid #E2DACA;border-radius:32px;padding:clamp(22px,2.6vw,30px);display:flex;flex-direction:column;gap:14px">
-      <span style="font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#1F2A26;font-weight:500">Быт и общение</span>
-      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:10px;font-size:17px;line-height:1.5">
-        <li style="display:flex;gap:12px"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:#8E6F56"></span>Готовит еду с учётом диеты</li>
-        <li style="display:flex;gap:12px"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:#8E6F56"></span>Прогулки, сопровождение к врачу</li>
-        <li style="display:flex;gap:12px"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:#8E6F56"></span>Поддерживает порядок в квартире</li>
-        <li style="display:flex;gap:12px"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:#8E6F56"></span>Разговаривает, читает, занимает делами</li>
-      </ul>
+  </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Подбор" style="position:relative;background:#F4F0E7;width:100vw;margin-left:calc(50% - 50vw);padding:clamp(40px,5.6vw,88px) max(clamp(20px,5vw,72px),calc(50vw - 708px))">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 32px">
+    <div style="display:flex;flex-direction:column;gap:14px;max-width:560px">
+      <h2 style="font-family:Lora,Georgia,serif;font-size:clamp(32px,4vw,46px);line-height:1.12">Как мы <span style="color:#8E6F56">подбираем</span> сиделку</h2>
+      <p style="font-size:17px;line-height:1.6;color:var(--muted)">Вы участвуете в выборе, но не тратите время на поиск и проверку.</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px">
+      <span style="font-family:Lora,Georgia,serif;font-size:clamp(64px,8vw,104px);line-height:.85;color:#1F3D34">7</span>
+      <span style="font-size:15.5px;line-height:1.4;color:var(--ink)">дней — от первого<br>звонка до выхода<br>сиделки</span>
     </div>
   </div>
-</section>
-
-<section data-screen-label="04 Подбор" style="position:relative;padding:clamp(40px,5.6vw,72px) 0;background:#F5F0E6;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
-  <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em">Как мы <em style="font-style:italic;color:var(--brown)">подбираем</em></h2>
-  <ol data-m="pick" style="list-style:none;padding:0;margin:clamp(28px,3.6vw,44px) 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,24px);align-items:stretch">
-    <li style="display:flex;flex-direction:column;gap:16px;min-width:0">
-      <div style="display:flex;align-items:center;gap:12px">
-        <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:#1F3D34;color:#FFFEFB;font-family:Lora,Georgia,serif;font-size:20px">1</span>
-        <span data-m="pick-line" style="flex:1 1 auto;height:1.25px;background:rgba(142,111,86,.38)"></span><svg data-m="pick-line" width="10" height="12" viewBox="0 0 10 12" fill="none" aria-hidden="true" style="flex:none;margin-left:-10px"><path d="M2 1l6 5-6 5" stroke="#8E6F56" stroke-opacity=".6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+  <div style="margin-top:clamp(32px,4vw,56px);display:flex;flex-direction:column;gap:18px">
+    <div data-m="wk-ticks" aria-hidden="true" style="position:relative;display:grid;grid-template-columns:repeat(7,minmax(0,1fr))">
+      <span style="position:absolute;left:7px;right:calc(100% / 7 - 13px);top:12px;height:1px;background:rgba(142,111,86,.5)"></span>
+      <span style="position:absolute;left:7px;width:calc(100% * 4 / 7);top:11.5px;height:2px;background:#8E6F56"></span>
+      <div style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;margin-top:6px;border-radius:50%;background:#F4F0E7;border:1px solid #8E6F56"></span>
+        <span style="font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#5F574F;white-space:nowrap">День 1</span>
       </div>
-      <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:clamp(20px,2.2vw,26px);border-radius:20px;background:#FFFEFB;border:1px solid #E2DACA">
-        <span style="align-self:flex-start;padding:4px 12px;border-radius:999px;background:#E1EAE3;color:#1F2A26;font-size:13px;font-weight:500">Куратор</span>
-        <h3 style="font-family:Lora,Georgia,serif;font-weight:600;font-size:22px;line-height:1.2">Знакомство с семьёй</h3>
-        <p style="font-size:16.5px;line-height:1.55;color:var(--muted)">Куратор узнаёт о здоровье, привычках и характере родителя, о том, что важно вам.</p>
+      <div style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;margin-top:6px;border-radius:50%;background:#F4F0E7;border:1px solid #8E6F56"></span>
+        <span style="font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#5F574F;white-space:nowrap">День 2</span>
       </div>
-    </li>
-    <li style="display:flex;flex-direction:column;gap:16px;min-width:0">
-      <div style="display:flex;align-items:center;gap:12px">
-        <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:#1F3D34;color:#FFFEFB;font-family:Lora,Georgia,serif;font-size:20px">2</span>
-        <span data-m="pick-line" style="flex:1 1 auto;height:1.25px;background:rgba(142,111,86,.38)"></span><svg data-m="pick-line" width="10" height="12" viewBox="0 0 10 12" fill="none" aria-hidden="true" style="flex:none;margin-left:-10px"><path d="M2 1l6 5-6 5" stroke="#8E6F56" stroke-opacity=".6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <div style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;margin-top:6px;border-radius:50%;background:#F4F0E7;border:1px solid #8E6F56"></span>
+        <span style="font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#5F574F;white-space:nowrap">День 3</span>
       </div>
-      <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:clamp(20px,2.2vw,26px);border-radius:20px;background:#FFFEFB;border:1px solid #E2DACA">
-        <span style="align-self:flex-start;padding:4px 12px;border-radius:999px;background:#E1EAE3;color:#1F2A26;font-size:13px;font-weight:500">Гериатр</span>
-        <h3 style="font-family:Lora,Georgia,serif;font-weight:600;font-size:22px;line-height:1.2">Оценка гериатра</h3>
-        <p style="font-size:16.5px;line-height:1.55;color:var(--muted)">Врач определяет, какие навыки нужны сиделке и что входит в план ухода.</p>
+      <div style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;margin-top:6px;border-radius:50%;background:#F4F0E7;border:1px solid #8E6F56"></span>
+        <span style="font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#5F574F;white-space:nowrap">День 4</span>
       </div>
-    </li>
-    <li style="display:flex;flex-direction:column;gap:16px;min-width:0">
-      <div style="display:flex;align-items:center;gap:12px">
-        <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:#1F3D34;color:#FFFEFB;font-family:Lora,Georgia,serif;font-size:20px">3</span>
-        <span data-m="pick-line" style="flex:1 1 auto;height:1.25px;background:rgba(142,111,86,.38)"></span><svg data-m="pick-line" width="10" height="12" viewBox="0 0 10 12" fill="none" aria-hidden="true" style="flex:none;margin-left:-10px"><path d="M2 1l6 5-6 5" stroke="#8E6F56" stroke-opacity=".6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <div style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;margin-top:6px;border-radius:50%;background:#F4F0E7;border:1px solid #8E6F56"></span>
+        <span style="font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#5F574F;white-space:nowrap">День 5</span>
       </div>
-      <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:clamp(20px,2.2vw,26px);border-radius:20px;background:#FFFEFB;border:1px solid #E2DACA">
-        <span style="align-self:flex-start;padding:4px 12px;border-radius:999px;background:#F3E9D8;color:#1F2A26;font-size:13px;font-weight:500">Вы выбираете</span>
-        <h3 style="font-family:Lora,Georgia,serif;font-weight:600;font-size:22px;line-height:1.2">2–3 кандидата</h3>
-        <p style="font-size:16.5px;line-height:1.55;color:var(--muted)">Проверенные документы, рекомендации, наше интервью. Вы знакомитесь и выбираете.</p>
+      <div style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;margin-top:6px;border-radius:50%;background:#F4F0E7;border:1px solid #8E6F56"></span>
+        <span style="font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#5F574F;white-space:nowrap">День 6</span>
       </div>
-    </li>
-    <li style="display:flex;flex-direction:column;gap:16px;min-width:0">
-      <div style="display:flex;align-items:center;gap:12px">
-        <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:#8E6F56;color:#FFFEFB;font-family:Lora,Georgia,serif;font-size:20px">4</span>
-        
+      <div style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;margin-top:0px;border-radius:50%;background:#1F3D34;border:1px solid #1F3D34"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFEFB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+        <span style="font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#1F3D34;white-space:nowrap">Первый выход</span>
       </div>
-      <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:clamp(20px,2.2vw,26px);border-radius:20px;background:#FFFEFB;border:1px solid #E2DACA">
-        <span style="align-self:flex-start;padding:4px 12px;border-radius:999px;background:#E1EAE3;color:#1F2A26;font-size:13px;font-weight:500">Куратор + вы</span>
-        <h3 style="font-family:Lora,Georgia,serif;font-weight:600;font-size:22px;line-height:1.2">Пробный день и контроль</h3>
-        <p style="font-size:16.5px;line-height:1.55;color:var(--muted)">Первую неделю куратор на связи каждый день. Отчёты о дне — вам в мессенджер.</p>
-      </div>
-    </li>
-  </ol>
-  <p style="margin-top:clamp(18px,2.2vw,24px);font-size:16px;color:var(--muted)">Обычно от знакомства до первого дня сиделки проходит 1–3 дня.</p>
-</section>
-
-<section data-screen-label="05 Проверка" style="position:relative;background:#FFFEFB;padding:clamp(40px,5.6vw,72px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(28px,4vw,56px);align-items:center;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
-  <div style="display:flex;flex-direction:column;gap:14px">
-    <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em">Как мы <em style="font-style:italic;color:var(--brown)">проверяем</em> сиделок</h2>
-    <p style="font-size:18px;color:var(--muted);max-width:24em">Чужой человек в доме — главный страх. Поэтому к вам приходят только те, кто прошёл все четыре этапа.</p>
+    </div>
+    <ol data-m="wk-steps" style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr 3fr 2fr;gap:8px">
+      <li style="display:flex;flex-direction:column;gap:12px;min-width:0;padding:clamp(18px,1.8vw,24px);border-radius:6px;background:#FFFEFB;border:1px solid #E2DACA">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+          <span style="font-family:Lora,Georgia,serif;font-size:clamp(30px,3vw,40px);line-height:1;color:#8E6F56">01</span>
+          <span data-m="wk-day" style="display:none;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8E6F56">День 1</span>
+        </div>
+        <span style="font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#5F574F">Куратор</span>
+        <h3 style="font-family:Lora,Georgia,serif;font-size:19px;line-height:1.25;color:var(--ink)">Знакомство с семьёй</h3>
+        <p style="font-size:14.5px;line-height:1.5;color:var(--muted)">Узнаём о здоровье, привычках и характере родителя.</p>
+      </li>
+      <li style="display:flex;flex-direction:column;gap:12px;min-width:0;padding:clamp(18px,1.8vw,24px);border-radius:6px;background:#EAF0EC">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+          <span style="font-family:Lora,Georgia,serif;font-size:clamp(30px,3vw,40px);line-height:1;color:#8E6F56">02</span>
+          <span data-m="wk-day" style="display:none;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8E6F56">День 2</span>
+        </div>
+        <span style="font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#5F574F">Гериатр</span>
+        <h3 style="font-family:Lora,Georgia,serif;font-size:19px;line-height:1.25;color:var(--ink)">Оценка врача</h3>
+        <p style="font-size:14.5px;line-height:1.5;color:var(--muted)">Определяет нужные навыки и план ухода.</p>
+      </li>
+      <li style="display:flex;flex-direction:column;gap:12px;min-width:0;padding:clamp(18px,1.8vw,24px);border-radius:6px;background:#DFE8E2">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+          <span style="font-family:Lora,Georgia,serif;font-size:clamp(30px,3vw,40px);line-height:1;color:#8E6F56">03</span>
+          <span data-m="wk-day" style="display:none;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8E6F56">Дни 3–5</span>
+        </div>
+        <span style="font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#5F574F">Вы выбираете</span>
+        <h3 style="font-family:Lora,Georgia,serif;font-size:19px;line-height:1.25;color:var(--ink)">2–3 кандидата</h3>
+        <p style="font-size:14.5px;line-height:1.5;color:var(--muted)">Документы проверены, интервью пройдено — знакомитесь с кандидатами лично или по видео и выбираете.</p>
+      </li>
+      <li style="display:flex;flex-direction:column;gap:12px;min-width:0;padding:clamp(18px,1.8vw,24px);border-radius:6px;background:#1F3D34">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+          <span style="font-family:Lora,Georgia,serif;font-size:clamp(30px,3vw,40px);line-height:1;color:#D9C3A8">04</span>
+          <span data-m="wk-day" style="display:none;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#D9C3A8">Дни 6–7</span>
+        </div>
+        <span style="font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,254,251,.75)">Куратор + вы</span>
+        <h3 style="font-family:Lora,Georgia,serif;font-size:19px;line-height:1.25;color:#FFFEFB">Пробный день и выход</h3>
+        <p style="font-size:14.5px;line-height:1.5;color:rgba(255,254,251,.84)">Сиделка выходит, куратор первую неделю на связи каждый день, отчёты — в мессенджер.</p>
+      </li>
+    </ol>
   </div>
-  <ol style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px">
-    <li style="width:100%;display:flex;align-items:center;gap:16px;padding:16px 26px 16px 16px;border-radius:32px;background:#EEF3EF">
-      <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:#FFFEFB;color:#1F3D34;font-family:Lora,Georgia,serif;font-size:19px;border:1px solid #E2DACA">1</span>
-      <span style="display:flex;flex-direction:column;gap:2px"><span style="font-family:Lora,Georgia,serif;font-weight:600;font-size:19px;line-height:1.25">Документы</span><span style="font-size:15px;line-height:1.45;color:var(--muted)">Паспорт, медкнижка, документы об обучении</span></span>
-    </li>
-    <li style="width:92%;min-width:min(100%,280px);display:flex;align-items:center;gap:16px;padding:16px 26px 16px 16px;border-radius:32px;background:#E1EAE3">
-      <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:#FFFEFB;color:#1F3D34;font-family:Lora,Georgia,serif;font-size:19px;border:1px solid #E2DACA">2</span>
-      <span style="display:flex;flex-direction:column;gap:2px"><span style="font-family:Lora,Georgia,serif;font-weight:600;font-size:19px;line-height:1.25">Рекомендации</span><span style="font-size:15px;line-height:1.45;color:var(--muted)">Созваниваемся с семьями, где кандидат работал раньше</span></span>
-    </li>
-    <li style="width:84%;min-width:min(100%,280px);display:flex;align-items:center;gap:16px;padding:16px 26px 16px 16px;border-radius:32px;background:#2E5446;color:#FFFEFB">
-      <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:#FFFEFB;color:#1F3D34;font-family:Lora,Georgia,serif;font-size:19px;border:1px solid #E2DACA">3</span>
-      <span style="display:flex;flex-direction:column;gap:2px"><span style="font-family:Lora,Georgia,serif;font-weight:600;font-size:19px;line-height:1.25">Собеседование куратора</span><span style="font-size:15px;line-height:1.45;color:rgba(255,254,251,.82)">Опыт, характер, поведение в трудных ситуациях</span></span>
-    </li>
-    <li style="width:76%;min-width:min(100%,280px);display:flex;align-items:center;gap:16px;padding:16px 26px 16px 16px;border-radius:32px;background:#1F3D34;color:#FFFEFB">
-      <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:#FFFEFB;color:#1F3D34;font-family:Lora,Georgia,serif;font-size:19px;border:1px solid #E2DACA">4</span>
-      <span style="display:flex;flex-direction:column;gap:2px"><span style="font-family:Lora,Georgia,serif;font-weight:600;font-size:19px;line-height:1.25">Оценка навыков</span><span style="font-size:15px;line-height:1.45;color:rgba(255,254,251,.82)">Под конкретный план ухода вашего родителя</span></span>
-    </li>
-  </ol>
 </section>
 
-<section data-screen-label="06 Отчёт" style="position:relative;padding:clamp(40px,5.6vw,72px) 0;background:#F5F0E6;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<section data-screen-label="05 Проверка" style="background:#F4F0E7;width:100vw;margin-left:calc(50% - 50vw);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr))">
+  <div style="padding:clamp(40px,5.6vw,80px) clamp(24px,4.4vw,72px) clamp(40px,5.6vw,80px) max(clamp(20px,5vw,72px),calc(50vw - 708px));display:flex;flex-direction:column;min-width:0">
+    <h2 style="font-size:clamp(32px,4vw,46px);line-height:1.12">Как мы <span style="color:#8E6F56">проверяем</span> сиделок</h2>
+    <p style="margin-top:16px;font-size:17px;line-height:1.6;color:var(--muted);max-width:30em">Чужой человек в доме — главный страх. Поэтому к вам приходят только те, кто прошёл все четыре этапа.</p>
+    <ol style="list-style:none;margin:clamp(24px,3vw,36px) 0 0;padding:0;display:flex;flex-direction:column;gap:8px">
+      <li style="width:100%;min-width:min(100%,280px);display:flex;align-items:center;gap:16px;padding:14px 24px 14px 14px;border-radius:6px;background:#FFFEFB;border:1px solid #E2DACA">
+        <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:#F4F0E7;color:#8E6F56;font-family:Lora,Georgia,serif;font-size:19px">1</span>
+        <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-family:Lora,Georgia,serif;font-size:19px;line-height:1.25;color:var(--ink)">Документы</span><span style="font-size:15px;line-height:1.45;color:var(--muted)">Паспорт, медкнижка, документы об обучении</span></span>
+      </li>
+      <li style="width:93%;min-width:min(100%,280px);display:flex;align-items:center;gap:16px;padding:14px 24px 14px 14px;border-radius:6px;background:#DFE8E2">
+        <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:#F4F0E7;color:#8E6F56;font-family:Lora,Georgia,serif;font-size:19px">2</span>
+        <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-family:Lora,Georgia,serif;font-size:19px;line-height:1.25;color:var(--ink)">Рекомендации</span><span style="font-size:15px;line-height:1.45;color:var(--muted)">Созваниваемся с семьями, где кандидат работал раньше</span></span>
+      </li>
+      <li style="width:86%;min-width:min(100%,280px);display:flex;align-items:center;gap:16px;padding:14px 24px 14px 14px;border-radius:6px;background:#2E5446">
+        <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:rgba(255,254,251,.14);color:#FFFEFB;font-family:Lora,Georgia,serif;font-size:19px">3</span>
+        <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-family:Lora,Georgia,serif;font-size:19px;line-height:1.25;color:#FFFEFB">Собеседование куратора</span><span style="font-size:15px;line-height:1.45;color:rgba(255,254,251,.82)">Опыт, характер, поведение в трудных ситуациях</span></span>
+      </li>
+      <li style="width:79%;min-width:min(100%,280px);display:flex;align-items:center;gap:16px;padding:14px 24px 14px 14px;border-radius:6px;background:#1F3D34">
+        <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:rgba(255,254,251,.14);color:#FFFEFB;font-family:Lora,Georgia,serif;font-size:19px">4</span>
+        <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-family:Lora,Georgia,serif;font-size:19px;line-height:1.25;color:#FFFEFB">Оценка навыков</span><span style="font-size:15px;line-height:1.45;color:rgba(255,254,251,.82)">Под конкретный план ухода вашего родителя</span></span>
+      </li>
+    </ol>
+  </div>
+  <div data-m="split-photo" style="position:relative;min-height:clamp(380px,44vw,680px);background:#DFE8E2;overflow:hidden">
+    <image-slot id="sidelki-check" src="img/sidelki-check.jpg" fit="cover" shape="rect" placeholder="Фото: куратор беседует с сиделкой за столом, документы, спокойная обстановка" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+    <div style="position:absolute;right:clamp(20px,3vw,40px);bottom:clamp(20px,3vw,40px);max-width:300px;padding:clamp(18px,2vw,24px) clamp(20px,2.2vw,28px);background:#FFFEFB;border-radius:3px;font-size:15.5px;line-height:1.5;color:var(--ink);pointer-events:none">За каждую сиделку отвечает куратор — лично и по договору.</div>
+  </div>
+</section>
+
+<section id="nashi-sidelki" data-screen-label="Наши сиделки" style="padding:clamp(40px,5.6vw,72px) 0;background:#FFFEFB;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));scroll-margin-top:20px">
+  <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end;justify-content:space-between"><div style="display:flex;flex-direction:column;gap:12px;max-width:34em">
+    <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em">Наши <span style="color:#8E6F56">сиделки</span></h2>
+    <p style="font-size:16px;line-height:1.6;color:var(--muted);max-width:26em">Каждая прошла все этапы проверки. Перед знакомством вы получаете полную анкету.</p></div>
+    <div style="display:flex;gap:12px;flex:none"><button type="button" onClick="{{ carPrev }}" aria-label="Назад" style="width:52px;height:52px;border-radius:50%;background:var(--card);border:1px solid var(--line);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .18s ease,color .18s ease" style-hover="background:#1F3D34;color:#FFFEFB;border-color:#1F3D34"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button><button type="button" onClick="{{ carNext }}" aria-label="Вперёд" style="width:52px;height:52px;border-radius:50%;background:var(--card);border:1px solid var(--line);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .18s ease,color .18s ease" style-hover="background:#1F3D34;color:#FFFEFB;border-color:#1F3D34"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button></div>
+  </div>
+  <div data-rail="1" style="display:flex;gap:clamp(16px,2vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-top:clamp(28px,3.6vw,44px)">
+    <article style="flex:0 0 clamp(250px,72vw,360px);scroll-snap-align:start;display:flex;flex-direction:column;background:#F4F0E7;border-radius:var(--r);overflow:hidden;min-width:0">
+      <div style="aspect-ratio:4/5;background:#DFE8E2"><image-slot id="sidelka-1" fit="cover" shape="rect" placeholder="Фото: сиделка, портрет"></image-slot></div>
+      <div style="display:flex;flex-direction:column;gap:12px;padding:clamp(18px,2vw,24px)">
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <h3 style="font-family:Lora,Georgia,serif;font-size:21px;line-height:1.25">Наталья</h3>
+          <span style="font-size:15px;color:var(--muted)">Стаж 14 лет</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px"><span style="padding:5px 10px;border-radius:3px;background:#DFE8E2;color:#1F3D34;font-size:13.5px;font-weight:500">Деменция</span><span style="padding:5px 10px;border-radius:3px;background:#DFE8E2;color:#1F3D34;font-size:13.5px;font-weight:500">Медобразование</span></div>
+      </div>
+    </article>
+    <article style="flex:0 0 clamp(250px,72vw,360px);scroll-snap-align:start;display:flex;flex-direction:column;background:#F4F0E7;border-radius:var(--r);overflow:hidden;min-width:0">
+      <div style="aspect-ratio:4/5;background:#DFE8E2"><image-slot id="sidelka-2" fit="cover" shape="rect" placeholder="Фото: сиделка, портрет"></image-slot></div>
+      <div style="display:flex;flex-direction:column;gap:12px;padding:clamp(18px,2vw,24px)">
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <h3 style="font-family:Lora,Georgia,serif;font-size:21px;line-height:1.25">Ирина</h3>
+          <span style="font-size:15px;color:var(--muted)">Стаж 9 лет</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px"><span style="padding:5px 10px;border-radius:3px;background:#DFE8E2;color:#1F3D34;font-size:13.5px;font-weight:500">После инсульта</span><span style="padding:5px 10px;border-radius:3px;background:#DFE8E2;color:#1F3D34;font-size:13.5px;font-weight:500">Реабилитация</span></div>
+      </div>
+    </article>
+    <article style="flex:0 0 clamp(250px,72vw,360px);scroll-snap-align:start;display:flex;flex-direction:column;background:#F4F0E7;border-radius:var(--r);overflow:hidden;min-width:0">
+      <div style="aspect-ratio:4/5;background:#DFE8E2"><image-slot id="sidelka-3" fit="cover" shape="rect" placeholder="Фото: сиделка, портрет"></image-slot></div>
+      <div style="display:flex;flex-direction:column;gap:12px;padding:clamp(18px,2vw,24px)">
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <h3 style="font-family:Lora,Georgia,serif;font-size:21px;line-height:1.25">Елена</h3>
+          <span style="font-size:15px;color:var(--muted)">Стаж 11 лет</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px"><span style="padding:5px 10px;border-radius:3px;background:#DFE8E2;color:#1F3D34;font-size:13.5px;font-weight:500">Лежачие подопечные</span><span style="padding:5px 10px;border-radius:3px;background:#DFE8E2;color:#1F3D34;font-size:13.5px;font-weight:500">Уход за кожей</span></div>
+      </div>
+    </article>
+    <article style="flex:0 0 clamp(250px,72vw,360px);scroll-snap-align:start;display:flex;flex-direction:column;background:#F4F0E7;border-radius:var(--r);overflow:hidden;min-width:0">
+      <div style="aspect-ratio:4/5;background:#DFE8E2"><image-slot id="sidelka-4" fit="cover" shape="rect" placeholder="Фото: сиделка, портрет"></image-slot></div>
+      <div style="display:flex;flex-direction:column;gap:12px;padding:clamp(18px,2vw,24px)">
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <h3 style="font-family:Lora,Georgia,serif;font-size:21px;line-height:1.25">Галина</h3>
+          <span style="font-size:15px;color:var(--muted)">Стаж 7 лет</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px"><span style="padding:5px 10px;border-radius:3px;background:#DFE8E2;color:#1F3D34;font-size:13.5px;font-weight:500">Прогулки</span><span style="padding:5px 10px;border-radius:3px;background:#DFE8E2;color:#1F3D34;font-size:13.5px;font-weight:500">Компаньон</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section data-screen-label="06 Отчёт" style="position:relative;padding:clamp(40px,5.6vw,72px) 0;background:#F4F0E7;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
   <div style="display:flex;flex-direction:column;gap:14px">
-    <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em">Вы знаете, <em style="font-style:italic;color:var(--brown)">как прошёл день</em></h2>
+    <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em">Вы знаете, <span style="color:#8E6F56">как прошёл день</span></h2>
     <p style="font-size:18px;color:var(--muted);max-width:26em">Каждый вечер сиделка присылает короткий отчёт в мессенджер. Если что-то не так — куратор и врач узнают об этом раньше вас.</p>
   </div>
-  <div style="width:min(100%,460px);border-radius:32px;background:var(--sage-tint);padding:clamp(16px,2vw,22px);display:flex;flex-direction:column;gap:14px">
+  <div style="width:min(100%,460px);border-radius:6px;background:var(--sage-tint);padding:clamp(16px,2vw,22px);display:flex;flex-direction:column;gap:14px">
     <div style="display:flex;align-items:center;gap:12px;padding:6px 6px 12px;border-bottom:1px solid #E3DACB">
       <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--sage-deep);color:var(--card);font-family:Lora,Georgia,serif;font-weight:600;font-size:18px">О</span>
       <span style="display:flex;flex-direction:column"><span style="font-weight:500;font-size:16px">Ольга, сиделка</span><span style="font-size:13.5px;color:var(--sage-deep)">отчёт за день</span></span>
     </div>
-    <div style="align-self:flex-start;max-width:92%;background:var(--card);border-radius:20px 22px 22px 6px;padding:14px 18px 10px;display:flex;flex-direction:column;gap:6px;box-shadow:0 6px 18px -12px rgba(31,61,52,.35)">
+    <div style="align-self:flex-start;max-width:92%;background:var(--card);border-radius:4px 22px 22px 6px;padding:14px 18px 10px;display:flex;flex-direction:column;gap:6px;box-shadow:0 6px 18px -12px rgba(31,61,52,.35)">
       <p style="font-size:17px;line-height:1.5">Мама позавтракала, давление 135/85, гуляли 40 минут, пила все лекарства, настроение хорошее</p>
       <span style="align-self:flex-end;display:inline-flex;align-items:center;gap:4px;font-size:12.5px;color:var(--muted)">19:40<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--sage-deep)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 7 17l-5-5"></path><path d="m22 10-7.5 7.5L13 16"></path></svg></span>
     </div>
-    <div style="align-self:flex-end;max-width:70%;background:var(--sage-deep);color:var(--card);border-radius:20px 22px 6px 22px;padding:12px 18px;font-size:16px">Спасибо, Ольга!</div>
+    <div style="align-self:flex-end;max-width:70%;background:var(--sage-deep);color:var(--card);border-radius:4px 22px 6px 22px;padding:12px 18px;font-size:16px">Спасибо, Ольга!</div>
   </div>
 </section>
 
 <section data-screen-label="07 Отличия" style="position:relative;background:#FFFEFB;padding:clamp(40px,5.6vw,72px) 0;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
-  <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em;max-width:20em">Сиделка через агентство и <em style="font-style:italic;color:var(--brown)">сиделка в команде</em></h2>
+  <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em;max-width:20em">Сиделка через агентство и <span style="color:#8E6F56">сиделка в команде</span></h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(14px,1.8vw,20px);margin-top:clamp(28px,3.6vw,44px)">
-    <div style="border:1px solid var(--line);border-radius:20px;padding:clamp(22px,2.8vw,34px);display:flex;flex-direction:column;gap:16px">
+    <div style="border:1px solid var(--line);border-radius:4px;padding:clamp(22px,2.8vw,34px);display:flex;flex-direction:column;gap:16px">
       <span style="font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500">Обычное агентство</span>
       <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;font-size:17px;line-height:1.5;color:var(--muted)">
         <li style="display:flex;gap:12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M18 6 6 18M6 6l12 12"></path></svg>Присылают человека — дальше разбирайтесь сами</li>
@@ -282,7 +404,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
         <li style="display:flex;gap:12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M18 6 6 18M6 6l12 12"></path></svg>Ухудшение замечают, когда уже поздно</li>
       </ul>
     </div>
-    <div style="background:var(--accent-tint);border-radius:32px;padding:clamp(22px,2.8vw,34px);display:flex;flex-direction:column;gap:16px">
+    <div style="background:var(--accent-tint);border-radius:6px;padding:clamp(22px,2.8vw,34px);display:flex;flex-direction:column;gap:16px">
       <span style="font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-deep);font-weight:500">Со-Действие</span>
       <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;font-size:17px;line-height:1.5">
         <li style="display:flex;gap:12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-deep)" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg>Куратор отвечает за работу сиделки и за замену</li>
@@ -293,25 +415,27 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
   </div>
 </section>
 
-<section data-screen-label="08 Гарантия замены" style="position:relative;background:#F5F0E6;padding:clamp(40px,5.6vw,72px) 0 clamp(40px,5.6vw,72px);width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
-  <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:center;padding:clamp(26px,3.6vw,52px);border-radius:32px;background:var(--sage-tint)">
-    <span style="display:inline-flex;align-items:center;justify-content:center;width:clamp(72px,9vw,112px);height:clamp(72px,9vw,112px);border-radius:999px;background:var(--sage-deep);color:var(--card)">
+<section data-screen-label="08 Гарантия замены" style="background:#F4F0E7;width:100vw;margin-left:calc(50% - 50vw);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr))">
+  <div data-m="split-photo" style="position:relative;min-height:clamp(360px,40vw,620px);background:#DFE8E2;overflow:hidden">
+    <image-slot id="sidelki-swap" src="img/sidelki-swap.jpg" fit="cover" shape="rect" placeholder="Фото: две сиделки и пожилая женщина — знакомство, передача дел" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+    <span aria-hidden="true" style="position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(to top,rgba(20,32,27,.55),rgba(20,32,27,0));pointer-events:none"></span>
+    <span style="position:absolute;left:clamp(20px,3vw,40px);bottom:clamp(20px,3vw,40px);padding-left:14px;border-left:1.5px solid #FFFEFB;color:#FFFEFB;font-size:15px;line-height:1.45;max-width:15em;pointer-events:none">Новая сиделка выходит до того, как уходит прежняя</span>
+  </div>
+  <div style="padding:clamp(40px,5.6vw,80px) max(clamp(20px,5vw,72px),calc(50vw - 708px)) clamp(40px,5.6vw,80px) clamp(24px,4.4vw,72px);display:flex;flex-direction:column;justify-content:center;gap:16px;min-width:0">
+    <span style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:var(--sage-deep);color:var(--card)">
       <svg width="44%" height="44%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg>
     </span>
-    <div style="display:flex;flex-direction:column;gap:12px">
-      <span style="font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--sage-deep);font-weight:500">Гарантия замены</span>
-      <h2 style="font-family:Lora,Georgia,serif;font-weight:400;font-size:clamp(30px,4.2vw,52px);line-height:1.1;letter-spacing:-.01em">Не подошла — заменим за 3 дня без доплаты</h2>
-      <p style="font-size:18px;line-height:1.6;max-width:32em">Уход не прерывается: новая сиделка выходит до того, как уходит прежняя, а куратор сам передаёт ей все дела.</p>
-    </div>
+    <h2 style="font-size:clamp(32px,4vw,46px);line-height:1.12">Не подошла — <span style="color:#8E6F56">заменим в течение недели</span> без доплаты</h2>
+    <p style="font-size:17px;line-height:1.6;color:var(--muted);max-width:30em">Уход не прерывается: новая сиделка выходит до того, как уходит прежняя, а куратор сам передаёт ей все дела.</p>
   </div>
 </section>
 
 <section id="formaty" data-screen-label="09 Форматы и цены" style="position:relative;padding:clamp(40px,5.6vw,72px) 0;background:#FFFEFB;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px));scroll-margin-top:72px">
-  <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em">Форматы <em style="font-style:italic;color:var(--brown)">работы</em></h2>
+  <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em">Форматы <span style="color:#8E6F56">работы</span></h2>
   <p style="margin-top:14px;font-size:18px;color:var(--muted);max-width:34em">Начать можно с нескольких часов в день — и расширить, когда станет понятно, сколько помощи нужно.</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(14px,1.8vw,20px);margin-top:clamp(28px,3.6vw,44px)">
     <sc-for list="{{ formats }}" as="f" hint-placeholder-count="4">
-      <button type="button" onClick="{{ f.onClick }}" aria-pressed="{{ f.pressed }}" style="display:flex;flex-direction:column;gap:12px;align-items:stretch;text-align:left;padding:clamp(22px,2.4vw,28px);border-radius:32px;border:1.5px solid {{ f.border }};background:{{ f.bg }};color:var(--ink);cursor:pointer;font-family:inherit;transition:border-color .18s ease,background .18s ease" style-hover="border-color:#1F3D34">
+      <button type="button" onClick="{{ f.onClick }}" aria-pressed="{{ f.pressed }}" style="display:flex;flex-direction:column;gap:12px;align-items:stretch;text-align:left;padding:clamp(22px,2.4vw,28px);border-radius:6px;border:1.5px solid {{ f.border }};background:{{ f.bg }};color:var(--ink);cursor:pointer;font-family:inherit;transition:border-color .18s ease,background .18s ease" style-hover="border-color:#1F3D34">
         <span style="font-family:Lora,Georgia,serif;font-weight:700;font-size:24px;line-height:1.15">{{ f.title }}</span>
         <span style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span style="font-size:14px;color:var(--muted)">от</span><span style="font-family:Lora,Georgia,serif;font-size:30px;line-height:1;color:#1F2A26">{{ f.price }}</span><span style="font-size:14px;color:var(--muted)">{{ f.unit }}</span></span>
         <span style="height:1px;background:#E2DACA"></span>
@@ -321,33 +445,54 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
     </sc-for>
   </div>
   <div style="margin-top:clamp(20px,2.4vw,28px);display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px">
-    <a href="#zayavka" style="display:inline-flex;align-items:center;min-height:52px;padding:15px 28px;border-radius:999px;background:#1F3D34;color:#FFFEFB;font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:#2E5446;color:#FFFEFB">Обсудить формат «{{ fmtTitle }}»</a>
-    <p style="font-size:14.5px;color:var(--muted);max-width:40em;flex:1 1 280px">Точная стоимость зависит от состояния родителя и объёма ухода — назовём после бесплатной консультации.</p>
+    <a href="#zayavka" style="display:inline-flex;align-items:center;min-height:52px;padding:15px 28px;border-radius:4px;background:#1F3D34;color:#FFFEFB;font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:#2E5446;color:#FFFEFB">Обсудить формат «{{ fmtTitle }}»</a>
+    <p style="font-size:14.5px;color:var(--muted);max-width:40em;flex:1 1 280px">Точная стоимость зависит от состояния родителя и объёма ухода — назовём после консультации.</p>
   </div>
 </section>
 
-<section data-screen-label="10 Отзывы" style="position:relative;background:#F5F0E6;padding:clamp(40px,5.6vw,72px) 0;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
-  <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em">Что говорят <em style="font-style:italic;color:var(--brown)">семьи</em></h2>
+<section data-screen-label="10 Отзывы" style="position:relative;background:#F4F0E7;padding:clamp(40px,5.6vw,72px) 0;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
+  <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em">Что говорят <span style="color:#8E6F56">семьи</span></h2>
   <div style="display:flex;gap:clamp(16px,2vw,22px);margin-top:30px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px">
     <article style="flex:none;width:clamp(260px,28vw,340px);scroll-snap-align:start;background:var(--card);border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:18px">
       <p style="font-size:16.5px;line-height:1.55;color:var(--ink-2)">Боялись, что мама не примет чужого человека. Куратор предложил начать с трёх часов в день — через месяц Ольга стала для мамы почти родной.</p>
       <div style="margin-top:auto;display:flex;align-items:center;gap:12px">
-        <span style="width:54px;height:54px;flex:none;border-radius:50%;background:#E1EAE3;color:#1F3D34;display:flex;align-items:center;justify-content:center;font-family:Lora,Georgia,serif;font-size:19px;font-weight:600;letter-spacing:.02em">М</span>
+        <span style="width:54px;height:54px;flex:none;border-radius:50%;background:#DFE8E2;color:#1F3D34;display:flex;align-items:center;justify-content:center;font-family:Lora,Georgia,serif;font-size:19px;font-weight:600;letter-spacing:.02em">М</span>
         <span style="display:flex;flex-direction:column;gap:1px"><span style="font-size:15.5px;font-weight:500;color:var(--ink)">Марина, дочь</span><span style="font-size:13px;color:var(--muted)">Родитель: мама, 84 года</span></span>
       </div>
     </article>
     <article style="flex:none;width:clamp(260px,28vw,340px);scroll-snap-align:start;background:var(--card);border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:18px">
       <p style="font-size:16.5px;line-height:1.55;color:var(--ink-2)">Живу в Казани, отец в Москве. Каждый вечер получаю короткий отчёт — впервые за два года сплю спокойно.</p>
       <div style="margin-top:auto;display:flex;align-items:center;gap:12px">
-        <span style="width:54px;height:54px;flex:none;border-radius:50%;background:#E1EAE3;color:#1F3D34;display:flex;align-items:center;justify-content:center;font-family:Lora,Georgia,serif;font-size:19px;font-weight:600;letter-spacing:.02em">А</span>
+        <span style="width:54px;height:54px;flex:none;border-radius:50%;background:#DFE8E2;color:#1F3D34;display:flex;align-items:center;justify-content:center;font-family:Lora,Georgia,serif;font-size:19px;font-weight:600;letter-spacing:.02em">А</span>
         <span style="display:flex;flex-direction:column;gap:1px"><span style="font-size:15.5px;font-weight:500;color:var(--ink)">Алексей, сын</span><span style="font-size:13px;color:var(--muted)">Родитель: отец, 79 лет</span></span>
       </div>
     </article>
     <article style="flex:none;width:clamp(260px,28vw,340px);scroll-snap-align:start;background:var(--card);border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:18px">
       <p style="font-size:16.5px;line-height:1.55;color:var(--ink-2)">Сиделка заметила, что папа стал хуже есть, — врач приехал в тот же день и поменял схему лекарств.</p>
       <div style="margin-top:auto;display:flex;align-items:center;gap:12px">
-        <span style="width:54px;height:54px;flex:none;border-radius:50%;background:#E1EAE3;color:#1F3D34;display:flex;align-items:center;justify-content:center;font-family:Lora,Georgia,serif;font-size:19px;font-weight:600;letter-spacing:.02em">Е</span>
+        <span style="width:54px;height:54px;flex:none;border-radius:50%;background:#DFE8E2;color:#1F3D34;display:flex;align-items:center;justify-content:center;font-family:Lora,Georgia,serif;font-size:19px;font-weight:600;letter-spacing:.02em">Е</span>
         <span style="display:flex;flex-direction:column;gap:1px"><span style="font-size:15.5px;font-weight:500;color:var(--ink)">Елена, дочь</span><span style="font-size:13px;color:var(--muted)">Родитель: отец, 88 лет</span></span>
+      </div>
+    </article>
+    <article style="flex:none;width:clamp(260px,28vw,340px);scroll-snap-align:start;background:var(--card);border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:18px">
+      <p style="font-size:16.5px;line-height:1.55;color:var(--ink-2)">Первая сиделка не сошлась с мамой характером. Сказали куратору в понедельник — к пятнице вышла новая, и мама до сих пор ждёт её каждое утро.</p>
+      <div style="margin-top:auto;display:flex;align-items:center;gap:12px">
+        <span style="width:54px;height:54px;flex:none;border-radius:50%;background:#DFE8E2;color:#1F3D34;display:flex;align-items:center;justify-content:center;font-family:Lora,Georgia,serif;font-size:19px;font-weight:600;letter-spacing:.02em">И</span>
+        <span style="display:flex;flex-direction:column;gap:1px"><span style="font-size:15.5px;font-weight:500;color:var(--ink)">Ирина, дочь</span><span style="font-size:13px;color:var(--muted)">Родитель: мама, 81 год</span></span>
+      </div>
+    </article>
+    <article style="flex:none;width:clamp(260px,28vw,340px);scroll-snap-align:start;background:var(--card);border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:18px">
+      <p style="font-size:16.5px;line-height:1.55;color:var(--ink-2)">После инсульта папе нужна была помощь круглосуточно. Сиделка с проживанием, гериатр раз в месяц — и он снова сам выходит во двор.</p>
+      <div style="margin-top:auto;display:flex;align-items:center;gap:12px">
+        <span style="width:54px;height:54px;flex:none;border-radius:50%;background:#DFE8E2;color:#1F3D34;display:flex;align-items:center;justify-content:center;font-family:Lora,Georgia,serif;font-size:19px;font-weight:600;letter-spacing:.02em">Д</span>
+        <span style="display:flex;flex-direction:column;gap:1px"><span style="font-size:15.5px;font-weight:500;color:var(--ink)">Дмитрий, сын</span><span style="font-size:13px;color:var(--muted)">Родитель: отец, 76 лет</span></span>
+      </div>
+    </article>
+    <article style="flex:none;width:clamp(260px,28vw,340px);scroll-snap-align:start;background:var(--card);border:1px solid #E2DACA;border-radius:var(--r);padding:clamp(20px,2.2vw,26px);display:flex;flex-direction:column;gap:18px">
+      <p style="font-size:16.5px;line-height:1.55;color:var(--ink-2)">Брали сиделку на время в больницу, потом оставили дома. Удобно, что человек тот же и уже знает маму.</p>
+      <div style="margin-top:auto;display:flex;align-items:center;gap:12px">
+        <span style="width:54px;height:54px;flex:none;border-radius:50%;background:#DFE8E2;color:#1F3D34;display:flex;align-items:center;justify-content:center;font-family:Lora,Georgia,serif;font-size:19px;font-weight:600;letter-spacing:.02em">Н</span>
+        <span style="display:flex;flex-direction:column;gap:1px"><span style="font-size:15.5px;font-weight:500;color:var(--ink)">Наталья, дочь</span><span style="font-size:13px;color:var(--muted)">Родитель: мама, 87 лет</span></span>
       </div>
     </article>
   </div>
@@ -355,12 +500,12 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 
 <section data-screen-label="11 Вопросы" style="position:relative;background:#FFFEFB;padding:clamp(40px,5.6vw,72px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(24px,4vw,56px);align-items:start;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
   <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
-    <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em">Вопросы о сиделках</h2>
+    <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em">Вопросы <span style="color:#8E6F56">о сиделках</span></h2>
     <a href="faq.html" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:16px;font-weight:500;color:var(--accent-deep)">Все частые вопросы
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
     </a>
   </div>
-  <div style="display:flex;flex-direction:column;background:var(--card);border-radius:20px;padding:6px clamp(20px,2.6vw,32px);border:1px solid var(--line)">
+  <div style="display:flex;flex-direction:column;background:var(--card);border-radius:4px;padding:6px clamp(20px,2.6vw,32px);border:1px solid var(--line)">
     <sc-for list="{{ faq }}" as="it" hint-placeholder-count="4">
       <div style="border-top:{{ it.border }}">
         <button type="button" onClick="{{ it.onClick }}" aria-expanded="{{ it.expanded }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:64px;padding:20px 0;background:none;border:none;cursor:pointer;text-align:left;color:var(--ink)" style-hover="color:var(--accent-deep)">
@@ -377,18 +522,17 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
   </div>
 </section>
 
-<section id="zayavka" data-screen-label="12 Заявка" style="position:relative;background:#F3E9D8;padding:clamp(40px,5.6vw,72px) 0 clamp(48px,6vw,96px);scroll-margin-top:80px;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
+<section id="zayavka" data-screen-label="12 Заявка" style="position:relative;background:#F4F0E7;padding:clamp(40px,5.6vw,72px) 0 clamp(48px,6vw,96px);scroll-margin-top:80px;width:100vw;margin-left:calc(50% - 50vw);padding-left:max(clamp(20px,5vw,72px),calc(50vw - 708px));padding-right:max(clamp(20px,5vw,72px),calc(50vw - 708px))">
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(20px,3vw,40px);align-items:stretch">
     <div style="padding:clamp(8px,1.6vw,20px) 0;display:flex;flex-direction:column;gap:16px">
-      <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em">Подберём <em style="font-style:italic;color:#1F3D34">сиделку</em></h2>
-      <p style="font-size:18px;line-height:1.6">Куратор перезвонит в течение дня, расспросит о ситуации и предложит формат. Консультация бесплатная и ни к чему не обязывает.</p>
+      <h2 style="font-family:Lora,Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.12;letter-spacing:-.015em">Подберём <span style="color:#8E6F56">сиделку</span></h2>
+      <p style="font-size:18px;line-height:1.6">Куратор перезвонит в течение дня, расспросит о ситуации и предложит формат. Консультация ни к чему не обязывает.</p>
       <div style="display:flex;flex-direction:column;gap:2px;margin-top:auto;padding-top:20px">
         <a href="tel:+79958870941" style="font-family:Lora,Georgia,serif;font-size:26px;color:var(--ink)" style-hover="color:var(--accent-deep)">+7 995 887-09-41</a>
         
       </div>
-      <svg aria-hidden="true" width="262" viewBox="0 0 262 60" fill="none" style="display:block;width:min(100%,262px);height:auto;margin-top:14px;margin-left:-4px;pointer-events:none"><path d="M0 30C30 18 60 44 96 36C126 29 140 10 160 16C178 22 168 44 150 40C134 36 150 20 176 26C204 32 222 44 245 40" stroke="#8E6F56" stroke-opacity=".22" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="249" cy="40" r="3" fill="#8E6F56" fill-opacity=".75"></circle><circle cx="257" cy="40" r="3" fill="#1F3D34" fill-opacity=".4"></circle></svg>
     </div>
-    <div style="padding:clamp(24px,3.4vw,48px);background:#FFFEFB;border-radius:32px">
+    <div style="padding:clamp(24px,3.4vw,48px);background:#FFFEFB;border-radius:6px">
       <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
           <span style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--sage-tint);color:var(--sage-deep)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
@@ -402,20 +546,20 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
             <span style="font-size:15px;font-weight:500">Какой формат интересует</span>
             <div style="display:flex;flex-wrap:wrap;gap:8px">
               <sc-for list="{{ formats }}" as="f" hint-placeholder-count="4">
-                <button type="button" onClick="{{ f.onClick }}" aria-pressed="{{ f.pressed }}" style="min-height:44px;padding:10px 18px;border-radius:999px;border:1px solid {{ f.chipBorder }};background:{{ f.chipBg }};color:{{ f.chipInk }};font-size:15px;cursor:pointer" style-hover="border-color:var(--accent)">{{ f.title }}</button>
+                <button type="button" onClick="{{ f.onClick }}" aria-pressed="{{ f.pressed }}" style="min-height:44px;padding:10px 18px;border-radius:4px;border:1px solid {{ f.chipBorder }};background:{{ f.chipBg }};color:{{ f.chipInk }};font-size:15px;cursor:pointer" style-hover="border-color:var(--accent)">{{ f.title }}</button>
               </sc-for>
             </div>
           </div>
           <label style="display:flex;flex-direction:column;gap:8px">
             <span style="font-size:15px;font-weight:500">Как к вам обращаться</span>
-            <input name="name" value="{{ name }}" onChange="{{ onName }}" placeholder="Имя" style="min-height:54px;padding:14px 22px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:16px;color:var(--ink);outline:none">
+            <input name="name" value="{{ name }}" onChange="{{ onName }}" placeholder="Имя" style="min-height:54px;padding:14px 22px;border-radius:4px;border:1px solid var(--line);background:var(--paper);font-size:16px;color:var(--ink);outline:none">
           </label>
           <label style="display:flex;flex-direction:column;gap:8px">
             <span style="font-size:15px;font-weight:500">Телефон</span>
-            <input name="phone" type="tel" value="{{ phone }}" onChange="{{ onPhone }}" placeholder="+7 ___ ___-__-__" style="min-height:54px;padding:14px 22px;border-radius:999px;border:1px solid {{ phoneBorder }};background:var(--paper);font-size:16px;color:var(--ink);outline:none">
+            <input name="phone" type="tel" value="{{ phone }}" onChange="{{ onPhone }}" placeholder="+7 ___ ___-__-__" style="min-height:54px;padding:14px 22px;border-radius:4px;border:1px solid {{ phoneBorder }};background:var(--paper);font-size:16px;color:var(--ink);outline:none">
             <sc-if value="{{ phoneErr }}" hint-placeholder-val="{{ false }}"><span style="font-size:14px;color:var(--accent-deep)">Укажите номер, чтобы мы могли перезвонить</span></sc-if>
           </label>
-          <button type="submit" style="min-height:56px;padding:16px 28px;border-radius:999px;border:0;background:var(--accent);color:var(--card);font-size:16px;font-weight:500;cursor:pointer;transition:background .18s ease" style-hover="background:#2E5446">Подобрать сиделку</button>
+          <button type="submit" style="min-height:56px;padding:16px 28px;border-radius:4px;border:0;background:var(--accent);color:var(--card);font-size:16px;font-weight:500;cursor:pointer;transition:background .18s ease" style-hover="background:#2E5446">Подобрать сиделку</button>
           <span style="font-size:13.5px;color:var(--muted)">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</span>
         </form>
       </sc-if>
@@ -427,8 +571,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:clamp(26px,3.4vw,48px);align-items:stretch">
 
     <div style="display:flex;flex-direction:column;gap:14px;grid-column:span 1">
-      <img src="logo-light.svg" alt="Со-Действие" width="201" height="44" style="display:block;height:44px;width:auto">
-      <p style="font-size:16px;line-height:1.6;color:var(--muted);max-width:26em">Закреплённая команда для родителей в Москве и Московской области.</p>
+      <div style="display:flex;align-items:center;gap:12px;align-self:flex-start;"><img src="logo-mark.png" alt="" width="289" height="245" data-logo="1" style="display:block;height:56px;width:auto"><div style="display:flex;flex-direction:column;gap:5px"><div style="font-family:Lora,Georgia,serif;font-weight:500;font-size:30px;line-height:1;letter-spacing:-.015em;color:#1F3D34;white-space:nowrap">Со-Действие</div><div style="font-size:12px;line-height:1;letter-spacing:.22em;text-transform:uppercase;color:#6B6458;white-space:nowrap">Забота, которая рядом</div></div></div>
+      <p style="font-size:16px;line-height:1.6;color:var(--muted);max-width:26em">Экосистема заботы о вашем родителе: персональный куратор и проверенные специалисты решают всё — от здоровья до быта. Постоянно, а не когда уже случилось.</p>
       <div style="display:flex;gap:10px;margin-top:2px">
         <a href="kontakty.html" aria-label="Телеграм" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);color:var(--ink-2)" style-hover="border-color:var(--ink);color:var(--ink)"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M18 3 2 9.3l4.4 1.5L8 17l2.6-3.4L15 16z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a>
         <a href="kontakty.html" aria-label="ВКонтакте" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);color:var(--ink-2)" style-hover="border-color:var(--ink);color:var(--ink)"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M2.5 6h3c.4 3 1.9 5.4 3 5.4V6h2.8v3c1 0 2-1.3 2.6-3h2.6c-.5 1.9-1.5 3.4-2.6 4.1 1.2.7 2.3 2.1 2.9 3.9h-2.9c-.5-1.4-1.4-2.6-2.6-2.6V14H8.4C4.9 14 3 10.6 2.5 6z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path></svg></a>
@@ -454,15 +598,15 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
     <div style="display:flex;flex-direction:column;gap:11px">
       <span style="font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">Связаться</span>
       <a href="tel:+79958870941" style="font-family:Lora,Georgia,serif;font-size:24px;line-height:1.1;color:var(--ink)" style-hover="color:var(--accent)">+7 995 887-09-41</a>
-      <span style="font-size:14px;color:var(--muted)">Ежедневно 7:00–22:00<br>Экстренная линия — круглосуточно</span>
-      <a href="mailto:info@so-deystvie.com" style="font-size:16px;color:var(--ink-2)" style-hover="color:var(--accent)">info@so-deystvie.com</a>
+      <span style="font-size:14px;color:var(--muted)">Ежедневно 10:00–22:00<br>Экстренная линия — круглосуточно</span>
+      <a href="mailto:info@sodeistvie-family.ru" style="font-size:16px;color:var(--ink-2)" style-hover="color:var(--accent)">info@sodeistvie-family.ru</a>
       <span style="font-size: 14px; line-height: 1.6; color: var(--muted); width: 235px; height: 30px">Москва, 2-й Боткинский проезд, 8<br></span>
-      <a href="kontakty.html#napisat" style="display:inline-flex;align-items:center;justify-content:center;text-align:center;line-height:1.2;align-self:flex-start;margin-top:auto;padding:13px 24px;border-radius:999px;background:var(--accent);color:var(--card);font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:#2E5446">Получить консультацию</a>
+      <a href="kontakty.html#napisat" style="display:inline-flex;align-items:center;justify-content:center;text-align:center;line-height:1.2;align-self:flex-start;margin-top:auto;padding:13px 24px;border-radius:4px;background:var(--accent);color:var(--card);font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:#2E5446">Получить консультацию</a>
     </div>
   </div>
 
   <div style="display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:space-between;align-items:baseline;margin-top:clamp(28px,3.4vw,44px);padding-top:20px;border-top:1px solid var(--line)">
-    <span style="font-size:14px;color:var(--muted)">© 2026 ООО «Со-Действие» · ИНН 773119151503</span>
+    <span style="font-size:14px;color:var(--muted)">© 2026 ИП Лысенков А. В. · ИНН 773119151503</span>
     <div style="display:flex;flex-wrap:wrap;gap:18px">
       <a href="kontakty.html" style="font-size:14px;color:var(--muted)" style-hover="color:var(--ink)">Политика конфиденциальности</a>
       <a href="kontakty.html" style="font-size:14px;color:var(--muted)" style-hover="color:var(--ink)">Договор и оферта</a>
@@ -476,15 +620,17 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 const FORMATS = [
-  { title: 'Почасовая', text: 'От 3 часов в день: утренние процедуры, обед, прогулка, лекарства.', price: '450 ₽', unit: '/ час' },
-  { title: 'Дневная', text: '8–12 часов рядом, пока родные на работе. Уход, быт, общение.', price: '3 900 ₽', unit: '/ день' },
-  { title: 'С проживанием', text: 'Сиделка живёт с родителем, 24/7 с графиком выходных и подменой.', price: '85 000 ₽', unit: '/ месяц' },
+  { title: 'Почасовая', text: 'От 3 часов в день: утренние процедуры, обед, прогулка, лекарства.', price: '500 ₽', unit: '/ час' },
+  { title: 'Дневная', text: '8–12 часов рядом, пока родные на работе. Уход, быт, общение.', price: '4 000 ₽', unit: '/ день' },
+  { title: 'С проживанием', text: 'Сиделка живёт с родителем, 24/7 с графиком выходных и подменой.', price: '100 000 ₽', unit: '/ месяц' },
   { title: 'В больнице', text: 'Дежурство в стационаре и помощь после выписки, пока восстанавливается.', price: '3 500 ₽', unit: '/ смена' },
 ];
 const FAQ = [
-  { q: 'Как быстро можно начать?', a: 'Обычно первая сиделка выходит в течение 1–3 дней после консультации. В срочных случаях — на следующий день.' },
+  { q: 'Как быстро можно начать?', a: 'Обычно первая сиделка выходит в течение недели после консультации. В срочных случаях — на следующий день.' },
   { q: 'Сиделка может давать лекарства и делать уколы?', a: 'Лекарства — да, строго по схеме гериатра. Уколы и капельницы выполняет медсестра нашей команды или сиделка с медицинским образованием.' },
   { q: 'Как оформляются отношения?', a: 'Вы заключаете договор с Со-Действием. Мы отвечаем за подбор, замену и качество работы, сиделка оформлена официально.' },
+  { q: 'Как вы проверяете сиделок?', a: 'Документы и медицинская книжка, рекомендации с прошлых мест, собеседование с куратором и проверка навыков ухода. До работы допускаем меньше трети кандидатов.' },
+  { q: 'Что если родитель не захочет сиделку?', a: 'Так бывает часто. Начинаем с нескольких часов в день и простых дел — прогулки, разговора, помощи по дому. Куратор подскажет, как представить сиделку, чтобы родитель не почувствовал себя беспомощным.' },
 ];
 
 const SIGNS = ['Забывает выпить лекарства', 'Стал хуже есть', 'Было падение', 'Давно не выходит из дома', 'Звоните — и не можете дозвониться'];
@@ -496,12 +642,18 @@ const SIGN_MSG = [
 
 class Component extends DCLogic {
   state = { signs: [false, false, false, false, false], fmt: 0, faq: 0, name: '', phone: '', sent: false, tried: false };
+  carBy(e, dir) {
+    const el = e.currentTarget.closest('section').querySelector('[data-rail]');
+    if (el) el.scrollBy({ left: dir * Math.max(280, el.clientWidth * 0.8), behavior: "smooth" });
+  }
   renderVals() {
     const s = this.state;
     const phoneErr = s.tried && s.phone.replace(/\D/g, '').length < 10;
     const signCount = s.signs.filter(Boolean).length;
     const msg = SIGN_MSG[Math.min(signCount, 2)];
     return {
+      carPrev: (e) => this.carBy(e, -1),
+      carNext: (e) => this.carBy(e, 1),
       signs: SIGNS.map((text, i) => {
         const on = s.signs[i];
         return { text, checked: on ? 'true' : 'false', onClick: () => this.setState(st => ({ signs: st.signs.map((v, j) => j === i ? !v : v) })),
@@ -511,9 +663,9 @@ class Component extends DCLogic {
       formats: FORMATS.map((f, i) => {
         const on = s.fmt === i;
         return { ...f, n: i + 1, pressed: on ? 'true' : 'false', onClick: () => this.setState({ fmt: i }),
-          border: on ? '#1F3D34' : '#E2DACA', bg: on ? '#E1EAE3' : '#FFFEFB',
+          border: on ? '#1F3D34' : '#E2DACA', bg: on ? '#DFE8E2' : '#FFFEFB',
           pill: on ? '✓ Выбран' : 'Выбрать',
-          pillStyle: 'margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;min-height:40px;padding:8px 18px;border-radius:999px;font-size:14.5px;font-weight:500;' + (on ? 'background:#1F3D34;color:#FFFEFB;' : 'border:1.5px solid #1F3D34;color:#1F3D34;'),
+          pillStyle: 'margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;min-height:40px;padding:8px 18px;border-radius:4px;font-size:14.5px;font-weight:500;' + (on ? 'background:#1F3D34;color:#FFFEFB;' : 'border:1.5px solid #1F3D34;color:#1F3D34;'),
           chipBorder: on ? 'var(--ink)' : 'var(--line)', chipBg: on ? 'var(--ink)' : 'transparent', chipInk: on ? 'var(--card)' : 'var(--ink)' };
       }),
       faq: FAQ.map((it, i) => {
